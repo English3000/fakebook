@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 // import usersReducer from './usersReducer';
 // import friendshipsReducer from './friendshipsReducer';
 // import friendRequestsReducer from './friendRequestsReducer';
