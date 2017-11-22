@@ -22,5 +22,5 @@ export const signIn = user => async (dispatch) => (
 //   dispatch(receiveCurrentUser(await SessionAPIUtil.signOut()));
 // );
 export const signOut = () => dispatch => {
-  SessionAPIUtil.signOut().then(dispatch(receiveCurrentUser(null)));
+  SessionAPIUtil.signOut().then( () => dispatch(receiveCurrentUser(null)) );
 };
