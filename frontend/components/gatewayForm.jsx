@@ -19,12 +19,16 @@ export default class GatewayForm extends React.Component {
 
   signUp(event) {
     event.preventDefault();
-    this.props.signUp(this.state);
+    this.props.signUp(this.state)
+      .then(() => $('.gateway-errors').addClass('hidden'),
+      () => $('.gateway-errors').removeClass('hidden'));
   }
 
   signIn(event) {
     event.preventDefault();
-    this.props.signIn(this.state);
+    this.props.signIn(this.state)
+      .then(() => $('.gateway-errors').addClass('hidden'),
+      () => $('.gateway-errors').removeClass('hidden'));
   }
 
   // MOVE to diff. component
@@ -36,12 +40,17 @@ export default class GatewayForm extends React.Component {
   handleEnter(event) {
     if (event.keyCode === 13) {
       event.preventDefault();
-      this.props.signIn(this.state);
+      this.props.signIn(this.state)
+        .then(() => $('.gateway-errors').addClass('hidden'),
+        () => $('.gateway-errors').removeClass('hidden'));
     }
   }
 
   render() {
     return (<div>
+      <ul className='gateway-errors hidden' onClick={() => $('.gateway-errors').addClass('hidden')}>
+        {this.props.errors.map(err => <li key={err}>{err}</li>)}
+      </ul>
       <form className='flex'>
         <button onClick={this.signUp} id='sign-up'><p>Sign</p><p className='bump-left'>Up</p></button>&emsp;
         <div className='inline-block input-box'>

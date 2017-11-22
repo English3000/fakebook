@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { signUp, signIn, signOut } from '../session_actions';
 import GatewayForm from './gatewayForm';
 
-// const mapStateToProps = state => ({
-// MAP ERRORS
-// })
+const mapStateToProps = ({ errors }) => {
+  return ({
+    errors: errors.session
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   signUp: user => dispatch(signUp(user)),
@@ -12,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   signOut: () => dispatch(signOut())
 });
 
-export default connect(null, mapDispatchToProps)(GatewayForm);
+export default connect(mapStateToProps, mapDispatchToProps)(GatewayForm);

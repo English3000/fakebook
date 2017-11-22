@@ -1,18 +1,8 @@
 import React from 'react';
 import GatewayFormContainer from './gatewayFormContainer';
+import DemoButtonContainer from './demoButtonContainer';
 
 export default class GatewayPage extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event) {
-    event.preventDefault();
-    this.props.signIn({'username':'AMK', 'password':'12345678'});
-  }
-
   render() {
     return (
       <div>
@@ -33,7 +23,7 @@ export default class GatewayPage extends React.Component {
               </div>
               <div className='col-33pct'>
                 <h1 className='pretty-font'>RE-INVENT Yourself!</h1>
-                <button onClick={this.handleClick} className='max-size gray-button white center-text'>DEMO</button>{/* <DemoButtonContainer /> */}
+                <DemoButtonContainer/>
               </div>
             </div>
           </div>
