@@ -19,15 +19,24 @@
 .input-box > input:first-of-type {
   margin-bottom: 2px;
 }
+.input-box2 > input:first-of-type {
+  margin-bottom: 2px;
+}
 
 .input-box {
   position: relative;
   top: 5px;
 }
+.input-box2 {
+  padding-top: 20px;
+  position: relative;
+  left: 45px;
+  /*top: 5px;*/
+}
 
 /*SOURCE: http://apps.eky.hk/css-triangle-generator/ */
 #sign-up {
-  color: black;/*midnightblue;*/
+  color: black;
   font-size: 11px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
@@ -35,23 +44,25 @@
   height: 0;
   border-style: solid;
   border-width: 0 28px 45px 28px;
-  /*border-width: 0 0 45px 45px;*/
   border-color: transparent transparent palegreen transparent;
-  /*border-color: transparent transparent lightcyan transparent;*/
   border-radius: 0;
   position: relative;
-  top: 1px;
-  left: 11px;
+  top: -30px;
+  left: -10px;
+  /*top: 1px;
+  left: 11px;*/
 }
 
 #sign-up p {
   position: relative;
-  left: -10px;
+  left: -11px;
+  /*left: -10px;*/
   top: 15px;
 }
 
 .bump-left {
-  padding-left: 2px;
+  padding-left: 4px;
+  /*padding-left: 2px;*/
 }
 
 .bump-more-left {
@@ -65,7 +76,7 @@
 }
 
 #sign-in {
-  color: black;/*midnightblue;*/
+  color: black;
   font-size: 11px;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
@@ -73,7 +84,7 @@
   height: 0;
   border-style: solid;
   border-width: 25px 0 25px 48px;
-  border-color: transparent transparent transparent palegreen;/*lightcyan;*/
+  border-color: transparent transparent transparent palegreen;
   border-radius: 0;
   position: relative;
   left: -9px;

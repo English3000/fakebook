@@ -1,5 +1,6 @@
 import React from 'react';
 import GatewayFormContainer from './gatewayFormContainer';
+import GatewayForm2Container from './gatewayForm2Container';
 import DemoButtonContainer from './demoButtonContainer';
 
 export default class GatewayPage extends React.Component {
@@ -24,6 +25,8 @@ export default class GatewayPage extends React.Component {
               <div className='col-33pct'>
                 <h1 className='pretty-font'>RE-INVENT Yourself!</h1>
                 <DemoButtonContainer/>
+                <br/><br/>
+                <GatewayForm2Container />
               </div>
             </div>
           </div>
