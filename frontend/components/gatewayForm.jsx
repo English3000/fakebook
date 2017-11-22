@@ -51,23 +51,22 @@ export default class GatewayForm extends React.Component {
       <ul className='gateway-errors hidden' onClick={() => $('.gateway-errors').addClass('hidden')}>
         {this.props.errors.map(err => <li key={err}>{err}</li>)}
       </ul>
-      <form className='flex'>
+      <form>
         {/* <button onClick={this.signUp} id='sign-up'><p>Sign</p><p className='bump-left'>Up</p></button>&emsp; */}
-        <div className='inline-block input-box'>
+        {/* <div className='inline-block input-box'> */}
           <input type='text'
             onChange={this.update('username')}
             onKeyDown={this.handleEnter}
             value={this.state.username}
             placeholder='Username'
-            autoFocus/>
-          <br/>
+            autoFocus/>&ensp;
           <input type='password'
             onChange={this.update('password')}
             onKeyDown={this.handleEnter}
             value={this.state.password}
-            placeholder='Password'/>&emsp;
-        </div>
-        <button onClick={this.signIn} id='sign-in'><span><p>Sign</p><p className='bump-more-left'>In</p></span></button>
+            placeholder='Password'/>&ensp;
+        {/* </div> */}
+        <button onClick={this.signIn}>Sign In</button>
       </form>
       {/* MOVE to diff. component */}
       {/* <button onClick={this.signOut}>Sign Out</button> */}
