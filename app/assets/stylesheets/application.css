@@ -14,7 +14,7 @@
  *= require_self
  */
 header {
-  background-color: royalblue;
+  background-color: forestgreen;/*royalblue;*/
   color: white;
 }
 
@@ -23,48 +23,13 @@ h1 {
   font-weight: bold;
 }
 
-.leftmost {
-  margin: 30px 47.5px 0 17.5px;
-}
-
-.pretty-font {
-  font-family: 'Indie Flower', cursive;
+h2 {
+  font-size: 26px;
 }
 
 .lavender-to-bottom {
   background-color: lavender;
   height: 800px;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.gray-button {
-  background-color: lightgray;
-  border: 0;
-  padding: 5px 0;
-  margin-top: 1px;
-}
-
-.lightcyan-button {
-  background-color: lightcyan;
-  border: 1px solid lightcyan;
-  font-weight: bold;
-  color: midnightblue;
-  font-size: 11px;
-}
-
-.white {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-}
-
-.max-size {
-  font-size: 18px;
-  width: 80%;
-  margin-left: 17.5px;
-  border-radius: 25px;
 }
 
 .center-900px {
@@ -73,9 +38,25 @@ h1 {
   max-width: 900px;
 }
 
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
 .logo-font {
   font-family: 'Open Sans', sans-serif;
   font-size: 30px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
 }
 
 .flex-between {
@@ -88,7 +69,11 @@ h1 {
   align-items: center;
 }
 
+/*.flex-center {
+  display: flex;;
+  justify-content: center;
+}*/
+
 .gateway-header {
   padding: 10px;
-  border-bottom: 1px solid black;
 }
