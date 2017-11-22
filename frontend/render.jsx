@@ -4,6 +4,7 @@ import configureStore from './store';
 import Connection from './components/connection';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // const store = configureStore();
-  ReactDOM.render(<Connection />, document.getElementById('app-display'));
+  const store = configureStore();
+  window.getState = store.getState;
+  ReactDOM.render(<Connection store={store}/>, document.getElementById('app-display'));
 });
