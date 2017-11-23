@@ -4,12 +4,11 @@ import { fetchUser } from '../all_actions';
 import { signOut } from '../session_actions';
 import Nav from './nav';
 
-const mapStateToProps = ({ entities }) => {
-  console.log(entities.users);
+const mapStateToProps = ({ session, entities }) => {
   return ({
+    currentUser: session.currentUserId,
     users: entities.users
   });
-  // currentUser: ownProps.match.params.id
 };
 
 const mapDispatchToProps = dispatch => ({

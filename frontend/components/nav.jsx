@@ -9,7 +9,7 @@ export default class Nav extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.id);
+    this.props.fetchUser(this.props.currentUser);
     // console.log(this.props);
   }
 
@@ -24,7 +24,10 @@ export default class Nav extends React.Component {
         <Link to='/posts' className='logo-font'>f</Link>
       </div>
       <nav className='flex-middle'>
-        <p>{this.props.users.username}</p>&ensp;
+        <img src={this.props.users.profile_pic ? this.props.users.profile_pic : 'http://3.bp.blogspot.com/-qUH2sD4GWB0/UUn5xBphLjI/AAAAAAAAA2o/MMYWv7n8sNw/s1600/thumb-up-terminator+pablo+M+R.jpg'}/>&ensp;
+        <Link to={`/users/${this.props.currentUser}`}>{this.props.users.username}</Link>&nbsp;&nbsp;|
+        &nbsp;<Link to='/posts'>Home</Link>&emsp;&emsp;
+        <i className='fa fa-users fa-lg pointer'></i>&emsp;
         <i className='fa fa-sign-out fa-lg pointer' onClick={this.signOut}></i>
       </nav>
     </header>);

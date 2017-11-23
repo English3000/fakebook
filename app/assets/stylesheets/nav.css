@@ -20,3 +20,9 @@
 .nav nav {
   margin-right: 7.5px;
 }
+
+.nav nav img {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+}
