@@ -10,7 +10,7 @@ export default class PostsIndex extends React.Component {
   render() {
     return (<div>
       <ul>
-        {this.props.posts.map(
+        {this.props.posts.reverse.map(
           post => <PostsIndexItem key={post.id}
                                   post={post}
                                   deletePost={this.props.deletePost}/>

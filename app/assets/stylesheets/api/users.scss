@@ -42,3 +42,11 @@
   position: relative;
   left: -200px;
 }
+
+.green-button {
+  background-color: palegreen;
+  box-shadow: 0 0 2px green;
+  padding: 0 6px;
+  border-radius: 2px;
+  font-weight: bold;
+}
