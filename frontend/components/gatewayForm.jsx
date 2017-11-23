@@ -1,6 +1,5 @@
 import React from 'react';
-//renders at top of <Route exact path='/'... /> w/in <header>
-//below it is description of platform functionality
+
 export default class GatewayForm extends React.Component {
   constructor(props) {
     super(props);
@@ -8,7 +7,6 @@ export default class GatewayForm extends React.Component {
     // this.signUp = this.signUp.bind(this);
     this.signIn = this.signIn.bind(this);
     // this.handleEnter = this.handleEnter.bind(this);
-    // this.signOut = this.signOut.bind(this); //MOVE to diff. component
   }
 
   update(field) {
@@ -31,12 +29,6 @@ export default class GatewayForm extends React.Component {
       () => $('.gateway-errors').removeClass('hidden'));
   }
 
-  // MOVE to diff. component
-  // signOut(event) {
-  //   event.preventDefault();
-  //   this.props.signOut(this.state);
-  // }
-
   // handleEnter(event) {
   //   if (event.keyCode === 13) {
   //     event.preventDefault();
@@ -56,20 +48,18 @@ export default class GatewayForm extends React.Component {
         {/* <div className='inline-block input-box'> */}
           <input type='text'
             onChange={this.update('username')}
-            onKeyDown={this.handleEnter}
+            // onKeyDown={this.handleEnter}
             value={this.state.username}
             placeholder='Username'
             autoFocus/>&ensp;
           <input type='password'
             onChange={this.update('password')}
-            onKeyDown={this.handleEnter}
+            // onKeyDown={this.handleEnter}
             value={this.state.password}
             placeholder='Password'/>&ensp;
         {/* </div> */}
         <button onClick={this.signIn}>Sign In</button>
       </form>
-      {/* MOVE to diff. component */}
-      {/* <button onClick={this.signOut}>Sign Out</button> */}
     </div>);
   }
 }

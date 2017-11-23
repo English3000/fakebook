@@ -1,11 +1,11 @@
-<script type='text/javascript'>
-  <% if signed_in? %>
+<% if signed_in? %>
+  <script>
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",
       user: current_user
     ).html_safe %>
-  <% end %>
-</script>
+  </script>
+<% end %>
 
 <div id='app-display'>
   Check Chrome console (alt + cmd + j)...
