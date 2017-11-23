@@ -38,17 +38,12 @@ h2 {
   max-width: 900px;
 }
 
-.center {
-  margin: 0 auto;
-}
-
-.center-text {
-  text-align: center;
-}
-
 .logo-font {
   font-family: 'Open Sans', sans-serif;
-  font-size: 30px;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .inline-block {
@@ -67,13 +62,4 @@ h2 {
 .flex-middle {
   display: flex;;
   align-items: center;
-}
-
-/*.flex-center {
-  display: flex;;
-  justify-content: center;
-}*/
-
-.gateway-header {
-  padding: 10px;
 }

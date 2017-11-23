@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -13,6 +14,13 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    return <button onClick={this.signOut}>Sign Out</button>;
+    return (<header className='flex-between nav'>
+      <div className='header-logo'>
+        <Link to='/posts' className='logo-font'>f</Link>
+      </div>
+      <nav className='flex-middle'>
+        <i className='fa fa-sign-out fa-lg pointer' onClick={this.signOut}></i>
+      </nav>
+    </header>);
   }
 }

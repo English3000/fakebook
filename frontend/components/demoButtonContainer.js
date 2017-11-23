@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { signUp, signIn, signOut } from '../session_actions';
+import { signIn } from '../session_actions';
 import DemoButton from './demoButton';
 
 // const mapStateToProps = state => ({
-// MAP ERRORS
+//
 // })
 
 const mapDispatchToProps = dispatch => ({

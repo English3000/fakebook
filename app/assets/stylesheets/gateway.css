@@ -1,3 +1,11 @@
+.gateway-header {
+  padding: 10px;
+}
+
+.gateway-logo-size {
+  font-size: 30px;
+}
+
 .top-padding {
   padding-top: 10px;
 }
@@ -143,7 +151,7 @@
 
 .pretty-font {
   font-family: 'Indie Flower', cursive;
-  color: purple;
+  color: darkblue;
   margin-left: 19px;
 }
 

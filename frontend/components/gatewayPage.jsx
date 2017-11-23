@@ -7,7 +7,7 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <p className='logo-font'>fakebook</p>
+        <p className='logo-font gateway-logo-size'>fakebook</p>
         <GatewayFormContainer />
       </div>
     </header>

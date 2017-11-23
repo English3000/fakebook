@@ -25,6 +25,6 @@ export const signIn = user => dispatch => (
     .then(u => (dispatch(receiveCurrentUser(u.id))),
           err => dispatch(receiveErrors(err.responseJSON)))
 );
-export const signOut = () => dispatch => {
-  SessionAPIUtil.signOut().then( user => dispatch(receiveCurrentUser(null)) );
-};
+export const signOut = () => dispatch => (
+  SessionAPIUtil.signOut().then( user => dispatch(receiveCurrentUser(null)) )
+);
