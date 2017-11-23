@@ -1,13 +1,12 @@
 .nav {
   height: 40px;
-  border-bottom: 0.5px darkblue solid;
 }
 
 .header-logo {
   font-size: 26px;
   height: 25px;
   background-color: white;
-  color: royalblue;
+  color: green;
   margin: 8px 0 0 19px;
   padding: 0 5px 0 8px;
   border-radius: 1px;
@@ -24,7 +23,7 @@
 }
 
 .nav nav {
-  margin-right: 7.5px;
+  margin: 7.5px 7.5px 0 0;
 }
 
 .nav nav img {
@@ -33,6 +32,6 @@
   border-radius: 100%;
 }
 
-.darkblue {
-  color: darkblue;
+.palegreen {
+  color: palegreen;
 }

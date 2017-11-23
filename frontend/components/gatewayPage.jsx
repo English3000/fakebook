@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GatewayFormContainer from './gatewayFormContainer';
-import SignUpFormContainer from './signUpFormContainer';
+// import SignUpFormContainer from './signUpFormContainer';
 import DemoButtonContainer from './demoButtonContainer';
 
 export default () => (
@@ -13,24 +13,33 @@ export default () => (
       </div>
     </header>
     <main className='lavender'>
-      <div className='center-900px top-padding'>
-        <div className='flex'>
-          <div className='col-55pct'>
+      <div className='center-900px'>
+        <div className='features-column flex-center flex-middle'>
+          <div>
             <h2>Features:</h2>
-            &nbsp;<i className='fa fa-user-o fa-2x'></i>&emsp;<h3 className='feature'><span>Create</span> a <em>Profile</em></h3><br/>
-            <i className='fa fa-handshake-o fa-2x'></i>&ensp;&nbsp;&nbsp;<h3 className='feature'><span>Connect</span> with <em>Friends</em></h3><br/>
-            <i className='fa fa-newspaper-o fa-2x'></i>&emsp;<h3 className='feature'><span>Catch up</span> or <em>Comment</em></h3><br/>
+            <section className='features-section flex'>
+              <div className='icons-div flex-middle flex-column'>
+                <i className='fa fa-user-o fa-2x'></i>
+                <i className='fa fa-handshake-o fa-2x'></i>
+                <i className='fa fa-newspaper-o fa-2x'></i>
+              </div>
+              <div className='features-div'>
+                <h3 className='feature'><span>Create</span> a <em>Profile</em></h3><br/>
+                <h3 className='feature'><span>Connect</span> with <em>Friends</em></h3><br/>
+                <h3 className='feature'><span>Catch up</span> or <em>Comment</em></h3>
+              </div>
+            </section>
             <DemoButtonContainer/>
           </div>
-          <div className='col-45pct'>
+          {/* <div className='col-45pct'>
             <h1>RE-INVENT Yourself!</h1>
             <h3 className='byline'>It's fake and always will be.</h3>
             <SignUpFormContainer />
-          </div>
+          </div> */}
         </div>
       </div>
     </main>
-    <footer className='gateway-footer'>
+    <footer className='gateway-footer flex-center'>
       <span>Learn More: &ensp;</span>
       <a href='https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'>
         <i className='fa fa-linkedin-square fa-2x'></i>

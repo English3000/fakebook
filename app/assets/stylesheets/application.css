@@ -14,7 +14,7 @@
  *= require_self
  */
 header {
-  background-color: royalblue;/*forestgreen;*/
+  background-color: forestgreen;/*royalblue;*/
   color: white;
 }
 
@@ -30,7 +30,7 @@ h2 {
 
 .lavender {
   background-color: lavender;
-  height: 675px;
+  height: 750px;
 }
 
 .lavender-to-bottom {
@@ -66,7 +66,17 @@ h2 {
   justify-content: space-between;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
 .flex-middle {
   display: flex;;
   align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }

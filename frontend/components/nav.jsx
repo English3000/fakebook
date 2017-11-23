@@ -26,12 +26,14 @@ export default class Nav extends React.Component {
         </div>
         <nav className='flex-middle'>
           <Link to={`/users/${this.props.currentUser}`} className='flex-middle'>
-            <img src={this.props.users.profile_pic ? this.props.users.profile_pic : 'http://3.bp.blogspot.com/-qUH2sD4GWB0/UUn5xBphLjI/AAAAAAAAA2o/MMYWv7n8sNw/s1600/thumb-up-terminator+pablo+M+R.jpg'}/>&nbsp;&nbsp;
+            <img src={this.props.users.profile_pic ? this.props.users.profile_pic : 'http://3.bp.blogspot.com/-qUH2sD4GWB0/UUn5xBphLjI/AAAAAAAAA2o/MMYWv7n8sNw/s1600/thumb-up-terminator+pablo+M+R.jpg'}/>
+            &ensp;
             {this.props.users.username}
-          </Link>&nbsp;&nbsp;|
-          &nbsp;<Link to='/posts'>Home</Link>&emsp;&emsp;
-          <i className='fa fa-users fa-lg pointer darkblue'></i>&emsp;
-          <i className='fa fa-sign-out fa-lg pointer darkblue' onClick={this.signOut}></i>
+          </Link>
+          <span className='palegreen'>&ensp;&nbsp;|&ensp;&nbsp;</span>
+          <Link to='/posts'>Home</Link>&emsp;&emsp;
+          <i className='fa fa-users fa-lg pointer palegreen'></i>&emsp;
+          <i className='fa fa-sign-out fa-lg pointer palegreen' onClick={this.signOut}></i>
         </nav>
       </div>
     </header>);
