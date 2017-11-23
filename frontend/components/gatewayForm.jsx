@@ -40,10 +40,11 @@ export default class GatewayForm extends React.Component {
 
   render() {
     return (<div>
+      {/* Heroku version isn't working; maybe need to seed production db??? */}
       <ul className='gateway-errors hidden' onClick={() => $('.gateway-errors').addClass('hidden')}>
         {this.props.errors.length > 0 ? this.props.errors.map(err => <li key={err}>{err}</li>) : ''}
       </ul>
-      <form>
+      <form className='signInForm'>
         {/* <button onClick={this.signUp} id='sign-up'><p>Sign</p><p className='bump-left'>Up</p></button>&emsp; */}
         {/* <div className='inline-block input-box'> */}
           <input type='text'

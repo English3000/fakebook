@@ -1,24 +1,24 @@
 .gateway-header {
-  padding: 10px;
+  padding: 15px 0;
 }
-
+/*everything 33% bigger*/
 .gateway-logo-size {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .top-padding {
-  padding-top: 10px;
+  padding-top: 25px;
 }
 
 .col-60pct {
   width: 59.5%;
   box-sizing: border-box;
-  padding-left: 17.5px;
+  padding: 35px 0 0 17.5px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .col-40pct {
-  min-width: 305px;
+  min-width: 362.5px;
   width: 40%;
   box-sizing: border-box;
   padding-left: 20px;
@@ -124,7 +124,9 @@
   background-color: gainsboro;
   border: 0;
   padding: 5px 0;
-  margin-top: 1px;
+  margin-left: 1px;
+  position: relative;
+  top: 3px;
 }
 
 .max-size {
@@ -141,8 +143,11 @@
 }
 
 .feature {
+  font-size: 20px;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
+  position: relative;
+  top: -4px;
 }
 
 .feature span {
@@ -156,25 +161,45 @@
 }
 
 .byline {
-  font-size: 18px;
-  padding: 0 0 5px 40px;
+  font-size: 20px;
+  padding: 0px 0 15px 50px;
+}
+
+.signInForm input {
+  height: 21px;
+  border: 1px black solid;
+}
+
+.signInForm button {
+  height: 24px;
+  position: relative;
+  top: -1px;
+  background-color: darkblue;
+  color: white;
+  border: 0;
+  border-radius: 1px;
 }
 
 .signUpForm {
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 .signUpForm input {
-  margin: 3px 0 0 10px;
-  height: 18px;
+  margin: 8px 0 0 10px;
+  height: 24px;
   width: 175px;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px lightgray solid;
 }
 
 .signUpForm button {
-  margin-top: 8px;
-  margin-left: 67.5px;
-  background-color: royalblue;
-  color: white;
-  padding: 2px 6px 3px 6px;
-  font-size: 14px;
+  margin-top: 15px;
+  margin-left: 60px;
+  background-color: lightblue;
+  padding: 6px 10px 7px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: snow;
+  border: 0;
 }
