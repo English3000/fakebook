@@ -1,5 +1,16 @@
 import * as FakebookAPIUtil from './api_util';
 
+export const RECEIVE_USER = 'RECEIVE_USER';
+
+export const receiveUser = user => ({
+  type: RECEIVE_USER,
+  user
+});
+
+export const fetchUser = id => dispatch => (
+  FakebookAPIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
+);
+
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';

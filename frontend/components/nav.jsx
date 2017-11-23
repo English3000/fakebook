@@ -8,6 +8,11 @@ export default class Nav extends React.Component {
     this.signOut = this.signOut.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.id);
+    // console.log(this.props);
+  }
+
   signOut(event) {
     event.preventDefault();
     this.props.signOut();
@@ -19,6 +24,7 @@ export default class Nav extends React.Component {
         <Link to='/posts' className='logo-font'>f</Link>
       </div>
       <nav className='flex-middle'>
+        <p>{this.props.users.username}</p>&ensp;
         <i className='fa fa-sign-out fa-lg pointer' onClick={this.signOut}></i>
       </nav>
     </header>);

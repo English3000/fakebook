@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
-// import usersReducer from './usersReducer';
+import usersReducer from './usersReducer';
 // import friendshipsReducer from './friendshipsReducer';
 // import friendRequestsReducer from './friendRequestsReducer';
-import postsReducer from './postsReducer';
-import commentsReducer from './commentsReducer';
+// import postsReducer from './postsReducer';
+// import commentsReducer from './commentsReducer';
 
 export default combineReducers({
-  // users: usersReducer,
+  users: usersReducer,
   // friendships: friendshipsReducer,
   // friendRequests: friendRequestsReducer,
-  posts: postsReducer,
-  comments: commentsReducer
+  // posts: postsReducer,
+  // comments: commentsReducer
 });
