@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class GatewayForm2 extends React.Component {
+export default class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {'username': '', 'password': ''};
@@ -22,15 +22,15 @@ export default class GatewayForm2 extends React.Component {
 
   render() {
     return (<div>
-      <form>
+      <form className='signUpForm'>
         <input type='text'
           onChange={this.update('username')}
           value={this.state.username}
-          placeholder='Username'/>&ensp;
+          placeholder='Username'/><br/>
         <input type='password'
           onChange={this.update('password')}
           value={this.state.password}
-          placeholder='Password'/>&ensp;
+          placeholder='Password'/><br/>
         <button onClick={this.signUp}>Sign Up</button>
       </form>
     </div>);

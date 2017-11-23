@@ -121,14 +121,10 @@
 
 .max-size {
   font-size: 18px;
-  width: 200px;
+  width: 175px;
   border-radius: 25px;
-  margin-left: 40px;
-}
-
-.pretty-font {
-  font-family: 'Indie Flower', cursive;
-  margin-left: 15px;
+  margin-top: 15px;
+  /*margin-left: 40px;*/
 }
 
 .white {
@@ -143,4 +139,34 @@
 
 .feature span {
   font-weight: 600;
+}
+
+.pretty-font {
+  font-family: 'Indie Flower', cursive;
+  color: purple;
+  margin-left: 19px;
+}
+
+.byline {
+  font-size: 18px;
+  padding: 0 0 5px 40px;
+}
+
+.signUpForm {
+  padding-left: 40px;
+}
+
+.signUpForm input {
+  margin: 3px 0 0 10px;
+  height: 18px;
+  width: 175px;
+}
+
+.signUpForm button {
+  margin-top: 8px;
+  margin-left: 67.5px;
+  background-color: royalblue;
+  color: white;
+  padding: 2px 6px 3px 6px;
+  font-size: 14px;
 }
