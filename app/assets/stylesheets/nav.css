@@ -6,7 +6,7 @@
   font-size: 26px;
   background-color: white;
   color: royalblue;
-  margin: 5px 0 6px 5px;
+  margin: 5px 0 6px 10px;
   padding: 0 5px 0 8px;
   border-radius: 1px;
   line-height: 100%;
@@ -15,4 +15,8 @@
 .header-logo a {
   position: relative;
   top: 2px;
+}
+
+.nav nav {
+  margin-right: 7.5px;
 }
