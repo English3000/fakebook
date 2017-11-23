@@ -1,25 +1,42 @@
 .gateway-header {
   padding: 15px 0;
 }
-/*everything 33% bigger*/
+
 .gateway-logo-size {
   font-size: 40px;
 }
 
-.top-padding {
-  padding-top: 25px;
+.gateway-footer {
+  height: 30px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.col-60pct {
-  width: 59.5%;
+.gateway-footer span {
+  margin-top: 6.5px;
+  font-weight: 600;
+}
+
+.fa-linkedin-square {
+  color: steelblue;
+}
+
+.top-padding {
+  padding-top: 40px;
+}
+
+.col-55pct {
+  min-width: 312.5px;
+  width: 54.5%;
   box-sizing: border-box;
-  padding: 35px 0 0 17.5px;
+  padding: 30px 0 0 70px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.col-40pct {
+.col-45pct {
   min-width: 362.5px;
-  width: 40%;
+  width: 45%;
   box-sizing: border-box;
   padding-left: 20px;
 }
@@ -103,8 +120,8 @@
   margin-left: 10px;
   position: absolute;
   /*right: 32.5%;*/
-  right: 40%;
-  top: 15px;
+  right: 42.5%;
+  top: 25px;
   z-index: 2;
   background-color: red;
   border: 2px solid black;
@@ -113,6 +130,16 @@
   box-sizing: border-box;
   text-align: right;
   cursor: pointer;
+}
+
+.gateway-errors:after {
+  content: '';
+  position: absolute;
+  top: 5.5px;
+  left: 100%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
 }
 
 .hidden {
@@ -129,8 +156,12 @@
   top: 3px;
 }
 
+.gray-button:hover {
+  background-color: gray;
+}
+
 .max-size {
-  font-size: 18px;
+  font-size: 21px;
   width: 175px;
   border-radius: 25px;
   margin-top: 15px;
@@ -139,7 +170,7 @@
 
 .white {
   color: white;
-  text-shadow: 0.5px 0.5px 2px black;
+  text-shadow: 0.5px 0.5px 4px black;
 }
 
 .feature {
@@ -154,12 +185,6 @@
   font-weight: 600;
 }
 
-.pretty-font {
-  font-family: 'Indie Flower', cursive;
-  color: darkblue;
-  margin-left: 19px;
-}
-
 .byline {
   font-size: 20px;
   padding: 0px 0 15px 50px;
@@ -167,39 +192,47 @@
 
 .signInForm input {
   height: 21px;
+  font-size: 12px;
   border: 1px black solid;
 }
 
 .signInForm button {
-  height: 24px;
-  position: relative;
-  top: -1px;
+  height: 25px;
   background-color: darkblue;
   color: white;
   border: 0;
   border-radius: 1px;
 }
 
+.signInForm button:hover {
+  box-shadow: 0 0 2px snow;
+}
+
 .signUpForm {
-  padding-left: 50px;
+  padding-left: 36.5px;
 }
 
 .signUpForm input {
   margin: 8px 0 0 10px;
-  height: 24px;
-  width: 175px;
+  font-size: 18px;
+  height: 30px;
+  width: 225px;
   border-radius: 5px;
   padding: 2px;
   border: 1px lightgray solid;
 }
 
 .signUpForm button {
-  margin-top: 15px;
-  margin-left: 60px;
+  margin-top: 12px;
+  margin-left: 67.5px;
   background-color: lightblue;
-  padding: 6px 10px 7px 10px;
+  padding: 8px 25px 9px 25px;
   font-size: 16px;
   font-weight: bold;
   color: snow;
   border: 0;
+}
+
+.signUpForm button:hover {
+  background-color: royalblue;
 }

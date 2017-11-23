@@ -28,14 +28,20 @@ h2 {
   font-weight: 600;
 }
 
+.lavender {
+  background-color: lavender;
+  height: 675px;
+}
+
 .lavender-to-bottom {
   background-color: lavender;
-  height: 775px;
+  min-height: 775px;
+  height: 100%;
 }
 
 .center-900px {
   margin: 0 auto;
-  min-width: 600px;
+  min-width: 675px;
   max-width: 900px;
 }
 
