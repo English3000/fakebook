@@ -1,15 +1,21 @@
 .nav {
-  height: 35px;
+  height: 40px;
+  border-bottom: 0.5px darkblue solid;
 }
 
 .header-logo {
   font-size: 26px;
+  height: 25px;
   background-color: white;
   color: royalblue;
-  margin: 5px 0 6px 10px;
+  margin: 8px 0 0 19px;
   padding: 0 5px 0 8px;
   border-radius: 1px;
   line-height: 100%;
+}
+
+.fa-sign-out {
+  margin-right: 6.5px;
 }
 
 .header-logo a {

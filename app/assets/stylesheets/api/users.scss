@@ -1,3 +1,44 @@
 // Place all the styles related to the API::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pad-left-12px {
+  padding: 0 12.5px;
+}
+
+#cover-photo {
+  max-width: 875px;
+  height: 325px;
+  position: absolute;
+  top: 41px;
+  // left: 25px;
+}
+
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 155px;
+  left: 20px;
+  z-index: 2;
+  border-radius: 2px;
+}
+
+.row-profile {
+  max-width: 875px;
+  position: relative;
+  z-index: 2;
+  left: 182.5px;
+  top: 130px;
+}
+
+.row-profile p {
+  font-size: 22.5px;
+  color: white;
+  font-weight: 400;
+  text-shadow: 0 0 2px black;
+}
+
+.row-profile button {
+  position: relative;
+  left: -200px;
+}

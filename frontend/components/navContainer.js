@@ -1,4 +1,3 @@
-import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchUser } from '../all_actions';
 import { signOut } from '../session_actions';
@@ -16,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
   signOut: () => dispatch(signOut())
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
