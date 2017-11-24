@@ -2,15 +2,15 @@ import React from 'react';
 import NavContainer from './navContainer';
 import UserProfileContainer from './userProfileContainer';
 // import PostFormContainer from './postFormContainer';
-import PostsIndex from './postsIndex';
+import PostsIndexContainer from './postsIndexContainer';
 
 export default () => (<div>
   <NavContainer />
-  <main className='lavender-to-bottom'>
+  <main className='ghostwhite-to-bottom'>
     <div className='center-900px'>
       <UserProfileContainer />
       {/* <PostFormContainer /> */}
-      {/* <PostsIndex /> */}
+      <PostsIndexContainer />
     </div>
   </main>
 </div>);

@@ -8,16 +8,16 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <Link to='/'><p className='logo-font gateway-logo-size'>fakebook</p></Link>
+        <Link to='/'><p className='logo-font gateway-logo-size'>f y i</p></Link>
         <GatewayFormContainer />
       </div>
     </header>
-    <main className='lavender'>
-      <div className='center-900px'>
-        <div className='features-column flex-center flex-middle'>
-          <div>
+    <main className='ghostwhite flex-middle'>
+      <div className='center-900px flex-center'>
+        <div className='features-circle flex-center flex-middle'>
+          <div className='flex-middle flex-column'>
             <h2>Features:</h2>
-            <section className='features-section flex'>
+            <section className='flex'>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x'></i>
                 <i className='fa fa-handshake-o fa-2x'></i>
@@ -31,22 +31,19 @@ export default () => (
             </section>
             <DemoButtonContainer/>
           </div>
-          {/* <div className='col-45pct'>
-            <h1>RE-INVENT Yourself!</h1>
-            <h3 className='byline'>It's fake and always will be.</h3>
-            <SignUpFormContainer />
-          </div> */}
         </div>
       </div>
     </main>
     <footer className='gateway-footer flex-center'>
-      <span>Learn More: &ensp;</span>
-      <a href='https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'>
-        <i className='fa fa-linkedin-square fa-2x'></i>
-      </a>&emsp;
-      <a href='https://github.com/English3000/fakebook'>
-        <i className='fa fa-github fa-2x'></i>
-      </a>&emsp;
+      <div className='flex'>
+        <span>Learn More: &ensp;</span>
+        <a href='https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'>
+          <i className='fa fa-linkedin-square fa-2x'></i>
+        </a>&emsp;
+        <a href='https://github.com/English3000/fakebook'>
+          <i className='fa fa-github fa-2x'></i>
+        </a>
+      </div>
     </footer>
   </div>
 );

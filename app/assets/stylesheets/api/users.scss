@@ -20,8 +20,8 @@
 
 .cover-photo {
   height: 325px;
-  border: 1px solid black;
-  border-top: 0;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 2px black;
   position: relative;
 }
 

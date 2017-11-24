@@ -28,15 +28,15 @@ h2 {
   font-weight: 600;
 }
 
-.lavender {
-  background-color: lavender;
+.ghostwhite {
+  background-color: ghostwhite;
   height: 750px;
 }
 
-.lavender-to-bottom {
-  background-color: lavender;
+.ghostwhite-to-bottom {
+  background-color: ghostwhite;
   min-height: 775px;
-  height: 100%;
+  height: 100%; /* not working */
 }
 
 .center-900px {

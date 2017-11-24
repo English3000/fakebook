@@ -1,6 +1,18 @@
-export const fetchUser = id => $.ajax({
+export const fetchUsers = () => $.ajax({
   method: 'GET',
-  url: `api/users/${id}`
+  url: 'api/users'
+});
+
+export const getUserPosts = user => $.ajax({
+  method: 'GET',
+  url: `api/users/${user.id}/posts`,
+  data: {user}
+});
+
+export const updateUser = user => $.ajax({
+  method: 'PATCH',
+  url: `api/users/${user.id}`,
+  data: {user}
 });
 
 export const fetchPosts = () => $.ajax({

@@ -12,6 +12,6 @@ export default class DemoButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleClick}  className='max-size gray-button white center-text'>DEMO</button>;
+    return <button onClick={this.handleClick}  className='gray-button'>DEMO</button>;
   }
 }

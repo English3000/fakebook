@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { fetchUser } from '../all_actions';
 import { signOut } from '../session_actions';
 import Nav from './nav';
 
@@ -11,7 +10,6 @@ const mapStateToProps = ({ session, entities }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id)),
   signOut: () => dispatch(signOut())
 });
 

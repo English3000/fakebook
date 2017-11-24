@@ -1,15 +1,27 @@
 import * as FakebookAPIUtil from './api_util';
 
+export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
+
+export const receiveUsers = users => ({
+  type: RECEIVE_USERS,
+  users
+});
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
 
-export const fetchUser = id => dispatch => (
-  FakebookAPIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
+export const fetchUsers = () => dispatch => (
+  FakebookAPIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
 );
+
+export const getUserPosts = user => dispatch => {
+  FakebookAPIUtil.getUserPosts(user).then(posts => dispatch(receiveUser(posts)));
+};
+
+export const updateUser = user => async (dispatch) => dispatch(receiveUser( await FakebookAPIUtil.updateUser(user) ));
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';

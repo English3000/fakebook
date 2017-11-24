@@ -6,7 +6,10 @@ import Connection from './components/connection';
 document.addEventListener('DOMContentLoaded', () => {
   let preloadedState;
   if (window.currentUser) {
-    preloadedState = { session: {currentUserId: window.currentUser.id} };
+    preloadedState = {
+      entities: {users: { [window.currentUser.id]: window.currentUser }},
+      session: {currentUserId: window.currentUser.id}
+    };
     delete window.currentUser;
   }
   const store = configureStore(preloadedState);

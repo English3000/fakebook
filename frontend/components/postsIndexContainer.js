@@ -1,14 +1,20 @@
 import { connect } from 'react-redux';
-import { requestPosts, /*updatePost,*/ deletePost } from '../all_actions';
+import { withRouter } from 'react-router-dom';
+import { requestPosts, getUserPosts, /*updatePost,*/ deletePost } from '../all_actions';
 import PostsIndex from './postsIndex';
 
-const mapStateToProps = state => ({
-  posts: Object.values(state.posts)
-});
+const mapStateToProps = ({ entities }, ownProps) => {
+  console.log(entities);
+  return {
+    users: entities.users,
+    posts: entities.posts,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   requestPosts: () => dispatch(requestPosts()),
+  getUserPosts: user => dispatch(getUserPosts(user)),
   deletePost: postId => dispatch(deletePost(postId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostsIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostsIndex));

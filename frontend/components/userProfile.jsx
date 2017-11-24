@@ -4,13 +4,17 @@ import merge from 'lodash/merge';
 export default class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      'cover_photo': this.props.users.cover_photo,
-      'profile_pic': this.props.users.profile_pic
-    };
+    this.state = this.props.users[this.props.match.params.id] ?
+      this.props.users[this.props.match.params.id] : '';
 
     this.select = this.select.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (Object.keys(this.props.users).length < 2) {
+      this.props.fetchUsers();
+    }
   }
 
   select(field) {
@@ -21,36 +25,35 @@ export default class UserProfile extends React.Component {
   handleSubmit(field) {
     return event => {
       event.preventDefault();
-      //PATCH user req ( merge(this.props.users, { [field]: event.target.value }) );
-      this.setState({ [field]: event.target.value });
+      this.setState({ [field]: event.target.value }, () => this.props.updateUser(this.state));
     };
   }
 
   render() {
-    console.log(this.props.users.profile_pic);
-    console.log(this.state);
+    const { users, match } = this.props;
+
     return (<div>
       <section>
         <div className='cover-photo'>
-          {this.props.users.cover_photo ?
-            <img className='cover-photo' src={this.props.users.cover_photo}/> :
-            <div><button className='button-to-add cover-photo-button' onclick={this.select('select-cover-photo')}>+ cover photo</button>
+          {users[match.params.id] && users[match.params.id].cover_photo ?
+            <img className='cover-photo' src={users[match.params.id].cover_photo}/> :
+            <div><button className='button-to-add cover-photo-button' onClick={this.select('select-cover-photo')}>+ cover photo</button>
             <input type="file"
                     id="select-cover-photo"
-                     onSubmit={this.handleSubmit('cover_photo')}/></div>}
+                     onChange={this.handleSubmit('cover_photo')}/></div>}
         </div>
 
         <div className='flex-bottom flex-between user-info-div'>
           <div className='flex-bottom'>
             <div className='profile-pic'>
-              {this.props.users.profile_pic ?
-                <img className='profile-pic' src={this.props.users.profile_pic}/> :
-                <div><button className='button-to-add' onclick={this.select('select-profile-pic')}>+ profile photo</button>
+              {users[match.params.id] && users[match.params.id].profile_pic ?
+                <img className='profile-pic' src={users[match.params.id].profile_pic}/> :
+                <div><button className='button-to-add' onClick={this.select('select-profile-pic')}>+ profile photo</button>
                 <input type="file"
                         id="select-profile-pic"
-                         onSubmit={this.handleSubmit('profile_pic')}/></div>}
+                         onChange={this.handleSubmit('profile_pic')}/></div>}
             </div>
-            <p id='username'>{this.props.users.username}</p>
+            <p id='username'>{users[match.params.id] ? users[match.params.id].username : ''}</p>
           </div>
           <div>
             {this.props.currentUser - this.props.currentPage !== 0 ?

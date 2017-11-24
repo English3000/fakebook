@@ -1,16 +1,18 @@
 .gateway-header {
   padding: 15px 0;
   position: fixed;
+  top: 0;
   z-index: 2;
   width: 100%;
 }
 
 .gateway-logo-size {
   font-size: 40px;
+  text-transform: uppercase;
 }
 
-.gateway-footer {
-  padding-top: 10px;
+.gateway-footer div {
+  margin: 10px 0;
 }
 
 .gateway-footer span {
@@ -129,12 +131,45 @@
   display: none;
 }
 
-.features-column {
-  height: 765px;
+.features-circle {
+  width: 500px;
+  height: 500px;
+  border: 0.5px solid #eee9e9;
+  border-radius: 100%;
+  box-shadow: 0 0 7.5px #cdc9c9;
+  position: relative;
+  top: 45px;
 }
 
-.features-section {
-  margin-left: -30px;
+/* rethink gray-button/hover color scheme */
+.features-circle:hover {
+  /*background-color: #eee9e9;*/
+  background: radial-gradient(ghostwhite, #eee9e9);
+}
+
+.gray-button {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-shadow: 0.5px 0.5px 1.5px black;
+  background-color: #cdc9c9;
+  padding: 7.5px 5px;
+  text-align: center;
+  font-size: 21px;
+  width: 125px;
+  border: 1px solid ghostwhite;
+  border-radius: 25px;
+  margin-top: 17.5px;
+  box-shadow: 0 0 5px ghostwhite;
+}
+
+.features-circle:hover .gray-button {
+  border-color: ghostwhite;
+}
+
+.features-circle:hover .gray-button:hover {
+  background: radial-gradient(dimgray, black);
+  border-color: black;
+  box-shadow: 0 0 0;
 }
 
 .icons-div i {
@@ -155,31 +190,4 @@
 
 .feature span {
   font-weight: 600;
-}
-
-.gray-button {
-  font-family: 'Ubuntu', sans-serif;
-  background-color: gainsboro;
-  border: 0;
-  padding: 5px 0;
-  text-align: center;
-  /*margin-left: 1px;
-  position: relative;
-  top: 3px;*/
-}
-
-.gray-button:hover {
-  background-color: gray;
-}
-
-.max-size {
-  font-size: 21px;
-  width: 162.5px;
-  border-radius: 25px;
-  margin: 20px 0 0 -10px;
-}
-
-.white {
-  color: white;
-  text-shadow: 0.5px 0.5px 4px black;
 }
