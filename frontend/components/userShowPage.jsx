@@ -10,7 +10,7 @@ export default () => (<div>
     <div className='center-900px'>
       <UserProfileContainer />
       {/* <PostFormContainer /> */}
-      <PostsIndex />
+      {/* <PostsIndex /> */}
     </div>
   </main>
 </div>);

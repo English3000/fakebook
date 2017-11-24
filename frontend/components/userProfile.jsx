@@ -1,5 +1,5 @@
 import React from 'react';
-
+//bug: when switch to another page, cover photo & profile pic don't change
 export default class UserProfile extends React.Component {
   render() {
     console.log(this.props);
