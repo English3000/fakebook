@@ -39,7 +39,7 @@ export default class GatewayForm extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<div className='flex-middle'>
       <ul className='gateway-errors hidden' onClick={() => $('.gateway-errors').addClass('hidden')}>
         {this.props.errors.length > 0 ? this.props.errors.map(err => <li key={err}>{err}</li>) : ''}
       </ul>

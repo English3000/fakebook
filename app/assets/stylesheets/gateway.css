@@ -9,6 +9,7 @@
 .gateway-logo-size {
   font-size: 40px;
   text-transform: uppercase;
+  width: 78px;
 }
 
 .gateway-footer div {
@@ -102,12 +103,7 @@
 
 .gateway-errors {
   font-family: 'Source Sans Pro', sans-serif;
-  margin-left: 10px;
-  position: absolute;
-  /*right: 32.5%;*/
-  right: 42.5%;
-  top: 25px;
-  z-index: 2;
+  margin-right: 20px;
   background-color: red;
   border: 2px solid black;
   border-radius: 5px;
@@ -115,13 +111,14 @@
   box-sizing: border-box;
   text-align: right;
   cursor: pointer;
+  max-height: 55px;
+  overflow: auto;
 }
 
 /*.gateway-errors:after {
   content: '';
   position: absolute;
-  top: 5.5px;
-  left: 100%;
+  bottom: 40%;
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent transparent black;
