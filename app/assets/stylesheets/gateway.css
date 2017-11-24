@@ -1,6 +1,7 @@
 .gateway-header {
   padding: 15px 0;
   position: fixed;
+  z-index: 2;
   width: 100%;
 }
 

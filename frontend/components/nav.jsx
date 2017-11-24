@@ -19,7 +19,7 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    return (<header className='nav'>
+    return (<header className='nav-bar'>
       <div className='center-900px flex-between'>
         <div className='header-logo'>
           <Link to='/posts' className='logo-font'>f</Link>

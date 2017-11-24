@@ -1,52 +1,67 @@
 // Place all the styles related to the API::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.pad-left-12px {
-  padding: 0 12.5px;
-}
 
-#cover-photo {
-  max-width: 875px;
-  height: 325px;
+.user-info-div {
   position: absolute;
-  top: 40px;
-  // left: 25px;
+  top: 150px;
+  width: 100%;
+  margin: 0 25px;
+  max-width: 850px;
 }
 
-#profile-pic {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  top: 155px;
-  left: 20px;
-  z-index: 2;
-  border-radius: 2px;
-}
-
-.row-profile {
-  max-width: 875px;
-  position: relative;
-  z-index: 2;
-  left: 182.5px;
-  top: 130px;
-}
-
-.row-profile p {
+#username {
   font-size: 22.5px;
   color: white;
   font-weight: 400;
-  text-shadow: 0 0 2px black;
+  text-shadow: 0 0 10px black;
+  margin-left: 15px;
 }
 
-.row-profile button {
+.cover-photo {
+  height: 325px;
+  border: 1px solid black;
+  border-top: 0;
   position: relative;
-  left: -200px;
 }
 
-.green-button {
+.cover-photo-button {
+  position: relative;
+  top: 60px;
+  left: 20px;
+}
+
+#select-cover-photo {
+  display: none;
+}
+
+.profile-pic {
+  height: 150px;
+  width: 150px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+}
+
+#select-profile-pic {
+  display: none;
+}
+
+.button-to-add {
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: lowercase;
+  color: white;
+  text-shadow: 0 0 1px black;
+  font-weight: 600;
   background-color: palegreen;
-  box-shadow: 0 0 2px green;
-  padding: 0 6px;
-  border-radius: 2px;
-  font-weight: bold;
+  width: 85px;
+  padding: 4px 0;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button-to-add:hover {
+  background-color: green;
+  text-shadow: 0 0 5px black;
 }
