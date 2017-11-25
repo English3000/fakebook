@@ -17,6 +17,11 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: {minimum: 8, allow_nil: true}
 
+  has_attached_file :profile_pic, default_url: ""
+  has_attached_file :cover_photo, default_url: ""
+  validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\Z/
+
   has_many :posts
   has_many :comments
   has_many :friendships

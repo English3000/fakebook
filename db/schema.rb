@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122002239) do
+ActiveRecord::Schema.define(version: 20171125205912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20171122002239) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.text "body", null: false
-    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -56,10 +55,16 @@ ActiveRecord::Schema.define(version: 20171122002239) do
     t.string "username", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.string "profile_pic"
-    t.string "cover_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_pic_file_name"
+    t.string "profile_pic_content_type"
+    t.integer "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
+    t.string "cover_photo_file_name"
+    t.string "cover_photo_content_type"
+    t.integer "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

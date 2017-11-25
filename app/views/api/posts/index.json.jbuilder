@@ -2,7 +2,7 @@
 json.by_id do
   @posts.each do |post|
     json.set! post.id do
-      json.extract! post, :id, :user_id, :body, :image_url, :updated_at
+      json.extract! post, :id, :user_id, :body, :updated_at
     end
   end
 end
