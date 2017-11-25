@@ -5,9 +5,7 @@
 .user-info-div {
   position: absolute;
   top: 150px;
-  width: 100%;
   margin: 0 25px;
-  max-width: 850px;
 }
 
 #username {
@@ -35,6 +33,34 @@
   display: none;
 }
 
+#cover-edit {
+  position: relative;
+  // top: -280px;
+  top: -30px;
+  left: 872px;
+  visibility: hidden;
+}
+
+.cover-photo:hover #cover-edit, .user-info-div:hover #cover-edit {
+  visibility: visible;
+}
+
+.fa-pencil-square-o {
+  cursor: pointer;
+}
+
+#profile-edit {
+  position: relative;
+  top: -148px;
+  // top: -27px;
+  left: 116px;
+  visibility: hidden;
+}
+
+.profile-pic:hover #profile-edit {
+  visibility: visible;
+}
+
 .profile-pic {
   height: 150px;
   width: 150px;
@@ -46,7 +72,7 @@
   display: none;
 }
 
-.button-to-add {
+.plus-button {
   font-size: 20px;
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: lowercase;
@@ -59,6 +85,11 @@
   text-align: center;
   border-radius: 15px;
   cursor: pointer;
+}
+
+.friend-button {
+  position: relative;
+  left: 547.5px;
 }
 
 .button-to-add:hover {

@@ -33,6 +33,10 @@ h2 {
   height: 750px;
 }
 
+.palegreen {
+  color: palegreen;
+}
+
 .ghostwhite-to-bottom {
   background-color: ghostwhite;
   min-height: 775px;
