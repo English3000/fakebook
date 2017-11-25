@@ -18,6 +18,7 @@
 
 .cover-photo {
   height: 325px;
+  overflow: hidden;
   border-radius: 0 0 5px 5px;
   box-shadow: 0 0 2px black;
   position: relative;
@@ -36,8 +37,8 @@
 #cover-edit {
   position: relative;
   // top: -280px;
-  top: -30px;
-  left: 872px;
+  top: -32px;
+  left: 866px;
   visibility: hidden;
 }
 
@@ -51,7 +52,7 @@
 
 #profile-edit {
   position: relative;
-  top: -148px;
+  top: -147.5px;
   // top: -27px;
   left: 116px;
   visibility: hidden;
@@ -66,6 +67,7 @@
   width: 150px;
   box-shadow: 0 0 10px gray;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #select-profile-pic {

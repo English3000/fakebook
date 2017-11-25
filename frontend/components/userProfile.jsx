@@ -34,11 +34,11 @@ export default class UserProfile extends React.Component {
 
     return (<div>
       <section>
-        <div className='cover-photo'>
+        <div className='cover-photo' onClick={this.select('select-profile-pic')}>
 
           {users[match.params.id] && users[match.params.id].cover_photo ? <div>
             <img className='cover-photo' src={users[match.params.id].cover_photo}/>
-            <i className='fa fa-pencil-square-o fa-2x palegreen' id='cover-edit' onClick={this.select('select-profile-pic')}></i>
+            <i className='fa fa-pencil-square-o fa-2x palegreen' id='cover-edit'></i>
           </div> : <div>
             <button className='cover-photo-button plus-button' onClick={this.select('select-cover-photo')}>+ cover photo</button>
           </div>}
@@ -50,11 +50,11 @@ export default class UserProfile extends React.Component {
 
         <div className='flex-bottom flex-between user-info-div'>
           <div className='flex-bottom'>
-            <div className='profile-pic'>
+            <div className='profile-pic' onClick={this.select('select-profile-pic')}>
 
               {users[match.params.id] && users[match.params.id].profile_pic ? <div>
                   <img className='profile-pic' src={users[match.params.id].profile_pic}/>
-                  <i className='fa fa-pencil-square-o fa-2x palegreen' id='profile-edit' onClick={this.select('select-profile-pic')}></i>
+                  <i className='fa fa-pencil-square-o fa-2x palegreen' id='profile-edit'></i>
               </div> : <div>
                   <button className='plus-button' onClick={this.select('select-profile-pic')}>+ profile photo</button>
               </div>}
