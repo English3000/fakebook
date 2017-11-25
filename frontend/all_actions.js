@@ -17,10 +17,6 @@ export const fetchUsers = () => dispatch => (
   FakebookAPIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
 );
 
-export const getUserPosts = user => dispatch => {
-  FakebookAPIUtil.getUserPosts(user).then(posts => dispatch(receiveUser(posts)));
-};
-
 export const updateUser = user => async (dispatch) => dispatch(receiveUser( await FakebookAPIUtil.updateUser(user) ));
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
@@ -37,16 +33,23 @@ export const receivePost = post => ({
 });
 export const removePost = post => ({
   type: REMOVE_POST,
-  postId: post.id
+  post
 });
 export const requestPosts = () => async (dispatch) => {
   return dispatch(receivePosts(await FakebookAPIUtil.fetchPosts()));
 };
+
+export const getUserPosts = id => dispatch => {
+  FakebookAPIUtil.getUserPosts(id).then(posts => dispatch(receivePosts(posts)));
+};
 // export const requestPost = id => async (dispatch) => {
 //   return await dispatch(receivePost(await FakebookAPIUtil.fetchPost(id)));
 // };
-export const deletePost = id => async (dispatch) => {
-  return await dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
+// export const deletePost = id => async (dispatch) => {
+//   return await dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
+// };
+export const deletePost = (postId, userId) => dispatch => {
+  FakebookAPIUtil.deletePost(postId, userId).then(posts => dispatch(receivePosts(posts)));
 };
 export const createPost = post => async (dispatch) => {
   return dispatch(receivePost(await FakebookAPIUtil.createPost(post)));

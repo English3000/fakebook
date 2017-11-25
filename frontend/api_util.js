@@ -3,10 +3,9 @@ export const fetchUsers = () => $.ajax({
   url: 'api/users'
 });
 
-export const getUserPosts = user => $.ajax({
+export const getUserPosts = id => $.ajax({
   method: 'GET',
-  url: `api/users/${user.id}/posts`,
-  data: {user}
+  url: `api/users/${id}/posts`
 });
 
 export const updateUser = user => $.ajax({
@@ -33,9 +32,10 @@ export const fetchComments = () => $.ajax({
 //   url: `api/comments/${id}`
 // });
 
-export const deletePost = id => $.ajax({
+export const deletePost = (id, user_id) => $.ajax({
   method: 'DELETE',
-  url: `api/posts/${id}`
+  url: `api/posts/${id}`,
+  data: {user_id}
 });
 export const deleteComment = id => $.ajax({
   method: 'DELETE',
