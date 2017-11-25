@@ -8,7 +8,7 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <Link to='/'><p className='logo-font gateway-logo-size'>f y i</p></Link>
+        <a href='https://github.com/English3000/fakebook'><p className='logo-font gateway-logo'>f y i</p></a>
         <GatewayFormContainer />
       </div>
     </header>
@@ -36,12 +36,9 @@ export default () => (
     </main>
     <footer className='gateway-footer flex-center'>
       <div className='flex'>
-        <span>Learn More: &ensp;</span>
+        <span>DEV &nbsp;= &nbsp;</span>
         <a href='https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'>
           <i className='fa fa-linkedin-square fa-2x'></i>
-        </a>&emsp;
-        <a href='https://github.com/English3000/fakebook'>
-          <i className='fa fa-github fa-2x'></i>
         </a>
       </div>
     </footer>

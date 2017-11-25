@@ -6,10 +6,16 @@
   width: 100%;
 }
 
-.gateway-logo-size {
+.gateway-logo {
   font-size: 40px;
   text-transform: uppercase;
   width: 78px;
+  padding: 0 10px;
+  border-radius: 12.5px;
+}
+
+.gateway-logo:hover {
+  box-shadow: 0 0 6.5px black;
 }
 
 .gateway-footer div {
@@ -141,14 +147,14 @@
 /* rethink gray-button/hover color scheme */
 .features-circle:hover {
   /*background-color: #eee9e9;*/
-  background: radial-gradient(ghostwhite, #eee9e9);
+  background: radial-gradient(ghostwhite, chartreuse);
 }
 
 .gray-button {
   font-family: 'Ubuntu', sans-serif;
   color: white;
   text-shadow: 0.5px 0.5px 1.5px black;
-  background-color: #cdc9c9;
+  background: radial-gradient(#eee9e9, #cdc9c9);
   padding: 7.5px 5px;
   text-align: center;
   font-size: 21px;
