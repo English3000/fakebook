@@ -6,7 +6,7 @@ export default class PostsIndexItem extends React.Component {
   }
 
   render() {
-    console.log("PostIndexItem props: ", this.props);
+    console.log(this.props.post.body);
     return (
       <li>
         <p>{this.props.post.body}</p>

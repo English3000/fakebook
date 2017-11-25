@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 
 export default class PostsIndex extends React.Component {
   componentDidMount() {
-    const {match} = this.props;
+    this.fetchPosts(this.props);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(newProps.location.pathname !== this.props.location.pathname) {
+      this.fetchPosts(newProps);
+    }
+  }
+
+  fetchPosts({ match }) {
     if (match.params.id) {
       this.props.getUserPosts(match.params.id);
     } else {
