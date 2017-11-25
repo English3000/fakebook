@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    
+
     select_posts
     render :index
   end
@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
     if params[:user_id]
       @posts = Post.where(user_id: params[:user_id]).order(updated_at: :desc)
     else
-      @posts = Post.all #restrict by friendships
+      @posts = Post.all.order(updated_at: :desc) #restrict by friendships
     end
   end
 end

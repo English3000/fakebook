@@ -36,7 +36,6 @@ export default () => (
     </main>
     <footer className='gateway-footer flex-center'>
       <div className='flex'>
-        <span>DEV &nbsp;= &nbsp;</span>
         <a href='https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'>
           <i className='fa fa-linkedin-square fa-2x'></i>
         </a>

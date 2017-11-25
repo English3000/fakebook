@@ -1,10 +1,10 @@
 import React from 'react';
 import NavContainer from './navContainer';
 // import PostFormContainer from './postFormContainer';
-import PostsIndex from './postsIndex';
+import PostsIndexContainer from './postsIndexContainer';
 
 export default () => (<div>
   <NavContainer />
   {/* <PostFormContainer /> */}
-  {/* <PostsIndex /> */}
+  <PostsIndexContainer />
 </div>);

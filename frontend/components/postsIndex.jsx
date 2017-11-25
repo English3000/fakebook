@@ -13,7 +13,7 @@ export default class PostsIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log("PostsIndex props: ", this.props.posts);
     const {posts} = this.props;
 
     return (<div>
