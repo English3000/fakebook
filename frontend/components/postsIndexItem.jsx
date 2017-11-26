@@ -40,7 +40,7 @@ export default class PostsIndexItem extends React.Component {
               <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>
             }
           </div> : ''}</div>
-          &nbsp;{author ? currentUser === author.id ? <i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i> : '' : ''}&nbsp;&ensp;<p className='post-body'>{post.body}</p>
+          &nbsp;{author ? currentUser === author.id ? <i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i> : <span>&emsp;</span> : <span>&emsp;</span>}&nbsp;&ensp;<p className='post-body'>{post.body}</p>
           {/* <p>{post.likes}</p> */}
           {/* 3 most recent comments chron'ly */}
         </article>
