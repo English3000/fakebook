@@ -10,7 +10,7 @@ const _defaultState = {
 
 export default (state = _defaultState, action) => {
   Object.freeze(state);
-  console.log("State @ PostsReducer: ", state);
+  // console.log("State @ PostsReducer: ", state);
   let newState = merge({}, state);
 
   switch (action.type) {

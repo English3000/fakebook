@@ -76,6 +76,10 @@ h2 {
   cursor: pointer;
 }
 
+.no-pointer {
+  cursor: default;
+}
+
 .inline-block {
   display: inline-block;
 }

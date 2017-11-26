@@ -5,7 +5,9 @@ export default class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.users[this.props.match.params.id] ?
-      this.props.users[this.props.match.params.id] : '';
+                  this.props.users[this.props.match.params.id] :
+                  {'username': '', 'profile_pic': '',
+                  'cover_photo': '', 'custom_link': '' };
 
     this.select = this.select.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +19,10 @@ export default class UserProfile extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.users[newProps.match.params.id]);
+  }
+
   select(field) {
     //hack from https://stackoverflow.com/questions/5138719/change-default-text-in-input-type-file (Sony Santos)
     return () => document.getElementById(field).click();
@@ -25,7 +31,13 @@ export default class UserProfile extends React.Component {
   handleSubmit(field) {
     return event => {
       event.preventDefault();
-      this.setState({ [field]: event.target.value }, () => this.props.updateUser(this.state));
+      if (field === 'custom_link') {
+        console.log(this.state);
+        console.log(this.props.users[this.props.match.params.id]);
+        this.setState({ [field]: $('#custom-link-input').val() }, () => this.props.updateUser(this.state));
+      } else {
+        this.setState({ [field]: event.target.value }, () => this.props.updateUser(this.state));
+      }
     };
   }
 
@@ -33,54 +45,87 @@ export default class UserProfile extends React.Component {
     const { users, match } = this.props;
     const user = users[match.params.id];
 
-    return (<div>
-      <section>
-        <div className='cover-photo' onClick={this.select('select-profile-pic')}>
+    if (this.props.currentUser - match.params.id === 0) {
+      return (<div>
+        <section>
+          <div className='cover-photo' onClick={this.select('select-cover-photo')}>
 
-          {user && user.cover_photo ? <div>
-            <img className='cover-photo' src={user.cover_photo}/>
-            <i className='fa fa-pencil-square-o fa-2x palegreen' id='cover-edit'></i>
-          </div> : <div>
-            <button className='cover-photo-button plus-button' onClick={this.select('select-cover-photo')}>+ cover photo</button>
-          </div>}
+            {user && user.cover_photo ? <div>
+              <img className='cover-photo' src={user.cover_photo}/>
+              <i className='fa fa-pencil-square-o fa-2x palegreen' id='cover-edit'></i>
+            </div> : <div>
+              <button className='cover-photo-button plus-button'>+ cover photo</button>
+            </div>}
 
-         <input type="file"
-                 id="select-cover-photo"
-                  onChange={this.handleSubmit('cover_photo')}/>
-        </div>
+           <input type="file"
+                   id="select-cover-photo"
+                    onChange={this.handleSubmit('cover_photo')}/>
+          </div>
 
-        <div className='flex-bottom flex-between user-info-div'>
-          <div className='flex-bottom'>
-            <div className='profile-pic' onClick={this.select('select-profile-pic')}>
+          <div className='flex-bottom flex-between user-info-div'>
+            <div className='flex-bottom'>
+              <div className='profile-pic' onClick={this.select('select-profile-pic')}>
 
-              {user && user.profile_pic ? <div>
-                  <img className='profile-pic' src={user.profile_pic}/>
-                  <i className='fa fa-pencil-square-o fa-2x palegreen' id='profile-edit'></i>
-              </div> : <div>
-                  <button className='plus-button' onClick={this.select('select-profile-pic')}>+ profile photo</button>
-              </div>}
+                {user && user.profile_pic ? <div>
+                    <img className='profile-pic' src={user.profile_pic}/>
+                    <i className='fa fa-pencil-square-o fa-2x palegreen' id='profile-edit'></i>
+                </div> : <div>
+                    <button className='plus-button'>+ profile photo</button>
+                </div>}
 
-              <input type="file" id="select-profile-pic"
-                     onChange={this.handleSubmit('profile_pic')}/>
+                <input type="file" id="select-profile-pic"
+                       onChange={this.handleSubmit('profile_pic')}/>
+              </div>
+              <div id='username'>{user && user.custom_link ?
+                <a href={user.custom_link} target='_blank'>
+                  {user.username}
+                </a> : user ? user.username : ''}&nbsp;
+                <i className='fa fa-link' onClick={() => $('.fa-link').toggleClass('visible')}>
+                  &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
+                    <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={this.state.custom_link} />
+                    <input type='submit' value='save'/>
+                  </form>
+                </i>
+
+              </div>
             </div>
-            <p id='username'>{user && user.custom_link ?
-              <a href={user.custom_link} target='_blank'>
-                {user.username}
-              </a> : user ? user.username : ''}&nbsp;
-              <i className='fa fa-link' onClick={() => $('.fa-link').toggleClass('visible')}>
-                &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
-                  <input type="url" id='custom-link' placeholder='http:// SET CUSTOM LINK' />
-                </form> {/* almost works */}
-              </i>
+            <div>
+              {this.props.currentUser - this.props.currentPage !== 0 ?
+                <p className='plus-button friend-button'>+ friend</p> : ''}
+            </div>
+          </div>
+        </section>
+      </div>);
+    } else {
+      return (<div>
+        <section>
+          <div className='cover-photo'>
+            {user && user.cover_photo ? <div>
+              <img className='cover-photo' src={user.cover_photo}/>
+            </div> : ''}
+          </div>
 
-            </p>
+          <div className='flex-bottom user-info-div'>
+            <div className='flex-bottom'>
+              <div className='profile-pic no-pointer'>
+                {user && user.profile_pic ? <div>
+                  <img className='profile-pic no-pointer' src={user.profile_pic}/>
+                </div> : ''}
+              </div>
+
+              <div id='username'>{user && user.custom_link ?
+                <a href={user.custom_link} target='_blank'>
+                  {user.username}
+                </a> : user ? user.username : ''}
+              </div>
+            </div>
+
+            <div>
+              <p className='plus-button friend-button'>+ friend</p>
+            </div>
           </div>
-          <div>
-            {this.props.currentUser - this.props.currentPage !== 0 ?
-              <p className='plus-button friend-button'>+ friend</p> : ''}
-          </div>
-        </div>
-      </section>
-    </div>);
+        </section>
+      </div>);
+    }
   }
 }

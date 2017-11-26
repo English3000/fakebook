@@ -8,7 +8,7 @@ export default class DemoButton extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    this.props.signIn({username: 'Alexander_Marks-Katz', password: 'demoUser'});
+    this.props.signIn({username: 'Alexander_Marks-Katz', password: '12345678'});
   }
 
   render() {
