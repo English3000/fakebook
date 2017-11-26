@@ -31,13 +31,14 @@ export default class UserProfile extends React.Component {
 
   render() {
     const { users, match } = this.props;
+    const user = users[match.params.id];
 
     return (<div>
       <section>
         <div className='cover-photo' onClick={this.select('select-profile-pic')}>
 
-          {users[match.params.id] && users[match.params.id].cover_photo ? <div>
-            <img className='cover-photo' src={users[match.params.id].cover_photo}/>
+          {user && user.cover_photo ? <div>
+            <img className='cover-photo' src={user.cover_photo}/>
             <i className='fa fa-pencil-square-o fa-2x palegreen' id='cover-edit'></i>
           </div> : <div>
             <button className='cover-photo-button plus-button' onClick={this.select('select-cover-photo')}>+ cover photo</button>
@@ -52,8 +53,8 @@ export default class UserProfile extends React.Component {
           <div className='flex-bottom'>
             <div className='profile-pic' onClick={this.select('select-profile-pic')}>
 
-              {users[match.params.id] && users[match.params.id].profile_pic ? <div>
-                  <img className='profile-pic' src={users[match.params.id].profile_pic}/>
+              {user && user.profile_pic ? <div>
+                  <img className='profile-pic' src={user.profile_pic}/>
                   <i className='fa fa-pencil-square-o fa-2x palegreen' id='profile-edit'></i>
               </div> : <div>
                   <button className='plus-button' onClick={this.select('select-profile-pic')}>+ profile photo</button>
@@ -62,7 +63,17 @@ export default class UserProfile extends React.Component {
               <input type="file" id="select-profile-pic"
                      onChange={this.handleSubmit('profile_pic')}/>
             </div>
-            <p id='username'>{users[match.params.id] ? users[match.params.id].username : ''}</p>
+            <p id='username'>{user && user.custom_link ?
+              <a href={user.custom_link} target='_blank'>
+                {user.username}
+              </a> : user ? user.username : ''}&nbsp;
+              <i className='fa fa-link' onClick={() => $('.fa-link').toggleClass('visible')}>
+                &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
+                  <input type="url" id='custom-link' placeholder='http:// SET CUSTOM LINK' />
+                </form> {/* almost works */}
+              </i>
+
+            </p>
           </div>
           <div>
             {this.props.currentUser - this.props.currentPage !== 0 ?

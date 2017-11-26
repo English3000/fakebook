@@ -16,6 +16,31 @@
   margin-left: 15px;
 }
 
+.fa-link {
+  font-size: 15px;
+  color: palegreen;
+  cursor: pointer;
+  text-shadow: none;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+#username:hover .fa-link {
+  visibility: visible;
+}
+
+#custom-link-form {
+  display: inline;
+  position: absolute;
+}
+
+#custom-link {
+  position: absolute;
+}
+
 .cover-photo {
   height: 325px;
   overflow: hidden;

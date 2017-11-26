@@ -19,18 +19,18 @@
   box-shadow: 0 0 6.5px black;
 }
 
-.gateway-footer div {
-  margin: 10px 0;
+.gateway-footer:before {
+  content: '';
+  position: absolute;
+  /*bottom: -10px;*/
+  border-width: 15px;
+  border-style: solid;
+  border-color: ghostwhite transparent transparent transparent;
 }
 
-.gateway-footer span {
-  font-size: 20px;
-  margin-top: 3px;
+.gateway-footer p {
+  margin-top: 20px;
   font-weight: 600;
-}
-
-.fa-linkedin-square {
-  color: steelblue;
 }
 
 .gateway-form {
@@ -145,9 +145,7 @@
   top: 45px;
 }
 
-/* rethink gray-button/hover color scheme */
 .features-circle:hover {
-  /*background-color: #eee9e9;*/
   background: radial-gradient(ghostwhite, chartreuse);
 }
 
@@ -192,6 +190,6 @@
   top: -4px;
 }
 
-.feature span {
+.feature .palegreen {
   font-weight: 600;
 }

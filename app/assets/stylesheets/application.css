@@ -46,6 +46,11 @@ h2 {
   color: #8b8682;
 }
 
+.lightgray {
+  color: dimgray;
+  font-weight: 400;
+}
+
 .ghostwhite-to-bottom {
   background-color: ghostwhite;
   min-height: 775px;
