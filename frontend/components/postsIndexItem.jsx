@@ -26,10 +26,16 @@ export default class PostsIndexItem extends React.Component {
     return (
       <li>
         <article className='post'>
-          <p className='post-author'>{author ? <span>
-            <Link className='green' to={`/users/${author.id}`}>{author.username}</Link>
-            &nbsp;on <em>{new Date(post.updated_at).toDateString()}</em></span> : ''}</p>
-          <i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i>&ensp;<p className='post-body'>{post.body}</p>
+          <div className='post-author'>{author ? <div className='flex-middle'>
+            <Link className='profile-pic-mini' to={`/users/${author.id}`}>
+              {author.profile_pic ?
+                <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
+            </Link>&ensp;
+            <Link className='green' to={`/users/${author.id}`}>
+              {author.username}
+            </Link>&nbsp;<span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toDateString()}</em></span>
+          </div> : ''}</div>
+          &nbsp;<i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i>&nbsp;&ensp;<p className='post-body'>{post.body}</p>
           {/* <p>{post.likes}</p> */}
           {/* 3 most recent comments chron'ly */}
         </article>

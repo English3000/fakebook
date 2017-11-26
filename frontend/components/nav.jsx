@@ -24,7 +24,7 @@ export default class Nav extends React.Component {
         </div>
         <nav className='flex-middle'>
           <Link to={`/users/${currentUser}`} className='flex-middle'>
-            <img src={users[currentUser] ? users[currentUser].profile_pic : ''}/>
+            <img className='profile-pic-mini' src={users[currentUser] ? users[currentUser].profile_pic : ''}/>
             &ensp;
             {users[currentUser] ? users[currentUser].username : ''}
           </Link>

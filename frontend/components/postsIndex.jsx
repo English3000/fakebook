@@ -1,4 +1,5 @@
 import React from 'react';
+import PostFormContainer from './postFormContainer';
 import PostsIndexItem from './postsIndexItem';
 import { Link } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ export default class PostsIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    //modify to accom. post creation
     if(newProps.location.pathname !== this.props.location.pathname) {
       this.fetchPosts(newProps);
     }
@@ -30,6 +32,7 @@ export default class PostsIndex extends React.Component {
 
     return (<div>
       <ul className='center-400px'>
+        <PostFormContainer />
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
           return <PostsIndexItem key={id} author={users[post.user_id]} post={post}
