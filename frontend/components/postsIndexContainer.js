@@ -3,8 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { getPosts, getUserPosts, getUsers, /*updatePost,*/ deletePost } from '../all_actions';
 import PostsIndex from './postsIndex';
 
-const mapStateToProps = ({ entities }) => {
+const mapStateToProps = ({ entities, session }) => {
   return {
+    currentUser: session.currentUserId,
     users: entities.users,
     posts: entities.posts,
   };

@@ -38,7 +38,7 @@ export default class PostsIndex extends React.Component {
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
           return <PostsIndexItem key={id} author={users[post.user_id]} post={post}
-                                 userShowId={match.params.id} deletePost={deletePost}/>;})
+                                 currentUser={this.props.currentUser} deletePost={deletePost}/>;})
         }
       </ul>
     </div>);
