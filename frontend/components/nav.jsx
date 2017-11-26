@@ -13,13 +13,14 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    // console.log(this.props);
-    const { users, currentUser } = this.props;
+    const { users, currentUser, match } = this.props;
 
     return (<header className='nav-bar'>
       <div className='center-900px flex-between'>
         <div className='header-logo'>
-          <Link to='/posts' className='logo-font'>fyi</Link>
+          {match.path === '/posts' ?
+          <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
+          <Link to='/posts' className='logo-font'>fyi</Link>}
         </div>
         <nav className='flex-middle'>
           <Link to={`/users/${currentUser}`} className='flex-middle'>

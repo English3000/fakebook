@@ -14,5 +14,5 @@ user1 = User.create({username: 'AMK', password: '12345678',
 user2 = User.create({username: 'ARMK', password: '12345678'})
 
 Post.create({user_id: user1.id, body: 'post 1'})
-Post.create({user_id: user2.id, body: 'post 2'})
+Post.create({user_id: user2.id, body: 'long post.............................................................'})
 Post.create({user_id: user1.id, body: 'post 3'})

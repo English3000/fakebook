@@ -1,4 +1,4 @@
-export const fetchUsers = () => $.ajax({
+export const getUsers = () => $.ajax({
   method: 'GET',
   url: 'api/users'
 });
@@ -14,7 +14,7 @@ export const updateUser = user => $.ajax({
   data: {user}
 });
 
-export const fetchPosts = () => $.ajax({
+export const getPosts = () => $.ajax({
   method: 'GET',
   url: 'api/posts'
 });

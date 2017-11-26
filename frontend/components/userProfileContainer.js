@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchUsers, updateUser/*, friendUser, unfriendUser*/ } from '../all_actions';
+import { getUsers, updateUser/*, friendUser, unfriendUser*/ } from '../all_actions';
 import UserProfile from './userProfile';
 
 const mapStateToProps = ({ session, entities }, ownProps) => {
@@ -12,7 +12,7 @@ const mapStateToProps = ({ session, entities }, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchUsers: () => dispatch(fetchUsers()),
+  getUsers: () => dispatch(getUsers()),
   updateUser: user => dispatch(updateUser(user))
 });
 

@@ -13,8 +13,8 @@ export const receiveUser = user => ({
   user
 });
 
-export const fetchUsers = () => dispatch => (
-  FakebookAPIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
+export const getUsers = () => dispatch => (
+  FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)))
 );
 
 export const updateUser = user => async (dispatch) => dispatch(receiveUser( await FakebookAPIUtil.updateUser(user) ));
@@ -35,8 +35,8 @@ export const removePost = post => ({
   type: REMOVE_POST,
   post
 });
-export const requestPosts = () => async (dispatch) => {
-  return dispatch(receivePosts(await FakebookAPIUtil.fetchPosts()));
+export const getPosts = () => async (dispatch) => {
+  return dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
 };
 
 export const getUserPosts = id => dispatch => {

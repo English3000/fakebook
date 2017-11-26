@@ -13,7 +13,7 @@ export default class UserProfile extends React.Component {
 
   componentDidMount() {
     if (Object.keys(this.props.users).length < 2) {
-      this.props.fetchUsers();
+      this.props.getUsers();
     }
   }
 

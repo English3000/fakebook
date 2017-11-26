@@ -37,6 +37,11 @@ h2 {
   color: palegreen;
 }
 
+.green {
+  color: green;
+  font-weight: 600;
+}
+
 .ghostwhite-to-bottom {
   background-color: ghostwhite;
   min-height: 775px;
@@ -47,6 +52,11 @@ h2 {
   margin: 0 auto;
   min-width: 675px;
   max-width: 900px;
+}
+
+.center-400px {
+  margin: 0 auto;
+  width: 400px;
 }
 
 .logo-font {
