@@ -21,9 +21,9 @@ export default class PostForm extends React.Component {
     this.props.createPost(this.state);
     this.setState({ body: '' });
   }
-
+//this.update doesn't work on refresh
   render() {
-    return (<form className='post flex-middle' onSubmit={this.makePost}>
+    return (<form className='post post-form flex-middle' onSubmit={this.makePost}>
       <textarea className='post-input' type='text' value={this.state.body}
         placeholder="What's on your mind?" onChange={this.update}/>
       <i className='fa fa-paper-plane post-button' onClick={this.makePost}></i>

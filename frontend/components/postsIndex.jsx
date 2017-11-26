@@ -10,6 +10,8 @@ export default class PostsIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     //modify to accom. post creation
+    console.log("Props: ", this.props);
+    console.log("New props: ", newProps);
     if(newProps.location.pathname !== this.props.location.pathname) {
       this.fetchPosts(newProps);
     }

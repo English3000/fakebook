@@ -23,6 +23,7 @@ export default class PostsIndexItem extends React.Component {
   render() {
     console.log("Post props:", this.props);
     const {post, author} = this.props;
+    const date = new Date();
     return (
       <li>
         <article className='post'>
@@ -33,7 +34,11 @@ export default class PostsIndexItem extends React.Component {
             </Link>&ensp;
             <Link className='green' to={`/users/${author.id}`}>
               {author.username}
-            </Link>&nbsp;<span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toDateString()}</em></span>
+            </Link>&nbsp;{
+              new Date(Date.now()).getDate() === new Date(post.updated_at).getDate() ?
+              <span className='gray'>at&nbsp;<em>{new Date(post.updated_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: true})}</em></span> :
+              <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>
+            }
           </div> : ''}</div>
           &nbsp;<i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i>&nbsp;&ensp;<p className='post-body'>{post.body}</p>
           {/* <p>{post.likes}</p> */}

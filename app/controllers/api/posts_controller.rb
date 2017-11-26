@@ -6,13 +6,7 @@ class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    
-    select_posts
-    if params[:id]
-      render `api/users/#{params[:id]}`
-    else
-      render :index
-    end
+    render :show
   end
 
   def destroy
