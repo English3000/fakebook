@@ -13,8 +13,10 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    select_posts
-    render :index
+    render :show
+
+    # select_posts
+    # render :index
   end
 
   private

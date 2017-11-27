@@ -21,20 +21,20 @@ export const updateUser = user => async (dispatch) => dispatch(receiveUser( awai
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
-// export const REMOVE_POST = 'REMOVE_POST';
+export const REMOVE_POST = 'REMOVE_POST';
 
-export const receivePosts = posts => ({
+export const receivePosts = content => ({
   type: RECEIVE_POSTS,
-  posts
+  content
 });
-export const receivePost = post => ({
+export const receivePost = content => ({
   type: RECEIVE_POST,
-  post
+  content
 });
-// export const removePost = post => ({
-//   type: REMOVE_POST,
-//   post
-// });
+export const removePost = content => ({
+  type: REMOVE_POST,
+  postId: content.post.id
+});
 export const getPosts = () => async (dispatch) => {
   return dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
 };
@@ -45,37 +45,37 @@ export const getUserPosts = id => async (dispatch) => {
 export const createPost = post => async (dispatch) => {
   return dispatch(receivePost(await FakebookAPIUtil.createPost(post)));
 };
-export const deletePost = (postId, userId) => async (dispatch) => {
-  return dispatch(receivePosts(await FakebookAPIUtil.deletePost(postId, userId)));
+export const deletePost = id => async (dispatch) => {
+  return dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
 };
 export const updatePost = post => async (dispatch) => {
   return dispatch(receivePost(await FakebookAPIUtil.updatePost(post)));
 };
 
-export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
+// export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
-// export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
-export const receiveComments = comments => ({
-  type: RECEIVE_COMMENTS,
-  comments
-});
+// export const receiveComments = comments => ({
+//   type: RECEIVE_COMMENTS,
+//   comments
+// });
 export const receiveComment = comment => ({
   type: RECEIVE_COMMENT,
   comment
 });
-// export const removeComment = comment => ({
-//   type: REMOVE_COMMENT,
-//   commentId: comment.id
-// });
-export const getPostComments = postId => async (dispatch) => {
-  return dispatch(receiveComments(await FakebookAPIUtil.getPostComments(postId)));
-};
+export const removeComment = comment => ({
+  type: REMOVE_COMMENT,
+  comment
+});
+// export const getPostComments = postId => async (dispatch) => {
+//   return dispatch(receiveComments(await FakebookAPIUtil.getPostComments(postId)));
+// };
 export const createComment = comment => async (dispatch) => {
   return dispatch(receiveComment(await FakebookAPIUtil.createComment(comment)));
 };
 export const deleteComment = id => async (dispatch) => {
-  return await dispatch(receiveComments(await FakebookAPIUtil.deleteComment(id)));
+  return await dispatch(removeComment(await FakebookAPIUtil.deleteComment(id)));
 };
 export const updateComment = comment => async (dispatch) => {
   return dispatch(receiveComment(await FakebookAPIUtil.updateComment(comment)));

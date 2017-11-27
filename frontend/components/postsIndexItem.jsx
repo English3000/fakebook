@@ -8,16 +8,16 @@ export default class PostsIndexItem extends React.Component {
     super(props);
     this.delete = this.delete.bind(this);
   }
-
-  componentWillMount() {
-    this.props.parentProps.getPostComments(this.props.post.id); //n-query;
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (this.props.parentProps.location.pathname !== newProps.parentProps.location.pathname) {
-      this.props.parentProps.getPostComments(this.props.post.id);
-    }
-  }
+  //
+  // componentWillMount() {
+  //   this.props.parentProps.getPostComments(this.props.post.id); //n-query;
+  // }
+  //
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.parentProps.location.pathname !== newProps.parentProps.location.pathname) {
+  //     this.props.parentProps.getPostComments(this.props.post.id);
+  //   }
+  // }
 
   delete(event) {
     event.preventDefault();
@@ -31,7 +31,7 @@ export default class PostsIndexItem extends React.Component {
   }
 
   render() {
-    // console.log("Post props:", this.props);
+    console.log("Post props:", this.props);
     const {post, author} = this.props;
     const {users, currentUser, comments, deleteComment} = this.props.parentProps;
     const date = new Date();
@@ -59,8 +59,8 @@ export default class PostsIndexItem extends React.Component {
           {/* 3 most recent comments chron'ly */}
         </article>
         <ul>
-          {comments.all_ids.map(id => {
-            const comment = comments.by_id[id];
+          {post.comment_ids.map(id => {
+            const comment = comments[id];
             if (comment.post_id === post.id) {
               return <Comment key={comment.id} currentUser={currentUser}
                               comment={comment} author={users[comment.user_id]}

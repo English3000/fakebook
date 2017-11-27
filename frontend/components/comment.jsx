@@ -15,9 +15,9 @@ export default class Comment extends React.Component {
 
   render() {
     const { comment, author, currentUser } = this.props;
-    // console.log("Comment props: ", this.props);
+    console.log("Comment props: ", this.props);
     return (<li>
-      <div className='comment flex-middle'>
+      {author ? <div className='comment flex-middle'>
         <Link className='profile-pic-mini' to={`/users/${author.id}`}>
           {author.profile_pic ?
             <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
@@ -30,7 +30,7 @@ export default class Comment extends React.Component {
             <i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i> :
           ''}
         </p>
-      </div>
+      </div> : ''}
       <div className='comment-details-row'></div>
       {/* <CommentReplyForm /> */}
     </li>);

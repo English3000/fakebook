@@ -21,10 +21,9 @@ export const createPost = post => $.ajax({
   url: 'api/posts',
   data: {post}
 });
-export const deletePost = (id, user_id) => $.ajax({
+export const deletePost = id => $.ajax({
   method: 'DELETE',
-  url: `api/posts/${id}`,
-  data: {user_id}
+  url: `api/posts/${id}`
 });
 
 export const getPostComments = id => $.ajax({

@@ -1,11 +1,14 @@
 import { RECEIVE_POSTS,
-         RECEIVE_POST
-       /* REMOVE_POST */ } from '../all_actions';
+         RECEIVE_POST, RECEIVE_COMMENT,
+         REMOVE_POST, REMOVE_COMMENT } from '../all_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  all_ids: [],
-  by_id: {}
+  posts: {
+    all_ids: [],
+    by_id: {}
+  },
+  comments: {}
 };
 
 export default (state = _defaultState, action) => {
@@ -15,15 +18,26 @@ export default (state = _defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_POSTS:
-      return action.posts;
+      return action.content;
     case RECEIVE_POST:
-      newState.by_id[action.post.id] = action.post;
-      newState.all_ids.unshift(action.post.id);
+      newState.posts.by_id[action.content.post.id] = action.content.post;
+      newState.posts.all_ids.unshift(action.content.post.id);
+      newState.comments = merge(action.content.comments, newState.comments);
       return newState;
-    // case REMOVE_POST:
-    //   delete newState.by_id[action.postId];
-    //   // newState.all_ids.splice(newState.all_ids.indexOf(action.postId), 1);
-    //   return newState;
+    case REMOVE_POST:
+      delete newState.posts.by_id[action.postId];
+      newState.posts.all_ids.splice(newState.posts.all_ids.indexOf(action.postId), 1);
+      return newState;
+    case RECEIVE_COMMENT:
+      newState.comments[action.comment.id] = action.comment;
+      newState.posts.by_id[action.comment.post_id].comment_ids.push(action.comment.id);
+      return newState;
+    case REMOVE_COMMENT:
+      delete newState.comments[action.comment.id];
+      newState.posts.by_id[action.comment.post_id].comment_ids
+        .splice(newState.posts.by_id[action.comment.post_id].comment_ids
+          .indexOf(action.comment.id), 1);
+      return newState;
     default:
       return state;
   }

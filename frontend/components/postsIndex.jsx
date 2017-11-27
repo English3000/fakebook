@@ -28,9 +28,8 @@ export default class PostsIndex extends React.Component {
   }
 
   render() {
-    // console.log("PostsIndex props: ", this.props);
-    const { currentUser, match, users, posts, deletePost,
-            getPostComments, comments, deleteComment } = this.props;
+    console.log("PostsIndex props: ", this.props);
+    const { users, posts } = this.props;
     const parentProps = this.props;
 
     return (<div>
@@ -38,7 +37,7 @@ export default class PostsIndex extends React.Component {
         <PostFormContainer />
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
-          // getPostComments(post.id);
+
           return <PostsIndexItem key={id} author={users[post.user_id]}
                                  post={post} parentProps={parentProps}/>;
         })}
