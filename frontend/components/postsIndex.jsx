@@ -28,7 +28,7 @@ export default class PostsIndex extends React.Component {
   }
 
   render() {
-    console.log("PostsIndex props: ", this.props);
+    // console.log("PostsIndex props: ", this.props);
     const { currentUser, match, users, posts, deletePost,
             getPostComments, comments, deleteComment } = this.props;
     const parentProps = this.props;

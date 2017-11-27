@@ -10,7 +10,7 @@ export default class PostsIndexItem extends React.Component {
   }
 
   componentWillMount() {
-    this.props.parentProps.getPostComments(this.props.post.id);
+    this.props.parentProps.getPostComments(this.props.post.id); //n-query;
   }
 
   componentWillReceiveProps(newProps) {
@@ -31,7 +31,7 @@ export default class PostsIndexItem extends React.Component {
   }
 
   render() {
-    console.log("Post props:", this.props);
+    // console.log("Post props:", this.props);
     const {post, author} = this.props;
     const {users, currentUser, comments, deleteComment} = this.props.parentProps;
     const date = new Date();

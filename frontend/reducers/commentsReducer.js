@@ -14,6 +14,8 @@ export default (state = _defaultState, action) => {
 
   switch (action.type) {
     case RECEIVE_COMMENTS:
+      console.log("deletion");
+      // return merge({}, state, action.comments);
       return action.comments;
     case RECEIVE_COMMENT:
       newState.by_id[action.comment.id] = action.comment;
