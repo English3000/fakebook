@@ -45,8 +45,8 @@ export const getUserPosts = id => async (dispatch) => {
 export const createPost = post => async (dispatch) => {
   return dispatch(receivePost(await FakebookAPIUtil.createPost(post)));
 };
-export const deletePost = (postId, userId) => dispatch => {
-  FakebookAPIUtil.deletePost(postId, userId).then(posts => dispatch(receivePosts(posts)));
+export const deletePost = (postId, userId) => async (dispatch) => {
+  return dispatch(receivePosts(await FakebookAPIUtil.deletePost(postId, userId)));
 };
 export const updatePost = post => async (dispatch) => {
   return dispatch(receivePost(await FakebookAPIUtil.updatePost(post)));

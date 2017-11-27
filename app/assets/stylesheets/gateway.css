@@ -35,6 +35,7 @@
 
 .gateway-form {
   height: 60px;
+  width: 318px;
 }
 
 .gateway-form button:focus, .gateway-form button:hover {
@@ -54,6 +55,7 @@
   font-size: 14px;
   font-weight: 500;
   padding: 1.5px 0 1.5px 4px;
+  width: 167px;
 }
 
 .inputs-div > input:first-of-type {
@@ -68,7 +70,7 @@
   border-width: 0 36px 55px 36px;
   border-color: transparent transparent palegreen transparent;
   border-radius: 0;
-  position: relative;
+  /* -webkit flex? bug */
 }
 
 #sign-up p {

@@ -11,7 +11,7 @@ export default class PostsIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     // console.log("Props: ", this.props);
     // console.log("New props: ", newProps);
-    if(newProps.location.pathname !== this.props.location.pathname) {
+    if (newProps.location.pathname !== this.props.location.pathname) {
       this.fetchPosts(newProps);
     }
   }
@@ -29,18 +29,18 @@ export default class PostsIndex extends React.Component {
 
   render() {
     console.log("PostsIndex props: ", this.props);
-    const { currentUser, match, users,
-            posts, deletePost, getPostComments } = this.props;
+    const { currentUser, match, users, posts, deletePost,
+            getPostComments, comments, deleteComment } = this.props;
+    const parentProps = this.props;
 
     return (<div>
       <ul className='center-400px'>
         <PostFormContainer />
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
-          return <PostsIndexItem key={id} author={users[post.user_id]} users={users}
-                                 post={post} userShowId={match.params.id}
-                                 currentUser={currentUser} deletePost={deletePost}
-                                 getPostComments={getPostComments}/>;
+          // getPostComments(post.id);
+          return <PostsIndexItem key={id} author={users[post.user_id]}
+                                 post={post} parentProps={parentProps}/>;
         })}
       </ul>
     </div>);

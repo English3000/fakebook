@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     end
     resource :session
     resources :posts do
-      resources :comments, except: [:create, :update]
+      resources :comments, except: [:create, :update, :destroy]
     end
-    resources :comments, only: [:create, :update]
+    resources :comments, only: [:create, :update, :destroy]
   end
 end

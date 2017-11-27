@@ -29,8 +29,8 @@ export default class Nav extends React.Component {
             {users[currentUser] ? users[currentUser].username : ''}
           </Link>
           <span className='palegreen'>&ensp;&nbsp;|&ensp;&nbsp;</span>
-          <Link to='/posts'>Home</Link>&emsp;&emsp;
-          <i className='fa fa-users fa-lg pointer palegreen'></i>&emsp;
+          <Link to='/posts'>Home</Link>
+          <i className='fa fa-users fa-lg pointer palegreen'></i>
           <i className='fa fa-sign-out fa-lg pointer palegreen' onClick={this.signOut}></i>
         </nav>
       </div>

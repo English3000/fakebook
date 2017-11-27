@@ -6,15 +6,16 @@
 }
 
 .post {
-  margin-top: 7.5px;
+  margin-top: 15px;
   padding: 20px;
   background-color: white;
   border: lightgray 1px solid;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 .post-form {
   padding-bottom: 15px;
+  border-radius: 5px;
 }
 
 .post-author {
@@ -24,6 +25,7 @@
 .post-body {
   display: inline-block;
   text-align: justify;
+  padding-left: 13px;
 }
 
 .post-input {

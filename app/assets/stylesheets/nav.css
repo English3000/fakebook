@@ -36,6 +36,14 @@
   font-weight: 500;
 }
 
+.nav-bar nav a:last-of-type {
+  margin-right: 12px;
+}
+
+.nav-bar nav i {
+  margin: 0 6px;
+}
+
 .palegreen {
   color: palegreen;
 }

@@ -6,26 +6,34 @@ import Comment from './comment';
 export default class PostsIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Post props:", props);
     this.delete = this.delete.bind(this);
   }
 
   componentWillMount() {
-    this.props.getPostComments(this.props.post.id);
+    this.props.parentProps.getPostComments(this.props.post.id);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.parentProps.location.pathname !== newProps.parentProps.location.pathname) {
+      this.props.parentProps.getPostComments(this.props.post.id);
+    }
   }
 
   delete(event) {
     event.preventDefault();
-    if (this.props.userShowId) {
-      this.props.deletePost(this.props.post.id, this.props.userShowId);
+    const {match, deletePost} = this.props.parentProps;
+    const post = this.props.post;
+    if (match.params.id) {
+      deletePost(post.id, match.params.id);
     } else {
-      this.props.deletePost(this.props.post.id);
+      deletePost(post.id);
     }
   }
 
   render() {
-    // console.log(this.props);
-    const {post, users, author, currentUser, comments} = this.props;
+    console.log("Post props:", this.props);
+    const {post, author} = this.props;
+    const {users, currentUser, comments, deleteComment} = this.props.parentProps;
     const date = new Date();
     return (
       <li>
@@ -45,19 +53,21 @@ export default class PostsIndexItem extends React.Component {
           </div> : ''}</div>
           &nbsp;{author ? currentUser === author.id ?
             <i className='delete-button fa fa-trash fa-lg palegreen' onClick={this.delete}></i> :
-            <span>&emsp;</span> : <span>&emsp;</span>}
-          &nbsp;&ensp;<p className='post-body'>{post.body}</p>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> : <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>}
+          <p className='post-body'>{post.body}</p>
           {/* <p>{post.likes}</p> */}
           {/* 3 most recent comments chron'ly */}
         </article>
         <ul>
-          <li>
-            {/* <CommentForm /> */}
-          </li>
-          {comments ? comments.all_ids.map(id => {
+          {comments.all_ids.map(id => {
             const comment = comments.by_id[id];
-            return <Comment key={comment.id} comment={comment} author={users[comment.user_id]}/>;
-          }) : ''}
+            if (comment.post_id === post.id) {
+              return <Comment key={comment.id} currentUser={currentUser}
+                              comment={comment} author={users[comment.user_id]}
+                              deleteComment={deleteComment}/>;
+            }
+          })}
+          {/* <CommentForm /> */}
         </ul>
       </li>
     );
