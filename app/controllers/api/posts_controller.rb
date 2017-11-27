@@ -25,6 +25,7 @@ class Api::PostsController < ApplicationController
   def select_posts
     if params[:user_id]
       @posts = Post.where(user_id: params[:user_id]).order(updated_at: :desc)
+      # render {} if @posts.length == 0
     else
       @posts = Post.all.order(updated_at: :desc) #restrict by friendships
     end

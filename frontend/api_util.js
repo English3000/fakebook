@@ -2,83 +2,74 @@ export const getUsers = () => $.ajax({
   method: 'GET',
   url: 'api/users'
 });
-
-export const getUserPosts = id => $.ajax({
-  method: 'GET',
-  url: `api/users/${id}/posts`
-});
-
 export const updateUser = user => $.ajax({
   method: 'PATCH',
   url: `api/users/${user.id}`,
   data: {user}
 });
 
+export const getUserPosts = id => $.ajax({
+  method: 'GET',
+  url: `api/users/${id}/posts`
+});
 export const getPosts = () => $.ajax({
   method: 'GET',
   url: 'api/posts'
 });
-export const fetchComments = () => $.ajax({
-  method: 'GET',
-  url: 'api/comments'
+export const createPost = post => $.ajax({
+  method: 'POST',
+  url: 'api/posts',
+  data: {post}
 });
-
-// export const fetchPost = id => $.ajax({
-//   method: 'GET',
-//   url: `api/posts/${id}`
-// });
-// export const fetchComment = id => $.ajax({
-//   method: 'GET',
-//   url: `api/comments/${id}`
-// });
-
 export const deletePost = (id, user_id) => $.ajax({
   method: 'DELETE',
   url: `api/posts/${id}`,
   data: {user_id}
 });
-export const deleteComment = id => $.ajax({
-  method: 'DELETE',
-  url: `api/comments/${id}`
-});
 
-export const deleteFriendship = () => $.ajax({
-  method: 'DELETE',
-  url: 'api/friendships'
-});
-export const deleteFriendRequest = id => $.ajax({
-  method: 'DELETE',
-  url: `api/friend_requests/${id}`
-});
-
-// export const unlikePost = post => $.ajax({
-//   method: 'DELETE',
-//   url: `api/posts/${post.id}/likes`
-// });
-// export const unlikeComment = comment => $.ajax({
-//   method: 'DELETE',
-//   url: `api/comments/${comment.id}/likes`
-// });
-
-
-export const createPost = post => $.ajax({
-  method: 'POST',
-  url: 'api/posts',
-  data: {post}
+export const getPostComments = id => $.ajax({
+  method: 'GET',
+  url: `api/posts/${id}/comments`
 });
 export const createComment = comment => $.ajax({
   method: 'POST',
   url: 'api/comments',
   data: {comment}
 });
+export const deleteComment = (post_id, comment_id) => $.ajax({
+  method: 'DELETE',
+  url: `api/posts/${post_id}/comments/${comment_id}`
+});
+
+//---
+export const updatePost = post => $.ajax({
+  method: 'PATCH',
+  url: `api/posts/${post.id}`,
+  data: {post}
+});
+export const updateComment = comment => $.ajax({
+  method: 'PATCH',
+  url: `api/comments/${comment.id}`,
+  data: {comment}
+});
+
 
 export const createFriendship = id => $.ajax({
   method: 'POST',
   url: `api/friendships/${id}`
 });
+export const deleteFriendship = () => $.ajax({
+  method: 'DELETE',
+  url: 'api/friendships'
+});
+
 export const createFriendRequest = () => $.ajax({
   method: 'POST',
   url: 'api/friend_requests'
+});
+export const deleteFriendRequest = id => $.ajax({
+  method: 'DELETE',
+  url: `api/friend_requests/${id}`
 });
 
 // export const likePost = post => $.ajax({
@@ -90,14 +81,11 @@ export const createFriendRequest = () => $.ajax({
 //   url: `api/comments/${comment.id}/likes`
 // });
 
-
-export const updatePost = post => $.ajax({
-  method: 'PATCH',
-  url: `api/posts/${post.id}`,
-  data: {post}
-});
-export const updateComment = comment => $.ajax({
-  method: 'PATCH',
-  url: `api/comments/${comment.id}`,
-  data: {comment}
-});
+// export const unlikePost = post => $.ajax({
+//   method: 'DELETE',
+//   url: `api/posts/${post.id}/likes`
+// });
+// export const unlikeComment = comment => $.ajax({
+//   method: 'DELETE',
+//   url: `api/comments/${comment.id}/likes`
+// });

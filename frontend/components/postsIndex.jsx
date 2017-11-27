@@ -9,9 +9,8 @@ export default class PostsIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    //modify to accom. post creation
-    console.log("Props: ", this.props);
-    console.log("New props: ", newProps);
+    // console.log("Props: ", this.props);
+    // console.log("New props: ", newProps);
     if(newProps.location.pathname !== this.props.location.pathname) {
       this.fetchPosts(newProps);
     }
@@ -30,16 +29,19 @@ export default class PostsIndex extends React.Component {
 
   render() {
     console.log("PostsIndex props: ", this.props);
-    const {posts, users, deletePost, match} = this.props;
+    const { currentUser, match, users,
+            posts, deletePost, getPostComments } = this.props;
 
     return (<div>
       <ul className='center-400px'>
         <PostFormContainer />
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
-          return <PostsIndexItem key={id} author={users[post.user_id]} post={post}
-                                 currentUser={this.props.currentUser} deletePost={deletePost}/>;})
-        }
+          return <PostsIndexItem key={id} author={users[post.user_id]} users={users}
+                                 post={post} userShowId={match.params.id}
+                                 currentUser={currentUser} deletePost={deletePost}
+                                 getPostComments={getPostComments}/>;
+        })}
       </ul>
     </div>);
   }

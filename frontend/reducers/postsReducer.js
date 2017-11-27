@@ -1,6 +1,6 @@
 import { RECEIVE_POSTS,
-         RECEIVE_POST,
-         REMOVE_POST } from '../all_actions';
+         RECEIVE_POST
+       /* REMOVE_POST */ } from '../all_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -20,9 +20,10 @@ export default (state = _defaultState, action) => {
       newState.by_id[action.post.id] = action.post;
       newState.all_ids.unshift(action.post.id);
       return newState;
-    case REMOVE_POST:
-      delete newState.by_id[action.postId];
-      return newState;
+    // case REMOVE_POST:
+    //   delete newState.by_id[action.postId];
+    //   // newState.all_ids.splice(newState.all_ids.indexOf(action.postId), 1);
+    //   return newState;
     default:
       return state;
   }
