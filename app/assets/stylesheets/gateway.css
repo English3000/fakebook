@@ -107,7 +107,7 @@
   top: -17.5px;
 }
 
-/*#sign-up:hover #sign-in {  DOESN'T WORK
+/*#sign-up:hover #sign-in {  DOESN'T WORK; work-around === JS
   box-shadow: none;
 }*/
 
@@ -203,8 +203,4 @@
   margin-top: 22.5px;
   position: relative;
   top: -4px;
-}
-
-.feature .palegreen {
-  font-weight: 600;
 }

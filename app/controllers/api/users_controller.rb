@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
-      render json: @user
+      render :show
     else
       render json: @user.errors.full_messages, status: 404
     end
@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user && @user.update_attributes(user_params)
-      render json: @user
+      render :show
     else
       render json: @user.errors.full_messages, status: 404
     end
