@@ -3,7 +3,8 @@ import { createComment } from '../all_actions';
 import CommentForm from './commentForm';
 
 const mapStateToProps = ({ entities, session }) => ({
-  currentUser: entities.users[session.currentUserId],
+  userId: session.currentUserId,
+  currentUser: entities.users[session.currentUserId]
 });
 
 const mapDispatchToProps = dispatch => ({

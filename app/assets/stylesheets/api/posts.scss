@@ -6,16 +6,20 @@
 }
 
 .post {
-  margin-top: 15px;
-  padding: 20px;
+  margin-top: 12.5px;
+  padding: 15px;
   background-color: white;
   border: lightgray 1px solid;
   border-radius: 5px 5px 0 0;
 }
 
 .post-form {
-  padding-bottom: 15px;
+  padding: 18px 15px 9px 20px;
+  // padding: 20px 15px 17.5px 20px;
+  background-color: /*limegreen;*/ /*chartreuse;*/ springgreen;
   border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 1px lightgray;
 }
 
 .absolute {
@@ -24,7 +28,7 @@
 }
 
 .post-author {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .post-body {
@@ -35,10 +39,21 @@
 
 .post-input {
   resize: none;
-  width: 323px;
+  width: 342px;
   min-height: 60px;
-  padding: 4px;
-  margin-right: 6px;
+  padding: 0 0 15px;
+  margin-right: 7px;
+  font-weight: 600;
+  text-shadow: 0 0 1px white;
+  // background-color: white;
+  // border-radius: 15px;
+  // box-shadow: 0 0 1px gray;
+}
+
+.post-input::placeholder {
+  color: black;
+  text-shadow: 0 0 1px white;
+  font-weight: 600;
 }
 
 .post-button {

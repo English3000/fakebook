@@ -6,7 +6,7 @@ export default class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: null,
-      user_id: this.props.currentUser.id,
+      user_id: this.props.userId,
       post_id: this.props.postId,
       comment_id: this.props.commentId
     };
@@ -35,15 +35,16 @@ export default class CommentForm extends React.Component {
         <ul className='comment-form-errors absolute hidden' onClick={() => $('.comment-form-errors').addClass('hidden')}>
             {this.props.errors.session.slice(0, 1).map(err => <li key={err}>{err}</li>)}
         </ul> : ''}
-      <div className='flex'>
-        <Link className='profile-pic-mini' to={`/users/${this.props.currentUser.id}`}>
-          {this.props.currentUser.profile_pic ?
-            <img className='profile-pic-mini' src={this.props.currentUser.profile_pic}/> : ''}
-        </Link>
+      <div className='flex-middle'>
+        {this.props.currentUser ?
+          <Link className='profile-pic-mini' to={`/users/${this.props.currentUser.id}`}>
+            {this.props.currentUser.profile_pic ?
+              <img className='profile-pic-mini' src={this.props.currentUser.profile_pic}/> : ''}
+          </Link> : '' }
         <div className='flex-middle'>
           <textarea className='comment-input' type='text' value={this.state.body ? this.state.body : ''}
                     placeholder="Respond..." onChange={this.update}/>
-          <i className='fa fa-paper-plane post-button' onClick={this.makeComment}></i>
+          <i className='fa fa-paper-plane comment-button' onClick={this.makeComment}></i>
         </div>
       </div>
     </form>);

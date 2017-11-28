@@ -15,7 +15,7 @@ export default class Comment extends React.Component {
 
   render() {
     const { comment, author, currentUser } = this.props;
-    console.log("Comment props: ", this.props);
+    // console.log("Comment props: ", this.props);
     return (<li>
       {author ? <div className='comment flex-middle'>
         <Link className='profile-pic-mini' to={`/users/${author.id}`}>

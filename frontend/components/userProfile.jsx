@@ -32,8 +32,8 @@ export default class UserProfile extends React.Component {
     return event => {
       event.preventDefault();
       if (field === 'custom_link') {
-        console.log(this.state);
-        console.log(this.props.users[this.props.match.params.id]);
+        // console.log(this.state);
+        // console.log(this.props.users[this.props.match.params.id]);
         this.setState({ [field]: $('#custom-link-input').val() }, () => this.props.updateUser(this.state));
       } else {
         this.setState({ [field]: event.target.value }, () => this.props.updateUser(this.state));

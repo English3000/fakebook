@@ -71,9 +71,7 @@ export const removeComment = comment => ({
   type: REMOVE_COMMENT,
   comment
 });
-// export const getPostComments = postId => async (dispatch) => {
-//   return dispatch(receiveComments(await FakebookAPIUtil.getPostComments(postId)));
-// };
+
 export const createComment = comment => dispatch => (
   FakebookAPIUtil.createComment(comment)
     .then(newComment => dispatch(receiveComment(newComment)),

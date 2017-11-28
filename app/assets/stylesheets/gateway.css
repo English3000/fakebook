@@ -38,11 +38,7 @@
   width: 318px;
 }
 
-/*.gateway-form div input:focus #sign-in {
-  box-shadow: 0 0 3px black;
-}*/
-
-.gateway-form button:focus, .gateway-form button:hover {
+#sign-up:focus, #sign-up:hover {
   box-shadow: 0 0 3px black;
 }
 
@@ -98,6 +94,7 @@
   border-width: 32px 0 32px 55px;
   border-color: transparent transparent transparent palegreen;
   border-radius: 0;
+  box-shadow: 0 0 3px black;
 }
 
 #sign-in p {
@@ -109,6 +106,10 @@
   left: -53px;
   top: -17.5px;
 }
+
+/*#sign-up:hover #sign-in {  DOESN'T WORK
+  box-shadow: none;
+}*/
 
 .bump-more-left {
   padding-left: 5px;

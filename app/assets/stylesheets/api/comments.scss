@@ -2,11 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
-  padding: 10px 20px;
-  background-color: ivory;/*whitesmoke;*/
+  padding: 10px 15px;
+  background-color: honeydew;
   border: lightgray 1px solid;
   border-top: 0;
-  // border-radius: 5px;
 }
 
 .comment:hover .delete-button {
@@ -16,16 +15,25 @@
 
 .comment-form {
   border-radius: 0 0 5px 5px;
+  background-color: palegreen;
 }
 
 .comment-input {
   resize: none;
-  width: 300px;
-  height: 25px;
-  padding: 4px;
-  margin-right: 6px;
+  width: 301px;
+  height: 24px;
+  padding: 6px 1px 4px 10px;
+  margin: 0 6px 0 10px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 0 1px lightgray;
 }
 
 .comment-body {
   margin-left: 9px;
+}
+
+.comment-button {
+  color: green;
+  cursor: pointer;
 }
