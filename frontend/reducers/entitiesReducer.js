@@ -8,7 +8,7 @@ import postsReducer from './postsReducer';
 export default combineReducers({
   users: usersReducer,
   content: postsReducer
-  // comments: postsReducer.comments//commentsReducer,
   // friendships: friendshipsReducer,
   // friendRequests: friendRequestsReducer
 });
+// comments: commentsReducer,

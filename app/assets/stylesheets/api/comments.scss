@@ -18,6 +18,14 @@
   border-radius: 0 0 5px 5px;
 }
 
+.comment-input {
+  resize: none;
+  width: 300px;
+  height: 25px;
+  padding: 4px;
+  margin-right: 6px;
+}
+
 .comment-body {
   margin-left: 9px;
 }

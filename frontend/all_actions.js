@@ -43,7 +43,7 @@ export const getPosts = () => async (dispatch) => {
 export const getUserPosts = id => async (dispatch) => {
   return dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
 };
-export const createPost = post => async (dispatch) => (
+export const createPost = post => dispatch => (
   FakebookAPIUtil.createPost(post)
     .then(newPost => dispatch(receivePost(newPost)),
           err => dispatch(receiveErrors(err.responseJSON)))
@@ -74,9 +74,11 @@ export const removeComment = comment => ({
 // export const getPostComments = postId => async (dispatch) => {
 //   return dispatch(receiveComments(await FakebookAPIUtil.getPostComments(postId)));
 // };
-export const createComment = comment => async (dispatch) => {
-  return dispatch(receiveComment(await FakebookAPIUtil.createComment(comment)));
-};
+export const createComment = comment => dispatch => (
+  FakebookAPIUtil.createComment(comment)
+    .then(newComment => dispatch(receiveComment(newComment)),
+          err => dispatch(receiveErrors(err.responseJSON)))
+);
 export const deleteComment = id => async (dispatch) => {
   return await dispatch(removeComment(await FakebookAPIUtil.deleteComment(id)));
 };

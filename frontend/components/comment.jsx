@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommentReplyForm from './commentReplyForm';
+import CommentFormContainer from './commentFormContainer';
 
 export default class Comment extends React.Component {
   constructor(props) {
@@ -32,7 +32,8 @@ export default class Comment extends React.Component {
         </p>
       </div> : ''}
       <div className='comment-details-row'></div>
-      {/* <CommentReplyForm /> */}
+      {/* <CommentFormContainer postId={comment.post_id} commentId={comment.id}
+                            errors={this.props.errors.session} /> */}
     </li>);
   }
 }

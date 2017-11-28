@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommentForm from './commentForm';
+import CommentFormContainer from './commentFormContainer';
 import Comment from './comment';
 
 export default class PostsIndexItem extends React.Component {
@@ -31,7 +31,7 @@ export default class PostsIndexItem extends React.Component {
   }
 
   render() {
-    console.log("Post props:", this.props);
+    // console.log("Post props:", this.props);
     const {post, author} = this.props;
     const {users, currentUser, comments, deleteComment} = this.props.parentProps;
     const date = new Date();
@@ -64,10 +64,11 @@ export default class PostsIndexItem extends React.Component {
             if (comment.post_id === post.id) {
               return <Comment key={comment.id} currentUser={currentUser}
                               comment={comment} author={users[comment.user_id]}
-                              deleteComment={deleteComment}/>;
+                              deleteComment={deleteComment} errors={this.props.parentProps.errors}/>;
             }
           })}
-          {/* <CommentForm /> */}
+          <CommentFormContainer key={post.id} postId={post.id} commentId={null}
+                                errors={this.props.parentProps.errors} />
         </ul>
       </li>
     );

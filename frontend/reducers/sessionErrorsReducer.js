@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER,
          RECEIVE_ERRORS } from '../session_actions';
-import { RECEIVE_POST } from '../all_actions';
+import { RECEIVE_POST, RECEIVE_COMMENT } from '../all_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);
@@ -8,6 +8,8 @@ export default (state = [], action) => {
     case RECEIVE_CURRENT_USER:
       return [];
     case RECEIVE_POST:
+      return [];
+    case RECEIVE_COMMENT:
       return [];
     case RECEIVE_ERRORS:
       return action.errors;
