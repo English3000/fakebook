@@ -1,4 +1,5 @@
 import * as FakebookAPIUtil from './api_util';
+import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -42,9 +43,11 @@ export const getPosts = () => async (dispatch) => {
 export const getUserPosts = id => async (dispatch) => {
   return dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
 };
-export const createPost = post => async (dispatch) => {
-  return dispatch(receivePost(await FakebookAPIUtil.createPost(post)));
-};
+export const createPost = post => async (dispatch) => (
+  FakebookAPIUtil.createPost(post)
+    .then(newPost => dispatch(receivePost(newPost)),
+          err => dispatch(receiveErrors(err.responseJSON)))
+);
 export const deletePost = id => async (dispatch) => {
   return dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
 };

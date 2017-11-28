@@ -5,12 +5,13 @@ import { getUsers,
          deletePost, deleteComment } from '../all_actions';
 import PostsIndex from './postsIndex';
 
-const mapStateToProps = ({ entities, session }) => {
+const mapStateToProps = ({ entities, session, errors }) => {
   return {
     currentUser: session.currentUserId,
     users: entities.users,
     posts: entities.content.posts,
-    comments: entities.content.comments
+    comments: entities.content.comments,
+    errors: errors
   };
 };
 

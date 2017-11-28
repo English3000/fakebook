@@ -80,6 +80,12 @@ h2 {
   cursor: default;
 }
 
+.absolute {
+  position: absolute;
+  top: 390px;
+  color: white;
+}
+
 .inline-block {
   display: inline-block;
 }

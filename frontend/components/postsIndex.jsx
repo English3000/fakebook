@@ -34,7 +34,7 @@ export default class PostsIndex extends React.Component {
 
     return (<div>
       <ul className='center-400px'>
-        <PostFormContainer />
+        <PostFormContainer errors={this.props.errors} />
         {posts.all_ids.map(id => {
           const post = posts.by_id[id];
 

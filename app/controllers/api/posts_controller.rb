@@ -5,14 +5,16 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-    render :show
+    if @post.save
+      render :show
+    else
+      render json: @post.errors.full_messages, status: 422
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     render :show
 
     # select_posts

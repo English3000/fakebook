@@ -38,6 +38,10 @@
   width: 318px;
 }
 
+/*.gateway-form div input:focus #sign-in {
+  box-shadow: 0 0 3px black;
+}*/
+
 .gateway-form button:focus, .gateway-form button:hover {
   box-shadow: 0 0 3px black;
 }
