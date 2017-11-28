@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
   padding: 10px 15px;
-  background-color: honeydew;
+  background-color: /*honeydew; rgba(152, 251, 152, 0.1);*/ aliceblue;
   border: lightgray 1px solid;
   border-top: 0;
 }
@@ -15,7 +15,7 @@
 
 .comment-form {
   border-radius: 0 0 5px 5px;
-  background-color: palegreen;
+  background-color: /*palegreen;*/ rgba(152, 251, 152, 0.6);
 }
 
 .comment-input {
