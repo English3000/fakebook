@@ -44,6 +44,14 @@
   margin: 0 6px;
 }
 
-.palegreen {
+.darkgreen {
+  color: darkgreen;
+}
+
+.fa-users:hover {
+  color: palegreen;
+}
+
+.fa-sign-out:hover {
   color: palegreen;
 }

@@ -44,10 +44,16 @@
 #custom-link-form input[type='submit'] {
   background-color: palegreen;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-shadow: 0 0 0.5px white;
   position: relative;
   top: 1px;
   border: 0;
   box-shadow: 0 0 2px black;
+}
+
+#custom-link-form input[type='submit']:hover {
+  background-color: springgreen;
 }
 
 .cover-photo {
@@ -125,7 +131,7 @@
 
 .plus-button:hover {
   background-color: green;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 3px black;
 }
 
 .friend-button {
