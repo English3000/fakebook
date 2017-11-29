@@ -36,7 +36,7 @@ export default () => (
         </div>
       </div>
     </main>
-    <footer className='gateway-footer flex-center'>
+    <footer className='gateway-footer flex-middle flex-center'>
       <p>find the rest!</p>
     </footer>
   </div>

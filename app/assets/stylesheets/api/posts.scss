@@ -22,6 +22,31 @@
   box-shadow: 0 0 1px lightgray;
 }
 
+.post-form:hover/*, .post-input:focus .post-form*/ {
+  background-color: springgreen;
+}
+
+.post-input {
+  resize: none;
+  width: 342px;
+  min-height: 60px;
+  padding: 0 0 15px;
+  margin-right: 7px;
+  font-weight: 600;
+  text-shadow: 0 0 1px white;
+}
+
+.post-input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 1px white;
+  font-weight: 600;
+}
+
+.post-button {
+  color: green;
+  cursor: pointer;
+}
+
 .absolute {
   position: absolute;
   color: white;
@@ -35,35 +60,17 @@
   display: inline-block;
   text-align: justify;
   padding-left: 13px;
-}
-
-.post-input {
-  resize: none;
-  width: 342px;
-  min-height: 60px;
-  padding: 0 0 15px;
-  margin-right: 7px;
-  font-weight: 600;
-  text-shadow: 0 0 1px white;
-  // background-color: white;
-  // border-radius: 15px;
-  // box-shadow: 0 0 1px gray;
-}
-
-.post-input::placeholder {
-  color: black;
-  text-shadow: 0 0 1px white;
-  font-weight: 600;
-}
-
-.post-button {
-  color: green;
-  cursor: pointer;
+  max-width: 330px;
+  overflow: auto;
 }
 
 .delete-button {
   display: inline;
   visibility: hidden;
+}
+
+.shift-down {
+  margin-top: 3px;
 }
 
 .post:hover .delete-button {

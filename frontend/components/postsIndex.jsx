@@ -28,19 +28,19 @@ export default class PostsIndex extends React.Component {
   }
 
   render() {
-    // console.log("PostsIndex props: ", this.props);
+    console.log("PostsIndex props: ", this.props);
     const { users, posts } = this.props;
     const parentProps = this.props;
 
     return (<div>
       <ul className='center-400px'>
         <PostFormContainer errors={this.props.errors.session} />
-        {posts.all_ids.map(id => {
+        {posts && posts.all_ids.length > 0 ? posts.all_ids.map(id => {
           const post = posts.by_id[id];
 
           return <PostsIndexItem key={id} author={users[post.user_id]}
                                  post={post} parentProps={parentProps}/>;
-        })}
+        }) : <div>{/* welcome message/pop up for new user */}</div>}
       </ul>
     </div>);
   }

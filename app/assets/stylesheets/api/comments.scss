@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
-  padding: 10px 15px;
+  padding: 10px 15px 10px 35px;
   background-color: /*honeydew; rgba(152, 251, 152, 0.1);*/ aliceblue;
   border: lightgray 1px solid;
   border-top: 0;
@@ -18,9 +18,13 @@
   background-color: /*palegreen;*/ rgba(152, 251, 152, 0.6);
 }
 
+.comment-form:hover {
+  background-color: palegreen;
+}
+
 .comment-input {
   resize: none;
-  width: 301px;
+  width: 281px;
   height: 24px;
   padding: 6px 1px 4px 10px;
   margin: 0 6px 0 10px;

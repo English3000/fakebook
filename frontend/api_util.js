@@ -49,22 +49,19 @@ export const updateComment = comment => $.ajax({
 });
 
 
-export const createFriendship = id => $.ajax({
+export const createFriend = relationship => $.ajax({
   method: 'POST',
-  url: `api/friendships/${id}`
+  url: `api/friends/${relationship.id}`,
+  data: {relationship}
 });
-export const deleteFriendship = () => $.ajax({
+export const updateFriend = relationship => $.ajax({
+  method: 'PATCH',
+  url: `api/friends/${relationship.id}`,
+  data: {relationship}
+});
+export const deleteFriend = id => $.ajax({
   method: 'DELETE',
-  url: 'api/friendships'
-});
-
-export const createFriendRequest = () => $.ajax({
-  method: 'POST',
-  url: 'api/friend_requests'
-});
-export const deleteFriendRequest = id => $.ajax({
-  method: 'DELETE',
-  url: `api/friend_requests/${id}`
+  url: `api/friends/${id}`
 });
 
 // export const likePost = post => $.ajax({

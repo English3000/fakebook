@@ -39,6 +39,9 @@ h2 {
 
 .springgreen {
   color: springgreen;
+}
+
+.text-shadow-black {
   text-shadow: 0 0 0.5px black;
 }
 
@@ -106,6 +109,11 @@ h2 {
 .flex-middle {
   display: flex;;
   align-items: center;
+}
+
+.flex-top {
+  display: flex;
+  align-items: flex-start;
 }
 
 .flex-bottom {

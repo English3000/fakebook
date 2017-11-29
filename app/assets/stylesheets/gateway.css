@@ -8,6 +8,7 @@
 
 .gateway-logo {
   font-size: 40px;
+  font-weight: bold;
   text-align: center;
   /*text-transform: uppercase;*/
   width: 78px;
@@ -22,14 +23,19 @@
 .gateway-footer:before {
   content: '';
   position: absolute;
-  /*bottom: -10px;*/
+  margin-top: -10px;
   border-width: 15px;
   border-style: solid;
   border-color: ghostwhite transparent transparent transparent;
 }
 
+.gateway-footer {
+  min-height: 50px;
+  max-height: 250px;
+}
+
 .gateway-footer p {
-  margin-top: 20px;
+  margin-top: 8px;
   font-weight: 600;
 }
 

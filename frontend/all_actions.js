@@ -14,9 +14,7 @@ export const receiveUser = user => ({
   user
 });
 
-export const getUsers = () => dispatch => (
-  FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)))
-);
+export const getUsers = () => dispatch => FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)));
 
 export const updateUser = user => async (dispatch) => dispatch(receiveUser( await FakebookAPIUtil.updateUser(user) ));
 
@@ -36,24 +34,15 @@ export const removePost = content => ({
   type: REMOVE_POST,
   postId: content.post.id
 });
-export const getPosts = () => async (dispatch) => {
-  return dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
-};
-
-export const getUserPosts = id => async (dispatch) => {
-  return dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
-};
+export const getPosts = () => async (dispatch) => dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
+export const getUserPosts = id => async (dispatch) => dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
 export const createPost = post => dispatch => (
   FakebookAPIUtil.createPost(post)
     .then(newPost => dispatch(receivePost(newPost)),
           err => dispatch(receiveErrors(err.responseJSON)))
 );
-export const deletePost = id => async (dispatch) => {
-  return dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
-};
-export const updatePost = post => async (dispatch) => {
-  return dispatch(receivePost(await FakebookAPIUtil.updatePost(post)));
-};
+export const deletePost = id => async (dispatch) => dispatch(removePost(await FakebookAPIUtil.deletePost(id)));
+export const updatePost = post => async (dispatch) => dispatch(receivePost(await FakebookAPIUtil.updatePost(post)));
 
 // export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
@@ -77,9 +66,17 @@ export const createComment = comment => dispatch => (
     .then(newComment => dispatch(receiveComment(newComment)),
           err => dispatch(receiveErrors(err.responseJSON)))
 );
-export const deleteComment = id => async (dispatch) => {
-  return await dispatch(removeComment(await FakebookAPIUtil.deleteComment(id)));
-};
-export const updateComment = comment => async (dispatch) => {
-  return dispatch(receiveComment(await FakebookAPIUtil.updateComment(comment)));
-};
+export const deleteComment = id => async (dispatch) => dispatch(removeComment(await FakebookAPIUtil.deleteComment(id)));
+export const updateComment = comment => async (dispatch) => dispatch(receiveComment(await FakebookAPIUtil.updateComment(comment)));
+
+//usersReducer will receive this:
+export const RECEIVE_FRIEND = 'RECEIVE_FRIEND';
+
+export const receiveFriend = relp => ({
+  type: RECEIVE_FRIEND,
+  relp
+});
+
+export const createFriend = relp => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.createFriend(relp)));
+export const deleteFriend = id => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.deleteFriend(id)));
+export const updateFriend = relp => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.updateFriend(relp)));

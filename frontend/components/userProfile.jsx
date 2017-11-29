@@ -58,7 +58,7 @@ export default class UserProfile extends React.Component {
 
             {user && user.cover_photo ? <div>
               <img className='cover-photo' src={user.cover_photo}/>
-              <i className='fa fa-pencil-square-o fa-2x springgreen' id='cover-edit'></i>
+              <i className='fa fa-pencil-square-o fa-2x springgreen text-shadow-black' id='cover-edit'></i>
             </div> : <div>
               <button className='cover-photo-button plus-button'>+ cover photo</button>
             </div>}
@@ -72,7 +72,7 @@ export default class UserProfile extends React.Component {
             <div className='profile-pic' onClick={this.select('select-profile-pic')}>
               {user && user.profile_pic ? <div>
                   <img className='profile-pic' src={user.profile_pic}/>
-                  <i className='fa fa-pencil-square-o fa-2x springgreen' id='profile-edit'></i>
+                  <i className='fa fa-pencil-square-o fa-2x springgreen text-shadow-black' id='profile-edit'></i>
               </div> : <button className='plus-button'>+ profile photo</button>}
 
               <input type="file" id="select-profile-pic" onChange={this.handleSubmit('profile_pic')}/>
@@ -82,7 +82,7 @@ export default class UserProfile extends React.Component {
               <a href={user.custom_link} target='_blank'>
                 {user.username}
               </a> : user ? user.username : ''}&nbsp;
-              <i className='fa fa-link' onClick={() => $('.fa-link').toggleClass('visible')}>
+              <i className='fa fa-link springgreen text-shadow-black' onClick={() => $('.fa-link').toggleClass('visible')}>
                 &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
                   <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={this.state.custom_link} />
                   <input type='submit' value='save'/>
