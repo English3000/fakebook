@@ -11,16 +11,16 @@
 #
 
 class Friend < ApplicationRecord
-  STATUSES = %w(TRUE PENDING FALSE).freeze #friend, pending, unfriend
+  STATUSES = %w(APPROVED PENDING).freeze #friend, pending, unfriend
   validates :user_id, :friend_id, :status, presence: true
   validates :status, inclusion: STATUSES
 
-  belongs_to :requester,
+  belongs_to :friend_inverse,
     class_name: :User,
     primary_key: :id,
     foreign_key: :user_id
 
-  belongs_to :receiver,
+  belongs_to :friend,
     class_name: :User,
     primary_key: :id,
     foreign_key: :friend_id

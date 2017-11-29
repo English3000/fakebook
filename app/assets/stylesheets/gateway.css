@@ -86,7 +86,6 @@
 }
 
 #sign-up:focus, #sign-up:hover/*, #sign-in:focus, #sign-in:hover*/ {
-  box-shadow: 0 0 3px black;
 }
 
 .bump-left {
@@ -100,7 +99,7 @@
   border-width: 32px 0 32px 55px;
   border-color: transparent transparent transparent palegreen;
   border-radius: 0;
-  box-shadow: 0 0 3px black;
+  /*box-shadow: 0 0 3px black;*/
 }
 
 #sign-in p {
@@ -113,13 +112,17 @@
   top: -17.5px;
 }
 
-/*.gateway-form:within-focus #sign-in {
-  w/o child selector, also fails
-}*/
+.gateway-form:focus-within #sign-in {
+  box-shadow: 0 0 3px black;
+}
 
-/*#sign-up:hover + #sign-in {
+.gateway-form:focus-within #sign-up:hover {
+  box-shadow: 0 0 3px black;
+}
+
+#sign-up:hover ~ button#sign-in {
   box-shadow: none;
-}*/
+}
 
 .bump-more-left {
   padding-left: 5px;

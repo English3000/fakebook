@@ -1,17 +1,17 @@
 class Api::FriendsController < ApplicationController
-  def create
+  def create #request
     @friendship = Friend.new(friend_params)
     @friendship.save
     render :show
   end
 
-  def update
+  def update #accept
     @friendship = Friend.find(params[:id])
     @friendship.update_attributes(friend_params)
     render :show
   end
 
-  def destroy
+  def destroy #reject
     @friendship = Friend.find(params[:id])
     @friendship.destroy
     render :show

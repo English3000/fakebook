@@ -31,7 +31,25 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
-  has_many :friends
+
+  has_many :friendships,
+    class_name: :Friend,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :friendships_inverse,
+    class_name: :Friend,
+    primary_key: :id,
+    foreign_key: :friend_id
+
+  def friends
+    friendships.where(status: 'APPROVED').pluck(:friend_id) +
+      friendships_inverse.where(status: 'APPROVED').pluck(:user_id)
+  end
+
+  def requests
+    friendships_inverse.where(status: 'PENDING').pluck(:user_id)
+  end
 
   after_initialize :ensure_token
 

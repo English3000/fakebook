@@ -8,12 +8,14 @@
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
+Friend.destroy_all
 
 user1 = User.create({username: 'Alexander_Marks-Katz', password: '12345678',
   profile_pic: File.new('app/assets/images/AMK-profile-pic.jpg'),
   custom_link: 'https://www.linkedin.com/in/alexander-marks-katz-78a09a20/'})
 user2 = User.create({username: 'demoUser', password: 'demoUser',
   cover_photo: File.new('app/assets/images/israel-cover-photo.jpg')})
+user3 = User.create({username: 'newestUser', password: 'newestUser'})
 
 post1 = Post.create({user_id: user1.id, body: "Don't delete me! :("})
 post2 = Post.create({user_id: user2.id, body: 'long post.............................................................'})
@@ -22,3 +24,6 @@ post3 = Post.create({user_id: user1.id, body: "fyi, welcome!"})
 comment1 = Comment.create({user_id: user2.id, post_id: post1.id, body: "I won't."})
 comment2 = Comment.create({user_id: user1.id, post_id: post1.id, body: "You can't!"})
 comment3 = Comment.create({user_id: user1.id, post_id: post2.id, body: "I've seen longer..."})
+
+friendship1 = Friend.create({user_id: user1.id, friend_id: user2.id, status: 'APPROVED'})
+friendship2 = Friend.create({user_id: user1.id, friend_id: user3.id, status: 'PENDING'})
