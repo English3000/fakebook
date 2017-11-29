@@ -4,7 +4,7 @@ export default class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: null,
+      body: '',
       user_id: this.props.currentUser
     };
 
@@ -19,7 +19,7 @@ export default class PostForm extends React.Component {
   makePost(event) {
     event.preventDefault();
     this.props.createPost(this.state) //upon success, errors not cleared
-      .then(this.setState({ body: null }))
+      .then(this.setState({ body: '' }))
       .then(() => $('.post-form-errors').addClass('hidden'),
       () => $('.post-form-errors').removeClass('hidden'));
   }

@@ -17,16 +17,18 @@ export default class Comment extends React.Component {
     const { comment, author, currentUser } = this.props;
     // console.log("Comment props: ", this.props);
     return (<li>
-      {author ? <div className='comment flex-top'>
-        <Link className='profile-pic-mini' to={`/users/${author.id}`}>
-          {author.profile_pic ?
-            <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
-        </Link>
-        <p className='comment-body'>
-          <Link className='green' to={`/users/${author.id}`}>
-            {author.username}
-          </Link>&ensp;{comment.body}
-        </p>
+      {author ? <div className='comment flex-top flex-between'>
+        <div className='flex-top'>
+          <Link className='profile-pic-mini' to={`/users/${author.id}`}>
+            {author.profile_pic ?
+              <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
+          </Link>
+          <p className='comment-body'>
+            <Link className='green' to={`/users/${author.id}`}>
+              {author.username}
+            </Link>&ensp;{comment.body}
+          </p>
+        </div>
         &ensp;{currentUser === comment.user_id ?
           <i className='delete-button fa fa-trash shift-down fa-lg springgreen' onClick={this.delete}></i> :
           ''}

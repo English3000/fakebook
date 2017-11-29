@@ -6,8 +6,8 @@
 }
 
 .post {
-  margin-top: 12.5px;
-  padding: 15px;
+  margin-top: 15px;
+  padding: 17.5px 15px 12.5px;
   background-color: white;
   border: lightgray 1px solid;
   border-radius: 5px 5px 0 0;
@@ -28,7 +28,7 @@
 
 .post-input {
   resize: none;
-  width: 342px;
+  width: 392px;
   min-height: 60px;
   padding: 0 0 15px;
   margin-right: 7px;
@@ -53,24 +53,25 @@
 }
 
 .post-author {
-  margin-bottom: 10px;
+  margin-bottom: 2.5px;
 }
 
 .post-body {
   display: inline-block;
   text-align: justify;
-  padding-left: 13px;
-  max-width: 330px;
+  padding-left: 33px;
+  max-width: 360px;
   overflow: auto;
 }
 
 .delete-button {
   display: inline;
   visibility: hidden;
+  // margin-right: -1px;
 }
 
 .shift-down {
-  margin-top: 3px;
+  margin-top: 4.5px;
 }
 
 .post:hover .delete-button {

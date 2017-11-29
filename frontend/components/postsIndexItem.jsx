@@ -38,24 +38,26 @@ export default class PostsIndexItem extends React.Component {
     return (
       <li>
         <article className='post'>
-          <div className='post-author'>{author ? <div className='flex-middle'>
-            <Link className='profile-pic-mini' to={`/users/${author.id}`}>
-              {author.profile_pic ?
-                <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
-            </Link>&ensp;
-            <Link className='green' to={`/users/${author.id}`}>
-              {author.username}
-            </Link>&nbsp;{
-              new Date(Date.now()).getDate() === new Date(post.updated_at).getDate() ?
-              <span className='gray'>at&nbsp;<em>{new Date(post.updated_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: true})}</em></span> :
-              <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>
-            }
-          </div> : ''}</div>
-          <div className='flex-top'>
+          <div className='post-author'>
+            {author ? <div className='flex-between flex-middle'>
+              <div className='flex-middle'>
+                <Link className='profile-pic-mini' to={`/users/${author.id}`}>
+                  {author.profile_pic ?
+                    <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
+                </Link>&ensp;
+                <Link className='green' to={`/users/${author.id}`}>
+                  {author.username}
+                </Link>&nbsp;
+                {new Date(Date.now()).getDate() === new Date(post.updated_at).getDate() ?
+                  <span className='gray'>at&nbsp;<em>{new Date(post.updated_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: true})}</em></span> :
+                  <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>}
+              </div>
+              {currentUser === author.id ?
+                <i className='delete-button fa fa-trash fa-lg springgreen' onClick={this.delete}></i> : ''}
+            </div> : ''}
+          </div>
+          <div className='flex'>
             <p className='post-body'>{post.body}</p>
-            &ensp;{author ? currentUser === author.id ?
-              <i className='delete-button fa fa-trash fa-lg springgreen shift-down' onClick={this.delete}></i> :
-              '' : ''}
           </div>
           {/* <p>{post.likes}</p> */}
           {/* 3 most recent comments chron'ly */}

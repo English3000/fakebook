@@ -28,12 +28,12 @@ export default class PostsIndex extends React.Component {
   }
 
   render() {
-    console.log("PostsIndex props: ", this.props);
+    // console.log("PostsIndex props: ", this.props);
     const { users, posts } = this.props;
     const parentProps = this.props;
 
     return (<div>
-      <ul className='center-400px'>
+      <ul className='center-450px'>
         <PostFormContainer errors={this.props.errors.session} />
         {posts && posts.all_ids.length > 0 ? posts.all_ids.map(id => {
           const post = posts.by_id[id];

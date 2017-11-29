@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
-  padding: 10px 15px 10px 35px;
+  padding: 10px 15px 12.5px 48px;
   background-color: /*honeydew; rgba(152, 251, 152, 0.1);*/ aliceblue;
   border: lightgray 1px solid;
   border-top: 0;
@@ -24,17 +24,17 @@
 
 .comment-input {
   resize: none;
-  width: 281px;
+  width: 316px;
   height: 24px;
   padding: 6px 1px 4px 10px;
-  margin: 0 6px 0 10px;
+  margin: 0 8px 0 10px;
   background-color: white;
   border-radius: 25px;
   box-shadow: 0 0 1px lightgray;
 }
 
 .comment-body {
-  margin-left: 9px;
+  margin: 2.5px 0 0 9px;
 }
 
 .comment-button {
