@@ -51,17 +51,17 @@ export const updateComment = comment => $.ajax({
 
 export const createFriend = relationship => $.ajax({
   method: 'POST',
-  url: `api/friends/${relationship.id}`,
+  url: `api/friendships/${relationship.id}`,
   data: {relationship}
 });
 export const updateFriend = relationship => $.ajax({
   method: 'PATCH',
-  url: `api/friends/${relationship.id}`,
+  url: `api/friendships/${relationship.id}`,
   data: {relationship}
 });
 export const deleteFriend = id => $.ajax({
   method: 'DELETE',
-  url: `api/friends/${id}`
+  url: `api/friendships/${id}`
 });
 
 // export const likePost = post => $.ajax({

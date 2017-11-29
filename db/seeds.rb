@@ -8,7 +8,7 @@
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
-Friend.destroy_all
+Friendship.destroy_all
 
 user1 = User.create({username: 'Alexander_Marks-Katz', password: '12345678',
   profile_pic: File.new('app/assets/images/AMK-profile-pic.jpg'),
@@ -25,5 +25,5 @@ comment1 = Comment.create({user_id: user2.id, post_id: post1.id, body: "I won't.
 comment2 = Comment.create({user_id: user1.id, post_id: post1.id, body: "You can't!"})
 comment3 = Comment.create({user_id: user1.id, post_id: post2.id, body: "I've seen longer..."})
 
-friendship1 = Friend.create({user_id: user1.id, friend_id: user2.id, status: 'APPROVED'})
-friendship2 = Friend.create({user_id: user1.id, friend_id: user3.id, status: 'PENDING'})
+friendship1 = Friendship.create({user_id: user1.id, friend_id: user2.id, status: 'APPROVED'})
+friendship2 = Friendship.create({user_id: user1.id, friend_id: user3.id, status: 'PENDING'})

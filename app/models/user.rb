@@ -31,14 +31,10 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
-
-  has_many :friendships,
-    class_name: :Friend,
-    primary_key: :id,
-    foreign_key: :user_id
+  has_many :friendships
 
   has_many :friendships_inverse,
-    class_name: :Friend,
+    class_name: :Friendship,
     primary_key: :id,
     foreign_key: :friend_id
 
