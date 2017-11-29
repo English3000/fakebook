@@ -22,7 +22,7 @@
   box-shadow: 0 0 1px lightgray;
 }
 
-.post-form:hover/*, .post-input:focus .post-form*/ {
+.post-form:hover, .post-form:focus-within {
   background-color: springgreen;
 }
 

@@ -18,7 +18,7 @@
   background-color: /*palegreen;*/ rgba(152, 251, 152, 0.6);
 }
 
-.comment-form:hover {
+.comment-form:hover, .comment-form:focus-within {
   background-color: palegreen;
 }
 

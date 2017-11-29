@@ -44,10 +44,6 @@
   width: 318px;
 }
 
-#sign-up:focus, #sign-up:hover {
-  box-shadow: 0 0 3px black;
-}
-
 .gateway-form button p {
   font-size: 14px;
 }
@@ -89,6 +85,10 @@
   top: 19px;
 }
 
+#sign-up:focus, #sign-up:hover/*, #sign-in:focus, #sign-in:hover*/ {
+  box-shadow: 0 0 3px black;
+}
+
 .bump-left {
   padding-left: 4px;
 }
@@ -113,7 +113,11 @@
   top: -17.5px;
 }
 
-/*#sign-up:hover #sign-in {  DOESN'T WORK; work-around === JS
+/*.gateway-form:within-focus #sign-in {
+  w/o child selector, also fails
+}*/
+
+/*#sign-up:hover + #sign-in {
   box-shadow: none;
 }*/
 
