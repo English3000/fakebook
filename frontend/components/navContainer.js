@@ -13,7 +13,7 @@ const mapStateToProps = ({ session, entities }) => {
 
 const mapDispatchToProps = dispatch => ({
   acceptFriendship: relp => dispatch(acceptFriendship(relp)),
-  rejectFriendship: id => dispatch(rejectFriendship(id)),
+  rejectFriendship: relp => dispatch(rejectFriendship(relp)),
   signOut: () => dispatch(signOut())
 });
 

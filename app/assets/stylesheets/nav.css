@@ -56,10 +56,56 @@
   color: darkgreen;
 }
 
-.fa-users:hover {
+.fa-sign-out:hover {
   color: palegreen;
 }
 
-.fa-sign-out:hover {
-  color: palegreen;
+.friend-requests-list {
+  position: fixed;
+  margin-left: -143px;
+  margin-top: 11px;
+}
+
+.friend-request-item {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  height: 40px;
+  width: 183px;
+  padding: 4px 12px 4px 12px;
+  border: forestgreen 1px solid;
+  border-top: 0;
+  background-color: aliceblue;
+  cursor: default;
+}
+
+.friend-request-item ~ i:hover {
+  color: darkgreen;
+}
+
+.friend-request-item a:hover span {
+  text-shadow: none;
+}
+
+.notif-button {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
+.reject-mini {
+  font-size: 24px;
+  margin-left: 12px;
+  box-shadow: 0 0 2px black;
+}
+
+.reject-mini span {
+  position: relative;
+  top: -0.5px;
+  left: -0.2px;
+}
+
+.accept-mini {
+  font-size: 16px;
+  box-shadow: 0 0 1px darkgray;
 }

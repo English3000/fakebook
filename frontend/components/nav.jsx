@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FriendRequestItem } from './friendRequestItem';
 
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
+    this.accept = this.accept.bind(this);
+    this.reject = this.reject.bind(this);
     this.signOut = this.signOut.bind(this);
   }
 
@@ -30,7 +33,13 @@ export default class Nav extends React.Component {
           </Link>
           <span className='darkgreen'>&ensp;&nbsp;|&ensp;&nbsp;</span>
           <Link to='/posts'>Home</Link>
-          <i className='fa fa-users fa-lg pointer darkgreen'></i>
+          <i className='fa fa-users fa-lg pointer darkgreen' onClick={() => $('.friend-requests-list').toggleClass('hidden')}>
+            {users[currentUser] ? <span className='palegreen'>{users[currentUser].request_ids.length}</span> : ''}
+            {users[currentUser] ? <ul className='friend-requests-list hidden'>
+              {users[currentUser].request_ids.map(requestId => (
+                <FriendRequestItem key={requestId} requestId={requestId} parentProps={this.props}/>) )}
+            </ul> : ''}
+          </i>
           <i className='fa fa-sign-out fa-lg pointer darkgreen' onClick={this.signOut}></i>
         </nav>
       </div>
