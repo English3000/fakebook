@@ -17,9 +17,9 @@ user2 = User.create({username: 'demoUser', password: 'demoUser',
   cover_photo: File.new('app/assets/images/israel-cover-photo.jpg')})
 user3 = User.create({username: 'newestUser', password: 'newestUser'})
 
-post1 = Post.create({user_id: user1.id, body: "Don't delete me! :("})
-post2 = Post.create({user_id: user2.id, body: 'long post.............................................................'})
-post3 = Post.create({user_id: user1.id, body: "fyi, welcome!"})
+post1 = Post.create({user_id: user1.id, body: "Don't delete me! :(", audience: 'PUBLIC'})
+post2 = Post.create({user_id: user2.id, body: 'long post.............................................................', audience: 'FRIENDS'})
+post3 = Post.create({user_id: user1.id, body: "fyi, welcome!", audience: 'PRIVATE'})
 
 comment1 = Comment.create({user_id: user2.id, post_id: post1.id, body: "I won't."})
 comment2 = Comment.create({user_id: user1.id, post_id: post1.id, body: "You can't!"})

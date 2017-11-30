@@ -10,11 +10,10 @@
 #
 
 class Post < ApplicationRecord
-  validates :body, presence: true
+  PRIVACIES = %w(PUBLIC FRIENDS PRIVATE)
+  validates :body, :audience, presence: true
+  validates :audience, inclusion: PRIVACIES
 
-  belongs_to :user#,
-    # class_name: :User,
-    # primary_key: :id,
-    # foreign_key: :user_id
+  belongs_to :user
   has_many :comments, dependent: :destroy
 end
