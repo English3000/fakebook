@@ -61,7 +61,7 @@ h2 {
 
 .ghostwhite-to-bottom {
   background-color: ghostwhite;
-  min-height: 775px;
+  min-height: 803px;
   height: 100%; /* not working */
 }
 

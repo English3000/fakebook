@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GatewayFormContainer from './gatewayFormContainer';
-// import SignUpFormContainer from './signUpFormContainer';
 import DemoButtonContainer from './demoButtonContainer';
 
 export default () => (
