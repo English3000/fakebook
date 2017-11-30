@@ -30,7 +30,7 @@ export default () => (
                 <h3 className='feature'>Comments</h3>
               </div>
             </section>
-            <DemoButtonContainer/>
+            <DemoButtonContainer/> 
           </div>
         </div>
       </div>
