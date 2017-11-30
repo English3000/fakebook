@@ -19,14 +19,20 @@ export default class GatewayForm extends React.Component {
     event.preventDefault();
     this.props.signUp(this.state)
       .then(() => $('.gateway-errors').addClass('hidden'),
-      () => $('.gateway-errors').removeClass('hidden'));
+      () => {
+        $('.gateway-errors').removeClass('hidden');
+        $('#sign-up').blur();
+      });
   }
 
   signIn(event) {
     event.preventDefault();
     this.props.signIn(this.state)
       .then(() => $('.gateway-errors').addClass('hidden'),
-      () => $('.gateway-errors').removeClass('hidden'));
+      () => {
+        $('.gateway-errors').removeClass('hidden');
+        $('#sign-in').blur();
+      });
   }
 
   handleEnter(event) {

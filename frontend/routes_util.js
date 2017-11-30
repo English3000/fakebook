@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 const Auth = ({ currentUserId, path, component: Component }) => (
   <Route path={path} render={props => (
-    currentUserId ? <Redirect to={`/users/${currentUserId}`}/> :
+    currentUserId ? <Redirect to={'/posts'}/> :
       <Component {...props}/>
   )} />
 );

@@ -26,6 +26,10 @@
   background-color: springgreen;
 }
 
+.post-form:hover .post-input::placeholder, .post-form:focus-within .post-input::placeholder {
+  color: black;
+}
+
 .post-input {
   resize: none;
   width: 392px;
@@ -49,7 +53,6 @@
 
 .absolute {
   position: absolute;
-  color: white;
 }
 
 .post-author {

@@ -12,6 +12,9 @@ export default class UserProfile extends React.Component {
 
     this.select = this.select.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.request = this.request.bind(this);
+    this.accept = this.accept.bind(this);
+    this.reject = this.reject.bind(this);
   }
 
   componentDidMount() {
@@ -60,7 +63,7 @@ export default class UserProfile extends React.Component {
               <img className='cover-photo' src={user.cover_photo}/>
               <i className='fa fa-pencil-square-o fa-2x springgreen text-shadow-black' id='cover-edit'></i>
             </div> : <div>
-              <button className='cover-photo-button plus-button'>+ cover photo</button>
+              <button className='friend-button cover-photo-button'>+ cover photo</button>
             </div>}
 
            <input type="file"
@@ -69,25 +72,33 @@ export default class UserProfile extends React.Component {
           </div>
 
           <div className='flex-bottom user-info-div'>
-            <div className='profile-pic' onClick={this.select('select-profile-pic')}>
+            <div className='profile-pic flex-middle flex-center' onClick={this.select('select-profile-pic')}>
               {user && user.profile_pic ? <div>
                   <img className='profile-pic' src={user.profile_pic}/>
                   <i className='fa fa-pencil-square-o fa-2x springgreen text-shadow-black' id='profile-edit'></i>
-              </div> : <button className='plus-button'>+ profile photo</button>}
+              </div> : <button className='friend-button'>+ profile photo</button>}
 
               <input type="file" id="select-profile-pic" onChange={this.handleSubmit('profile_pic')}/>
             </div>
 
-            <div id='username'>{user && user.custom_link ?
+            <div id='username'>{user ? user.custom_link ?
               <a href={user.custom_link} target='_blank'>
-                {user.username}
-              </a> : user ? user.username : ''}&nbsp;
-              <i className='fa fa-link springgreen text-shadow-black' onClick={() => $('.fa-link').toggleClass('visible')}>
-                &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
-                  <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={this.state.custom_link} />
-                  <input type='submit' value='save'/>
-                </form>
-              </i>
+                {user.username}&nbsp;
+                <i className='fa fa-link springgreen text-shadow-black' onClick={() => $('.fa-link').toggleClass('visible')}>
+                  &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
+                    <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={user.custom_link} />
+                    <input type='submit' value='save'/>
+                  </form>
+                </i>
+              </a> : <div>
+                {user.username}&nbsp;
+                <i className='fa fa-link springgreen text-shadow-black' onClick={() => $('.fa-link').toggleClass('visible')}>
+                  &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
+                    <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={this.state.custom_link} />
+                    <input type='submit' value='save'/>
+                  </form>
+                </i>
+              </div> : ''}
             </div>
           </div>
         </section>
@@ -114,10 +125,36 @@ export default class UserProfile extends React.Component {
               </a> : user ? user.username : ''}
             </div>
 
-            <button className='plus-button friend-button'>+ friend</button>
-          </div>
+            {user && users[this.props.currentUser].friend_ids.includes(user.id) ?
+              <span className='friend-button unfriend-button absolute shift-left'>friend <button onClick={this.reject}>&times;</button></span> :
+            user && users[this.props.currentUser].request_ids.includes(user.id) ? <div className='request-pending-div flex absolute'>
+              <button className='accept-friend-button' onClick={this.accept}>&#10004;</button>
+              <span className='friend-button yellow'>friend</span>
+              <button className='reject-friend-button' onClick={this.reject}><span>&times;</span></button>
+            </div> : <button className='friend-button absolute shift-left' onClick={this.request}>+ friend</button>}
+          </div>  {/* bug: see +friend for a sec as loads */}
         </section>
       </div>);
     }
+  }
+
+  request(event) {
+    event.preventDefault();
+    this.props.requestFriendship({ user_id: this.props.currentUser,
+                                   friend_id: this.props.match.params.id,
+                                   status: 'PENDING' });
+  }
+
+  accept(event) {
+    event.preventDefault();
+    this.props.acceptFriendship({ friend_id: this.props.currentUser,
+                                  user_id: this.props.match.params.id,
+                                  status: 'APPROVED' });
+  }
+
+  reject(event) {
+    event.preventDefault();
+    this.props.rejectFriendship({ unfriender_id: this.props.currentUser,
+                                  unfriended_id: this.props.match.params.id });
   }
 }

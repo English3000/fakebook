@@ -22,6 +22,11 @@
   background-color: palegreen;
 }
 
+.comment-form:hover .comment-input::placeholder,
+.comment-form:focus-within .comment-input::placeholder {
+  color: black;
+}
+
 .comment-input {
   resize: none;
   width: 316px;

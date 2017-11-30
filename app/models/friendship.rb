@@ -12,4 +12,10 @@ class Friendship < ApplicationRecord
     class_name: :User,
     primary_key: :id,
     foreign_key: :friend_id
+
+  def self.find_friendship(id1, id2) #users' ids
+    self.where(user_id: id1, friend_id: id2).or(
+      self.where(user_id: id2, friend_id: id1)
+    ).first
+  end
 end

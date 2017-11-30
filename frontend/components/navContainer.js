@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { acceptFriendship, rejectFriendship } from '../all_actions';
 import { signOut } from '../session_actions';
 import Nav from './nav';
 
@@ -11,6 +12,8 @@ const mapStateToProps = ({ session, entities }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  acceptFriendship: relp => dispatch(acceptFriendship(relp)),
+  rejectFriendship: id => dispatch(rejectFriendship(id)),
   signOut: () => dispatch(signOut())
 });
 

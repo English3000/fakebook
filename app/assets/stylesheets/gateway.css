@@ -85,9 +85,6 @@
   top: 19px;
 }
 
-#sign-up:focus, #sign-up:hover/*, #sign-in:focus, #sign-in:hover*/ {
-}
-
 .bump-left {
   padding-left: 4px;
 }
@@ -120,7 +117,7 @@
   box-shadow: 0 0 3px black;
 }
 
-#sign-up:hover ~ button#sign-in {
+#sign-up:hover ~ #sign-in {
   box-shadow: none;
 }
 
@@ -132,6 +129,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   margin-right: 20px;
   background-color: red;
+  color: white;
   border: 2px solid black;
   border-radius: 5px;
   padding: 5px;

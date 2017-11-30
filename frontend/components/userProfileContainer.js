@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getUsers, updateUser/*, friendUser, unfriendUser*/ } from '../all_actions';
+import { getUsers, updateUser,
+         requestFriendship, acceptFriendship, rejectFriendship } from '../all_actions';
+import {  } from '../all_actions';
 import UserProfile from './userProfile';
 
 const mapStateToProps = ({ session, entities }, ownProps) => {
@@ -13,7 +15,10 @@ const mapStateToProps = ({ session, entities }, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   getUsers: () => dispatch(getUsers()),
-  updateUser: user => dispatch(updateUser(user))
+  updateUser: user => dispatch(updateUser(user)),
+  requestFriendship: (requesterId, receiverId) => dispatch(requestFriendship(requesterId, receiverId)),
+  acceptFriendship: (requesterId, receiverId) => dispatch(acceptFriendship(requesterId, receiverId)),
+  rejectFriendship: id => dispatch(rejectFriendship(id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserProfile));

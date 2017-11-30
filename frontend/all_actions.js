@@ -70,13 +70,23 @@ export const deleteComment = id => async (dispatch) => dispatch(removeComment(aw
 export const updateComment = comment => async (dispatch) => dispatch(receiveComment(await FakebookAPIUtil.updateComment(comment)));
 
 //usersReducer will receive this:
-export const RECEIVE_FRIEND = 'RECEIVE_FRIEND';
+export const RECEIVE_FRIEND_REQUEST = 'RECEIVE_FRIEND_REQUEST';
+export const RECEIVE_FRIENDSHIP = 'RECEIVE_FRIENDSHIP';
+export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 
-export const receiveFriend = relp => ({
-  type: RECEIVE_FRIEND,
+export const receiveFriendRequest = relp => ({
+  type: RECEIVE_FRIEND_REQUEST,
+  relp
+});
+export const receiveFriendship = relp => ({
+  type: RECEIVE_FRIENDSHIP,
+  relp
+});
+export const removeFriendship = relp => ({
+  type: REMOVE_FRIENDSHIP,
   relp
 });
 
-export const createFriend = relp => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.createFriend(relp)));
-export const deleteFriend = id => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.deleteFriend(id)));
-export const updateFriend = relp => async (dispatch) => dispatch(receiveFriend(await FakebookAPIUtil.updateFriend(relp)));
+export const requestFriendship = relp => async (dispatch) => dispatch(receiveFriendRequest(await FakebookAPIUtil.createFriendship(relp)));
+export const rejectFriendship = relp => async (dispatch) => dispatch(removeFriendship(await FakebookAPIUtil.deleteFriendship(relp)));
+export const acceptFriendship = relp => async (dispatch) => dispatch(receiveFriendship(await FakebookAPIUtil.updateFriendship(relp)));

@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users do
       resources :posts, only: [:index]
+      # resources :friendships, only: [:post] # :id == non-currentUser
     end
     resource :session
     resources :posts
     resources :comments
+    resource :friendships
   end
 end
