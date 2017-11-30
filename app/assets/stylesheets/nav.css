@@ -66,8 +66,12 @@
   margin-top: 11px;
 }
 
+.friend-requests-list:focus-within {
+  visibility: visible;
+}
+
 .friend-request-item {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   color: black;
   height: 40px;
@@ -77,6 +81,10 @@
   border-top: 0;
   background-color: aliceblue;
   cursor: default;
+}
+
+.max-px80 {
+  max-width: 80px;
 }
 
 .friend-request-item ~ i:hover {

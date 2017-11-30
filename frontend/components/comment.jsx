@@ -5,7 +5,14 @@ import CommentFormContainer from './commentFormContainer';
 export default class Comment extends React.Component {
   constructor(props) {
     super(props);
+    this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
+  }
+
+  update(event) {
+    event.preventDefault();
+    const { parentProps, post } = this.props;
+    parentProps.updatePost(post);
   }
 
   delete(event) {
@@ -29,9 +36,10 @@ export default class Comment extends React.Component {
             </Link>&ensp;{comment.body}
           </p>
         </div>
-        &ensp;{currentUser === comment.user_id ?
-          <i className='delete-button fa fa-trash shift-down fa-lg springgreen' onClick={this.delete}></i> :
-          ''}
+        &ensp;{currentUser === comment.user_id ? <div>
+          {/* <i className='delete-button fa fa-pencil fa-lg springgreen' onClick={this.update}></i>
+          &emsp;*/}<i className='delete-button fa fa-trash shift-down fa-lg springgreen' onClick={this.delete}></i>
+        </div> : ''}
       </div> : ''}
       <div className='comment-details-row'></div>
       {/* <CommentFormContainer postId={comment.post_id} commentId={comment.id}

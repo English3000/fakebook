@@ -1,7 +1,7 @@
 json.by_id do
   @comments.each do |comment|
     json.set! comment.id do
-      json.extract! comment, :id, :user_id, :post_id, :body, :updated_at#, :comment_id
+      json.extract! comment, :id, :user_id, :post_id, :body#, :updated_at#, :comment_id
     end
   end
 end

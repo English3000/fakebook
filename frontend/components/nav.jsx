@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FriendRequestItem } from './friendRequestItem';
+import FriendRequestItem from './friendRequestItem';
 
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.accept = this.accept.bind(this);
-    this.reject = this.reject.bind(this);
     this.signOut = this.signOut.bind(this);
   }
 

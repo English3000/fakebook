@@ -1,5 +1,6 @@
 import { RECEIVE_POSTS,
          RECEIVE_POST, RECEIVE_COMMENT,
+         UPDATE_POST, UPDATE_COMMENT,
          REMOVE_POST, REMOVE_COMMENT } from '../all_actions';
 import merge from 'lodash/merge';
 
@@ -24,6 +25,9 @@ export default (state = _defaultState, action) => {
       newState.posts.all_ids.unshift(action.content.post.id);
       newState.comments = merge(action.content.comments, newState.comments);
       return newState;
+    case UPDATE_POST:
+      newState.posts.by_id[action.content.post.id] = action.content.post;
+      return newState;
     case REMOVE_POST:
       delete newState.posts.by_id[action.postId];
       newState.posts.all_ids.splice(newState.posts.all_ids.indexOf(action.postId), 1);
@@ -31,6 +35,9 @@ export default (state = _defaultState, action) => {
     case RECEIVE_COMMENT:
       newState.comments[action.comment.id] = action.comment;
       newState.posts.by_id[action.comment.post_id].comment_ids.push(action.comment.id);
+      return newState;
+    case UPDATE_COMMENT:
+      newState.comments[action.comment.id] = action.comment;
       return newState;
     case REMOVE_COMMENT:
       delete newState.comments[action.comment.id];

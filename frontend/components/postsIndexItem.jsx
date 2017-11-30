@@ -6,6 +6,8 @@ import Comment from './comment';
 export default class PostsIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.post;
+    this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
   }
   //
@@ -19,21 +21,22 @@ export default class PostsIndexItem extends React.Component {
   //   }
   // }
 
+  update(event) {
+    event.preventDefault();
+    const { parentProps, post } = this.props;
+    parentProps.updatePost(post);
+  }
+
   delete(event) {
     event.preventDefault();
-    const {match, deletePost} = this.props.parentProps;
-    const post = this.props.post;
-    if (match.params.id) {
-      deletePost(post.id, match.params.id);
-    } else {
-      deletePost(post.id);
-    }
+    const { parentProps, post } = this.props;
+    parentProps.deletePost(post.id);
   }
 
   render() {
     // console.log("Post props:", this.props);
     const {post, author} = this.props;
-    const {users, currentUser, comments, deleteComment} = this.props.parentProps;
+    const {users, currentUser, comments, updateComment, deleteComment} = this.props.parentProps;
     const date = new Date();
     return (
       <li>
@@ -53,8 +56,9 @@ export default class PostsIndexItem extends React.Component {
                   <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>}
                 &ensp;<b>({post.audience})</b>
               </div>
-              {currentUser === author.id ?
-                <i className='delete-button fa fa-trash fa-lg springgreen' onClick={this.delete}></i> : ''}
+              {currentUser === author.id ? <div>
+                {/* <i className='delete-button fa fa-pencil fa-lg springgreen' onClick={this.update}></i>
+                &emsp;*/}<i className='delete-button fa fa-trash fa-lg springgreen' onClick={this.delete}></i></div> : ''}
             </div> : ''}
           </div>
           <div className='flex'>
@@ -69,7 +73,8 @@ export default class PostsIndexItem extends React.Component {
             if (comment.post_id === post.id) {
               return <Comment key={comment.id} currentUser={currentUser}
                               comment={comment} author={users[comment.user_id]}
-                              deleteComment={deleteComment} errors={this.props.parentProps.errors}/>;
+                              updateComment={updateComment} deleteComment={deleteComment}
+                              errors={this.props.parentProps.errors}/>;
             }
           })}
           <CommentFormContainer key={post.id} postId={post.id} commentId={null}

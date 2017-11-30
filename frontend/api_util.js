@@ -21,6 +21,11 @@ export const createPost = post => $.ajax({
   url: 'api/posts',
   data: {post}
 });
+export const updatePost = post => $.ajax({
+  method: 'PATCH',
+  url: `api/posts/${post.id}`,
+  data: {post}
+});
 export const deletePost = id => $.ajax({
   method: 'DELETE',
   url: `api/posts/${id}`
@@ -29,6 +34,11 @@ export const deletePost = id => $.ajax({
 export const createComment = comment => $.ajax({
   method: 'POST',
   url: 'api/comments',
+  data: {comment}
+});
+export const updateComment = comment => $.ajax({
+  method: 'PATCH',
+  url: `api/comments/${comment.id}`,
   data: {comment}
 });
 export const deleteComment = id => $.ajax({
@@ -53,16 +63,6 @@ export const deleteFriendship = friendship => $.ajax({
 });
 
 //---
-export const updatePost = post => $.ajax({
-  method: 'PATCH',
-  url: `api/posts/${post.id}`,
-  data: {post}
-});
-export const updateComment = comment => $.ajax({
-  method: 'PATCH',
-  url: `api/comments/${comment.id}`,
-  data: {comment}
-});
 
 // export const likePost = post => $.ajax({
 //   method: 'POST',

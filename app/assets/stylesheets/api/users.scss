@@ -1,8 +1,12 @@
+
 .user-info-div {
   position: absolute;
   top: 166px;
-  width: 852px;
-  margin: 0 9.5px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 31.5px 0 9.5px;
+  margin: 0 auto;
 }
 
 #username {

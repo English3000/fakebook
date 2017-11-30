@@ -28,6 +28,9 @@ export default (state = _nullUser, action) => {
     case RECEIVE_FRIENDSHIP:
       newState[action.relp.user_id].friend_ids.push(action.relp.friend_id);
       newState[action.relp.friend_id].friend_ids.push(action.relp.user_id);
+      newState[action.relp.friend_id].request_ids
+        .splice(newState[action.relp.friend_id].request_ids
+          .indexOf(action.relp.user_id), 1);
       return newState;
     case REMOVE_FRIENDSHIP:
       newState[action.relp.friend_id].request_ids
