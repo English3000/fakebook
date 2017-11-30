@@ -51,6 +51,7 @@ export default class PostsIndexItem extends React.Component {
                 {new Date(Date.now()).getDate() === new Date(post.updated_at).getDate() ?
                   <span className='gray'>at&nbsp;<em>{new Date(post.updated_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: true})}</em></span> :
                   <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>}
+                &ensp;<b>({post.audience})</b>
               </div>
               {currentUser === author.id ?
                 <i className='delete-button fa fa-trash fa-lg springgreen' onClick={this.delete}></i> : ''}

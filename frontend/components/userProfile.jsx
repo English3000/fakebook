@@ -99,7 +99,9 @@ export default class UserProfile extends React.Component {
               </div> : ''}
             </div>
           </div>
-          {user ? <span className='friend-button green-b shift-right'>{user.friend_ids.length} friends</span> : ''}
+          {user ? <span className='friend-button green-b shift-right'>
+            {user.friend_ids.length} friend{user.friend_ids.length !== 1 ? 's' : ''}
+          </span> : ''}
           {/* friend list dropdown on hover/click */}
         </div>
       </section></div>);

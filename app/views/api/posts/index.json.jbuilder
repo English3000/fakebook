@@ -28,7 +28,7 @@ json.posts do
   json.by_id do
     @posts.each do |post|
       json.set! post.id do
-        json.extract! post, :id, :user_id, :body, :updated_at
+        json.extract! post, :id, :user_id, :body, :audience, :updated_at
         json.comment_ids do
           json.array! post.comment_ids
         end
