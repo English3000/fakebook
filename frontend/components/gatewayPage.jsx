@@ -7,7 +7,7 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <a href='https://github.com/English3000/fyi' target='_blank'>
+        <a href='https://github.com/English3000/fyi#readme' target='_blank'>
           <p className='logo-font gateway-logo'>f y i</p>
         </a>
         <GatewayFormContainer />
@@ -35,8 +35,8 @@ export default () => (
         </div>
       </div>
     </main>
-    <footer className='gateway-footer flex-middle flex-center'>
-      <a href='https://github.com/English3000/fyi' target='_blank'>find the rest!</a>
+    <footer className='gateway-footer flex-center'>
+      <a href='https://github.com/English3000/fyi#readme' target='_blank'>find the rest!</a>
     </footer>
   </div>
 );
