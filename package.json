@@ -28,7 +28,8 @@
   },
   "scripts": {
     "start": "npm install",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
