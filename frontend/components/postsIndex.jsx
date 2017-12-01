@@ -5,9 +5,6 @@ import LoadingIcon from './loadingIcon';
 import { Link } from 'react-router-dom';
 
 export default class PostsIndex extends React.Component {
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.pageLoading) return <LoadingIcon />;
-  // }
   // componentWillMount() {
   //   this.fetchPosts(this.props);
   // }
