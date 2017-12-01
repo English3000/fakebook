@@ -1,5 +1,5 @@
 {
-  "name": "fyi",
+  "name": "Fakebook",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -23,8 +23,8 @@
     "test": "test"
   },
   "engines": {
-    "node": "6.10.1",
-    "npm": "3.10.10"
+    "node": "4.1.1",
+    "npm": "2.1.x"
   },
   "scripts": {
     "start": "npm install",
@@ -32,13 +32,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/English3000/fyi.git"
+    "url": "git+https://github.com/English3000/fakebook.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/English3000/fyi/issues"
+    "url": "https://github.com/English3000/fakebook/issues"
   },
-  "homepage": "https://github.com/English3000/fyi#readme"
+  "homepage": "https://github.com/English3000/fakebook#readme"
 }
