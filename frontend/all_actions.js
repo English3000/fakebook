@@ -3,7 +3,7 @@ import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
 export const PAGE_LOADING = 'PAGE_LOADING';
 
-export const pageLoading = () => {type: PAGE_LOADING};
+export const pageLoading = () => ({type: PAGE_LOADING});
 
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
@@ -19,7 +19,7 @@ export const receiveUser = user => ({
 });
 
 export const getUsers = () => dispatch => {
-  dispatch(pageLoading);
+  dispatch(pageLoading());
   return FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)));
 };
 
@@ -47,11 +47,11 @@ export const removePost = content => ({
   postId: content.post.id
 });
 export const getPosts = () => async (dispatch) => {
-  dispatch(pageLoading);
+  dispatch(pageLoading());
   return dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
 };
 export const getUserPosts = id => async (dispatch) => {
-  dispatch(pageLoading);
+  dispatch(pageLoading());
   return dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
 }
 export const createPost = post => dispatch => (

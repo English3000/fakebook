@@ -29,7 +29,7 @@ export default class PostForm extends React.Component {
 //this.update doesn't work on refresh
   render() {
     // console.log("Post Form Errors: ", this.props.errors);
-    return (<form className='post post-form flex-middle'>
+    return (<form className='post-form flex-middle'>
       <ul className='post-form-errors absolute hidden' onClick={() => $('.post-form-errors').addClass('hidden')}>
         {this.props.errors.length > 0 ? this.props.errors.map(err => <li key={err}>{err}</li>) : ''}
       </ul>

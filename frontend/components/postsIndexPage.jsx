@@ -4,7 +4,7 @@ import PostsIndexContainer from './postsIndexContainer';
 import LoadingIcon from './loadingIcon';
 
 export default class PostsIndexPage extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.getPosts();
     if (Object.keys(this.props.users).length < 2) this.props.getUsers();
   }
@@ -14,15 +14,12 @@ export default class PostsIndexPage extends React.Component {
   // }
 
   render() {
-    if (this.props.pageLoading) {
-      return <LoadingIcon />;
-    } else {
-      return (<div>
+    return (this.props.pageLoading ? <LoadingIcon /> :
+      <div>
         <NavContainer />
         <div className='px40'></div>
         <PostsIndexContainer posts={this.props.posts}
                              comments={this.props.comments} />
       </div>);
-    }
   }
 }

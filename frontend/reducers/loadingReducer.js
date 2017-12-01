@@ -14,6 +14,7 @@ export default (state = _defaultState, action) => {
       return {pageLoading: true};
     case RECEIVE_USERS:
     case RECEIVE_POSTS:
+      return {pageLoading: false};
     default:
       return state;
   }

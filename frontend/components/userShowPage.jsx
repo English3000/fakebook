@@ -3,6 +3,7 @@ import NavContainer from './navContainer';
 import UserProfileContainer from './userProfileContainer';
 import UserDetailsContainer from './userDetailsContainer';
 import PostsIndexContainer from './postsIndexContainer';
+import LoadingIcon from './loadingIcon';
 
 export default class UserShowPage extends React.Component {
   componentDidMount() {
@@ -21,11 +22,8 @@ export default class UserShowPage extends React.Component {
   // }
 
   render() {
-    if (this.props.pageLoading) {
-      return <LoadingIcon />;
-    } else {
-      console.log(this.props);
-      return (<div>
+    return (this.props.pageLoading ? <LoadingIcon /> :
+      <div>
         <NavContainer />
         <main className='ghostwhite-to-bottom'>
           <div className='center-900px'>
@@ -38,6 +36,5 @@ export default class UserShowPage extends React.Component {
           </div>
         </main>
       </div>);
-    }
   }
 }
