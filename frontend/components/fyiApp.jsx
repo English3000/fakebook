@@ -4,7 +4,6 @@ import GatewayPage from './gatewayPage';
 import UserShowPageContainer from './userShowPageContainer';
 import PostsIndexPageContainer from './postsIndexPageContainer';
 import { ProtectedRoute, AuthRoute } from '../routes_util';
-// import regeneratorRuntime from "regenerator-runtime";
 
 export default () => (
   <div>
