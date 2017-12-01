@@ -37,7 +37,7 @@ export default class PostsIndex extends React.Component {
     const parentProps = this.props;
 
     return (this.props.pageLoading ? <LoadingIcon /> :
-      <div className='ghostwhite-to-bottom'>
+      <div className='ghostwhite-100pct'>
         <ul className='center-450px'>
           <div className='px15'></div>
           <PostFormContainer errors={this.props.errors.session} />

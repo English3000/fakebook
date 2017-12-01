@@ -28,9 +28,14 @@ h2 {
   font-weight: 600;
 }
 
+.ghostwhite-100pct {
+  background-color: ghostwhite;
+  height: 100%;
+}
+
 .ghostwhite {
   background-color: ghostwhite;
-  height: 750px;
+  min-height: 750px;
 }
 
 .palegreen {

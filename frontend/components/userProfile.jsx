@@ -53,7 +53,7 @@ export default class UserProfile extends React.Component {
     const user = users[match.params.id];
 
     if (this.props.currentUser - match.params.id === 0) {
-      return (<div><section>
+      return (<div className='plus-z-index'><section>
         <div className='cover-photo' onClick={this.select('select-cover-photo')}>
           {user && user.cover_photo ? <div>
             <img className='cover-photo' src={user.cover_photo}/>
@@ -104,7 +104,7 @@ export default class UserProfile extends React.Component {
         </div>
       </section></div>);
     } else {
-      return (<div><section><div className='cover-photo'>
+      return (<div className='plus-z-index'><section><div className='cover-photo'>
         {user && user.cover_photo ? <div>
           <img className='cover-photo' src={user.cover_photo}/>
         </div> : ''}

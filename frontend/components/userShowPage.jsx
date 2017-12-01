@@ -25,7 +25,7 @@ export default class UserShowPage extends React.Component {
     return (this.props.pageLoading ? <LoadingIcon /> :
       <div>
         <NavContainer />
-        <main className='ghostwhite-to-bottom'>
+        <main className='ghostwhite-100pct'>
           <div className='center-900px'>
             <UserProfileContainer users={this.props.users} />
             <div className='flex'>
