@@ -9,9 +9,9 @@ export default class UserShowPage extends React.Component {
     if (Object.keys(this.props.users).length < 2) this.props.getUsers();
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.match.params.id !== newProps.match.params.id) newProps.getUsers();
-  }
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.match.params.id !== newProps.match.params.id) newProps.getUsers();
+  // }
 
   render() {
     return (<div>

@@ -30,7 +30,7 @@ export default class UserDetails extends React.Component {
         {currentUser - match.params.id === 0 ? <input className='submit-button' type='submit' value='update'></input> : ''}
       </h2>
       <textarea className='details-intro' placeholder={currentUser - match.params.id === 0 ? "What you'd like everyone to know about you..." : ''}
-                value={user.intro} onChange={this.update('intro')}></textarea>
+                defaultValue={user.intro} onChange={this.update('intro')}></textarea>
       <div className='flex-center detail-inputs'>
         <div className="flex-column flex-middle darkgreen">
           <i className="fa fa-map-marker"></i>

@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     delete window.currentUser;
   }
   const store = configureStore(preloadedState);
-  window.getState = store.getState;
+  // window.getState = store.getState;
   ReactDOM.render(<Connection store={store}/>, document.getElementById('app-display'));
 });
