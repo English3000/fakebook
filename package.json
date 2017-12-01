@@ -1,5 +1,5 @@
 {
-  "name": "Fakebook",
+  "name": "fyi",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -32,13 +32,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/English3000/fakebook.git"
+    "url": "git+https://github.com/English3000/fyi.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexander Marks-Katz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/English3000/fakebook/issues"
+    "url": "https://github.com/English3000/fyi/issues"
   },
-  "homepage": "https://github.com/English3000/fakebook#readme"
+  "homepage": "https://github.com/English3000/fyi#readme"
 }

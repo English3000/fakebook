@@ -38,9 +38,9 @@ comment2 = Comment.create({user_id: user1.id, post_id: post1.id, body: "You can'
 comment3 = Comment.create({user_id: user1.id, post_id: post2.id, body: "I've seen longer..."})
 
 Friendship.create({user_id: user1.id, friend_id: user2.id, status: 'APPROVED'})
-Friendship.create({user_id: user4.id, friend_id: user1.id, status: 'PENDING'})
-Friendship.create({user_id: user4.id, friend_id: user2.id, status: 'PENDING'})
-Friendship.create({user_id: user2.id, friend_id: user4.id, status: 'APPROVED'})
+Friendship.create({user_id: user3.id, friend_id: user1.id, status: 'PENDING'})
+Friendship.create({user_id: user3.id, friend_id: user2.id, status: 'PENDING'})
+Friendship.create({user_id: user2.id, friend_id: user3.id, status: 'APPROVED'})
 
 Like.create({user_id: user2.id, post_id: post4.id})
 Like.create({user_id: user1.id, post_id: post7.id})
