@@ -35,7 +35,6 @@ module.exports = {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /node_modules/,
         loader: 'babel-loader',
-        presets: ['@babel/preset-env'],
         query: {
           presets: ['react', 'es2017']
         }
