@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GatewayPage from './gatewayPage';
 import UserShowPageContainer from './userShowPageContainer';
-import PostsIndexPage from './postsIndexPage';
+import PostsIndexPageContainer from './postsIndexPageContainer';
 import { ProtectedRoute, AuthRoute } from '../routes_util';
 
 export default () => (
@@ -10,7 +10,7 @@ export default () => (
     <Switch>
       <AuthRoute exact path='/' component={GatewayPage}/>
       <ProtectedRoute exact path='/users/:id' component={UserShowPageContainer}/>
-      <ProtectedRoute exact path='/posts' component={PostsIndexPage}/>
+      <ProtectedRoute exact path='/posts' component={PostsIndexPageContainer}/>
     </Switch>
   </div>
 );

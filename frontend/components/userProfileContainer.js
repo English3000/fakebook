@@ -4,9 +4,10 @@ import { getUsers, updateUser,
          requestFriendship, acceptFriendship, rejectFriendship } from '../all_actions';
 import UserProfile from './userProfile';
 
-const mapStateToProps = ({ session, entities }) => ({
+const mapStateToProps = ({ session, entities, ui }) => ({
   currentUser: session.currentUserId,
-  users: entities.users
+  users: entities.users,
+  pageLoading: ui.pageLoading
 });
 
 const mapDispatchToProps = dispatch => ({

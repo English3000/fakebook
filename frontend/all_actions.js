@@ -1,6 +1,10 @@
 import * as FakebookAPIUtil from './api_util';
 import { receiveErrors, RECEIVE_ERRORS } from './session_actions';
 
+export const PAGE_LOADING = 'PAGE_LOADING';
+
+export const pageLoading = () => {type: PAGE_LOADING};
+
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER';
 
@@ -14,7 +18,10 @@ export const receiveUser = user => ({
   user
 });
 
-export const getUsers = () => dispatch => FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)));
+export const getUsers = () => dispatch => {
+  dispatch(pageLoading);
+  return FakebookAPIUtil.getUsers().then(users => dispatch(receiveUsers(users)));
+};
 
 export const updateUser = user => async (dispatch) => dispatch(receiveUser( await FakebookAPIUtil.updateUser(user) ));
 
@@ -39,8 +46,14 @@ export const removePost = content => ({
   type: REMOVE_POST,
   postId: content.post.id
 });
-export const getPosts = () => async (dispatch) => dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
-export const getUserPosts = id => async (dispatch) => dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
+export const getPosts = () => async (dispatch) => {
+  dispatch(pageLoading);
+  return dispatch(receivePosts(await FakebookAPIUtil.getPosts()));
+};
+export const getUserPosts = id => async (dispatch) => {
+  dispatch(pageLoading);
+  return dispatch( receivePosts(await FakebookAPIUtil.getUserPosts(id)) );
+}
 export const createPost = post => dispatch => (
   FakebookAPIUtil.createPost(post)
     .then(newPost => dispatch(receivePost(newPost)),

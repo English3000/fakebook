@@ -8,20 +8,21 @@ import { getUsers,
          unlikePost, unlikeComment } from '../all_actions';
 import PostsIndex from './postsIndex';
 
-const mapStateToProps = ({ entities, session, errors }) => {
+const mapStateToProps = ({ entities, session, errors, ui }) => {
   return {
     currentUser: session.currentUserId,
     users: entities.users,
-    posts: entities.content.posts,
-    comments: entities.content.comments,
+    // posts: entities.content.posts,
+    // comments: entities.content.comments,
+    pageLoading: ui.pageLoading,
     errors: errors
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   getUsers: () => dispatch(getUsers()),
-  getPosts: () => dispatch(getPosts()),
-  getUserPosts: user => dispatch(getUserPosts(user)),
+  // getPosts: () => dispatch(getPosts()),
+  // getUserPosts: user => dispatch(getUserPosts(user)),
   updatePost: post => dispatch(updatePost(post)),
   deletePost: id => dispatch(deletePost(id)),
   updateComment: comment => dispatch(updateComment(comment)),

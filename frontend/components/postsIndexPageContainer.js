@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getUsers, getUserPosts } from '../all_actions';
-import UserShowPage from './userShowPage';
+import { getUsers, getPosts } from '../all_actions';
+import PostsIndexPage from './postsIndexPage';
 
 const mapStateToProps = ({ session, entities, ui }) => ({
   currentUser: session.currentUserId,
@@ -13,7 +13,7 @@ const mapStateToProps = ({ session, entities, ui }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getUsers: () => dispatch(getUsers()),
-  getUserPosts: user => dispatch(getUserPosts(user))
+  getPosts: () => dispatch(getPosts())
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserShowPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostsIndexPage));
