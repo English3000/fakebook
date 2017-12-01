@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130080034) do
+ActiveRecord::Schema.define(version: 20171201003730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 20171130080034) do
     t.integer "cover_photo_file_size"
     t.datetime "cover_photo_updated_at"
     t.string "custom_link"
+    t.text "intro"
+    t.string "location"
+    t.string "job"
+    t.string "school"
+    t.string "partnership"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

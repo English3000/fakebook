@@ -2,16 +2,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getUsers, updateUser,
          requestFriendship, acceptFriendship, rejectFriendship } from '../all_actions';
-import {  } from '../all_actions';
 import UserProfile from './userProfile';
 
-const mapStateToProps = ({ session, entities }, ownProps) => {
-  return ({
-    currentUser: session.currentUserId,
-    users: entities.users,
-    currentPage: ownProps.match.params.id
-  });
-};
+const mapStateToProps = ({ session, entities }) => ({
+  currentUser: session.currentUserId,
+  users: entities.users
+});
 
 const mapDispatchToProps = dispatch => ({
   getUsers: () => dispatch(getUsers()),

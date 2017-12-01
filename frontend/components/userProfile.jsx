@@ -17,11 +17,9 @@ export default class UserProfile extends React.Component {
     this.reject = this.reject.bind(this);
   }
 
-  componentDidMount() {
-    if (Object.keys(this.props.users).length < 2) {
-      this.props.getUsers();
-    }
-  }
+  // componentDidMount() {
+  //   if (Object.keys(this.props.users).length < 2) this.props.getUsers();
+  // }
 
   componentWillReceiveProps(newProps) {
     this.setState(newProps.users[newProps.match.params.id]);
@@ -86,7 +84,7 @@ export default class UserProfile extends React.Component {
                 <i className='fa fa-link springgreen text-shadow-black' onClick={() => $('.fa-link').toggleClass('visible')}>
                   &nbsp;<form id='custom-link-form' onSubmit={this.handleSubmit('custom_link')}>
                     <input type='url' id='custom-link-input' placeholder='http://Set-Custom-Link' defaultValue={user.custom_link} />
-                    <input type='submit' value='save'/>
+                    <input className='submit-button' type='submit' value='save'/>
                   </form>
                 </i>
               </a> : <div>{user.username}

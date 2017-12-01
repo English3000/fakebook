@@ -1,3 +1,43 @@
+.user-details-form {
+  width: 250px;
+  height: 100%;
+  max-height: 400px;
+  font-size: 15px;
+  background-color: rgba(152, 251, 152, 0.2);
+  border-radius: 5px;
+  margin: 15px 15px 0 0px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  box-shadow: 0 0 2px black;
+}
+
+.user-details-form i {
+  margin: 8px 4px 8px 16px;
+}
+
+.user-details-form input {
+  margin: 6px 4px;
+}
+
+.details-title {
+  font-size: 24px;
+  // margin-left: 12px;
+}
+
+.details-intro {
+  resize: none;
+  padding: 5px;
+  width: 90%;
+  height: 125px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px 7.5px;
+  display: block;
+}
+
+.detail-inputs {
+  width: 100%;
+}
 
 .user-info-div {
   position: absolute;
@@ -41,7 +81,7 @@
   width: 140px;
 }
 
-#custom-link-form input[type='submit'] {
+.submit-button {
   background-color: springgreen;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
@@ -53,7 +93,7 @@
   box-shadow: 0 0 2px black;
 }
 
-#custom-link-form input[type='submit']:hover {
+.submit-button:hover {
   background-color: green;
   text-shadow: 0 0 3px white;
 }
