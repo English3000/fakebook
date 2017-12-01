@@ -15,6 +15,7 @@ class Comment < ApplicationRecord
   validates :body, presence: true
 
   belongs_to :post
+  has_many :likes, dependent: :destroy
   # belongs_to :comment
   # has_many :comments, dependent: :destroy
 end

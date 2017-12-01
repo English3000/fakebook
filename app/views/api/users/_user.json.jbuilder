@@ -14,3 +14,9 @@ end
 json.request_ids do
   json.array! user.requests
 end
+json.liked_post_ids do
+  json.array! user.likes.pluck(:post_id)
+end
+json.liked_comment_ids do
+  json.array! user.likes.pluck(:comment_id)
+end

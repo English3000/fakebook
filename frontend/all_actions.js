@@ -100,3 +100,30 @@ export const removeFriendship = relp => ({
 export const requestFriendship = relp => async (dispatch) => dispatch(receiveFriendRequest(await FakebookAPIUtil.createFriendship(relp)));
 export const rejectFriendship = relp => async (dispatch) => dispatch(removeFriendship(await FakebookAPIUtil.deleteFriendship(relp)));
 export const acceptFriendship = relp => async (dispatch) => dispatch(receiveFriendship(await FakebookAPIUtil.updateFriendship(relp)));
+
+export const LIKE_POST = 'LIKE_POST';
+export const UNLIKE_POST = 'UNLIKE_POST';
+export const LIKE_COMMENT = 'LIKE_COMMENT';
+export const UNLIKE_COMMENT = 'UNLIKE_COMMENT';
+
+export const receivePostLike = details => ({
+  type: LIKE_POST,
+  details
+});
+export const removePostLike = details => ({
+  type: UNLIKE_POST,
+  details
+});
+export const receiveCommentLike = details => ({
+  type: LIKE_COMMENT,
+  details
+});
+export const removeCommentLike = details => ({
+  type: UNLIKE_COMMENT,
+  details
+});
+
+export const likePost = post => async (dispatch) => dispatch(receivePostLike(await FakebookAPIUtil.likePost(post)))
+export const unlikePost = post => async (dispatch) => dispatch(removePostLike(await FakebookAPIUtil.unlikePost(post)))
+export const likeComment = comment => async (dispatch) => dispatch(receiveCommentLike(await FakebookAPIUtil.likeComment(comment)))
+export const unlikeComment = comment => async (dispatch) => dispatch(removeCommentLike(await FakebookAPIUtil.unlikeComment(comment)))

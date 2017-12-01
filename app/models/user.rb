@@ -17,6 +17,11 @@
 #  cover_photo_file_size    :integer
 #  cover_photo_updated_at   :datetime
 #  custom_link              :string
+#  intro                    :text
+#  location                 :string
+#  job                      :string
+#  school                   :string
+#  partnership              :string
 #
 
 class User < ApplicationRecord
@@ -29,6 +34,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :profile_pic, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\Z/
 
+  has_many :likes
   has_many :posts
   has_many :comments
   has_many :friendships

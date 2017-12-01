@@ -56,13 +56,32 @@
 }
 
 .post-author {
-  margin-bottom: 2.5px;
+  margin-bottom: 7.5px;
+  padding-left: 10px;
+}
+
+.likes {
+  font-size: 18px;
+  padding-right: 6px;
+}
+
+.likes + i {
+  padding-right: 9px;
+  cursor: pointer;
+}
+
+.likes + i:hover {
+  color: palegreen;
+}
+
+.likes + i.hover-red:hover {
+  color: red;
 }
 
 .post-body {
   display: inline-block;
   text-align: justify;
-  padding-left: 33px;
+  // padding-left: 33px;
   max-width: 360px;
   overflow: auto;
 }

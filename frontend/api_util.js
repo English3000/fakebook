@@ -62,22 +62,20 @@ export const deleteFriendship = friendship => $.ajax({
   data: {friendship}
 });
 
-//---
+export const likePost = post => $.ajax({
+  method: 'POST',
+  url: `api/posts/${post.id}/likes`
+});
+export const likeComment = comment => $.ajax({
+  method: 'POST',
+  url: `api/comments/${comment.id}/likes`
+});
 
-// export const likePost = post => $.ajax({
-//   method: 'POST',
-//   url: `api/posts/${post.id}/likes`
-// });
-// export const likeComment = comment => $.ajax({
-//   method: 'POST',
-//   url: `api/comments/${comment.id}/likes`
-// });
-
-// export const unlikePost = post => $.ajax({
-//   method: 'DELETE',
-//   url: `api/posts/${post.id}/likes`
-// });
-// export const unlikeComment = comment => $.ajax({
-//   method: 'DELETE',
-//   url: `api/comments/${comment.id}/likes`
-// });
+export const unlikePost = post => $.ajax({
+  method: 'DELETE',
+  url: `api/posts/${post.id}/likes/${post.user_id}`
+});
+export const unlikeComment = comment => $.ajax({
+  method: 'DELETE',
+  url: `api/comments/${comment.id}/likes/${comment.user_id}`
+});

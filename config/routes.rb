@@ -8,8 +8,12 @@ Rails.application.routes.draw do
       # resources :friendships, only: [:post] # :id == non-currentUser
     end
     resource :session
-    resources :posts
-    resources :comments
+    resources :posts do
+      resources :likes, only: [:create, :destroy]
+    end
+    resources :comments do
+      resources :likes, only: [:create, :destroy]
+    end
     resource :friendships
   end
 end

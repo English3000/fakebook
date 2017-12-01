@@ -35,8 +35,7 @@ export default class PostsIndexItem extends React.Component {
 
   render() {
     // console.log("Post props:", this.props);
-    const {post, author} = this.props;
-    const {users, currentUser, comments, updateComment, deleteComment} = this.props.parentProps;
+    const {post, author, parentProps} = this.props;
     const date = new Date();
     return (
       <li>
@@ -56,12 +55,24 @@ export default class PostsIndexItem extends React.Component {
                   <span className='gray'>on&nbsp;<em>{new Date(post.updated_at).toLocaleDateString([], {month: 'short', day: 'numeric'})}</em></span>}
                 &ensp;<b>({post.audience})</b>
               </div>
-              {currentUser === author.id ? <div>
+              {parentProps.currentUser === author.id ? <div>
                 {/* <i className='delete-button fa fa-pencil fa-lg springgreen' onClick={this.update}></i>
                 &emsp;*/}<i className='delete-button fa fa-trash fa-lg springgreen' onClick={this.delete}></i></div> : ''}
             </div> : ''}
           </div>
           <div className='flex'>
+            {parentProps.users[parentProps.currentUser] ?
+              parentProps.users[parentProps.currentUser].liked_post_ids
+                .includes(post.id) ?
+            <div className='flex-middle'>
+              <span className='likes'>{post.likes}</span>
+              <i className="fa fa-thumbs-up fa-lg green hover-red"
+                 onClick={() => parentProps.unlikePost(post)}></i>
+            </div> : <div className='flex-middle'>
+              <span className='likes'>{post.likes}</span>
+              <i className="fa fa-thumbs-up fa-lg green"
+                 onClick={() => parentProps.likePost(post)}></i>
+            </div> : ''}
             <p className='post-body'>{post.body}</p>
           </div>
           {/* <p>{post.likes}</p> */}
@@ -69,16 +80,14 @@ export default class PostsIndexItem extends React.Component {
         </article>
         <ul>
           {post.comment_ids.map(id => {
-            const comment = comments[id];
+            const comment = parentProps.comments[id];
             if (comment.post_id === post.id) {
-              return <Comment key={comment.id} currentUser={currentUser}
-                              comment={comment} author={users[comment.user_id]}
-                              updateComment={updateComment} deleteComment={deleteComment}
-                              errors={this.props.parentProps.errors}/>;
+              return <Comment key={comment.id} parentProps={parentProps}
+                              comment={comment} author={parentProps.users[comment.user_id]} />;
             }
           })}
           <CommentFormContainer key={post.id} postId={post.id} commentId={null}
-                                errors={this.props.parentProps.errors} />
+                                errors={parentProps.errors} />
         </ul>
       </li>
     );

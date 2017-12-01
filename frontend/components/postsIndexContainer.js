@@ -3,7 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { getUsers,
          getPosts, getUserPosts,
          updatePost, updateComment,
-         deletePost, deleteComment } from '../all_actions';
+         deletePost, deleteComment,
+         likePost, likeComment,
+         unlikePost, unlikeComment } from '../all_actions';
 import PostsIndex from './postsIndex';
 
 const mapStateToProps = ({ entities, session, errors }) => {
@@ -23,7 +25,11 @@ const mapDispatchToProps = dispatch => ({
   updatePost: post => dispatch(updatePost(post)),
   deletePost: id => dispatch(deletePost(id)),
   updateComment: comment => dispatch(updateComment(comment)),
-  deleteComment: id => dispatch(deleteComment(id))
+  deleteComment: id => dispatch(deleteComment(id)),
+  likePost: post => dispatch(likePost(post)),
+  unlikePost: post => dispatch(unlikePost(post)),
+  likeComment: comment => dispatch(likeComment(comment)),
+  unlikeComment: comment => dispatch(unlikeComment(comment))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostsIndex));

@@ -11,21 +11,33 @@ export default class Comment extends React.Component {
 
   update(event) {
     event.preventDefault();
-    const { parentProps, post } = this.props;
-    parentProps.updatePost(post);
+    const { parentProps, comment } = this.props;
+    parentProps.updateComment(comment);
   }
 
   delete(event) {
     event.preventDefault();
-    this.props.deleteComment(this.props.comment.id);
+    this.props.parentProps.deleteComment(this.props.comment.id);
   }
 
   render() {
-    const { comment, author, currentUser } = this.props;
+    const { comment, author, parentProps } = this.props;
     // console.log("Comment props: ", this.props);
     return (<li>
       {author ? <div className='comment flex-top flex-between'>
         <div className='flex-top'>
+          {parentProps.users[parentProps.currentUser] ?
+            parentProps.users[parentProps.currentUser].liked_comment_ids
+              .includes(comment.id) ?
+          <div className='flex-middle'>
+            <span className='likes'>{comment.likes}</span>
+            <i className="fa fa-thumbs-up fa-lg green hover-red"
+               onClick={() => parentProps.unlikeComment(comment)}></i>
+          </div> : <div className='flex-middle'>
+            <span className='likes'>{comment.likes}</span>
+            <i className="fa fa-thumbs-up fa-lg green"
+               onClick={() => parentProps.likeComment(comment)}></i>
+          </div> : ''}
           <Link className='profile-pic-mini' to={`/users/${author.id}`}>
             {author.profile_pic ?
               <img className='profile-pic-mini' src={author.profile_pic}/> : ''}
@@ -36,7 +48,7 @@ export default class Comment extends React.Component {
             </Link>&ensp;{comment.body}
           </p>
         </div>
-        &ensp;{currentUser === comment.user_id ? <div>
+        &ensp;{parentProps.currentUser === comment.user_id ? <div>
           {/* <i className='delete-button fa fa-pencil fa-lg springgreen' onClick={this.update}></i>
           &emsp;*/}<i className='delete-button fa fa-trash shift-down fa-lg springgreen' onClick={this.delete}></i>
         </div> : ''}

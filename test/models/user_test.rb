@@ -17,6 +17,11 @@
 #  cover_photo_file_size    :integer
 #  cover_photo_updated_at   :datetime
 #  custom_link              :string
+#  intro                    :text
+#  location                 :string
+#  job                      :string
+#  school                   :string
+#  partnership              :string
 #
 
 require 'test_helper'

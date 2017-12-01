@@ -7,6 +7,7 @@
 #  body       :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  audience   :string           not null
 #
 
 class Post < ApplicationRecord
@@ -15,5 +16,6 @@ class Post < ApplicationRecord
   validates :audience, inclusion: PRIVACIES
 
   belongs_to :user
+  has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 end

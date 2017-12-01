@@ -1,7 +1,9 @@
 import React from 'react';
 import { RECEIVE_USERS, RECEIVE_USER,
          RECEIVE_FRIEND_REQUEST,
-         RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../all_actions';
+         RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP,
+         LIKE_POST, LIKE_COMMENT,
+         UNLIKE_POST, UNLIKE_COMMENT } from '../all_actions';
 import merge from 'lodash/merge';
 
 const _nullUser = {
@@ -42,6 +44,24 @@ export default (state = _nullUser, action) => {
       newState[action.relp.friend_id].friend_ids
         .splice(newState[action.relp.friend_id].friend_ids
           .indexOf(action.relp.user_id), 1);
+      return newState;
+    case LIKE_POST:
+      newState[action.details.currentUserId].liked_post_ids
+        .push(action.details.postId);
+      return newState;
+    case LIKE_COMMENT:
+      newState[action.details.currentUserId].liked_comment_ids
+        .push(action.details.commentId);
+      return newState;
+    case UNLIKE_POST:
+      newState[action.details.currentUserId].liked_post_ids
+        .splice(newState[action.details.currentUserId].liked_post_ids
+          .indexOf(action.details.postId), 1);
+      return newState;
+    case UNLIKE_COMMENT:
+      newState[action.details.currentUserId].liked_comment_ids
+        .splice(newState[action.details.currentUserId].liked_comment_ids
+          .indexOf(action.details.commentId), 1);
       return newState;
     default:
       return state;
