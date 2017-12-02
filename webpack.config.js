@@ -37,7 +37,7 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['react', ['env', {
-            "exclude": ["@babel/plugin-transform-regenerator", "es6.set"]
+            exclude: ["transform-regenerator"]
           }]]
         }
       }
