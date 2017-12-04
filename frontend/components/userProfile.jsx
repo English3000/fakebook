@@ -49,10 +49,10 @@ export default class UserProfile extends React.Component {
   }
 
   render() {
-    const { users, match } = this.props;
+    const { users, match, currentUser } = this.props;
     const user = users[match.params.id];
 
-    if (this.props.currentUser - match.params.id === 0) {
+    if (currentUser - match.params.id === 0) {
       return (<div className='plus-z-index'><section>
         <div className='cover-photo' onClick={this.select('select-cover-photo')}>
           {user && user.cover_photo ? <div>
@@ -133,7 +133,9 @@ export default class UserProfile extends React.Component {
             <button className='accept-friend-button' onClick={this.accept}>&#10004;</button>
             <span className='friend-button yellow'>friend</span>
             <button className='reject-friend-button' onClick={this.reject}><span>&times;</span></button>
-        </div> : <button className='friend-button shift-right' onClick={this.request}>+ friend</button>}
+        </div> : user && user.request_ids.includes(currentUser) ?
+        <span className='friend-button yellow shift-right'>friend?</span> :
+        <button className='friend-button shift-right' onClick={this.request}>+ friend</button>}
       </div></section></div>); //bug: see +friend for a sec as loads
     }
   }
@@ -142,7 +144,7 @@ export default class UserProfile extends React.Component {
     event.preventDefault();
     this.props.requestFriendship({ user_id: this.props.currentUser,
                                    friend_id: this.props.match.params.id,
-                                   status: 'PENDING' }).then(() => alert('Sent'));
+                                   status: 'PENDING' });//.then(() => alert('Sent'));
   }
 
   accept(event) {

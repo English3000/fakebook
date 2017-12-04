@@ -10,16 +10,6 @@ export default class PostsIndexItem extends React.Component {
     this.update = this.update.bind(this);
     this.delete = this.delete.bind(this);
   }
-  //
-  // componentWillMount() {
-  //   this.props.parentProps.getPostComments(this.props.post.id); //n-query;
-  // }
-  //
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.parentProps.location.pathname !== newProps.parentProps.location.pathname) {
-  //     this.props.parentProps.getPostComments(this.props.post.id);
-  //   }
-  // }
 
   update(event) {
     event.preventDefault();
