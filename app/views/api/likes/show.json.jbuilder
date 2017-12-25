@@ -5,4 +5,4 @@ else
   json.commentId @like.comment.id
   json.comment_likes @like.comment.likes.count
 end
-json.currentUserId @like.user.id
+json.currentUserId @like.user.id #unneeded

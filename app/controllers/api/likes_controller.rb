@@ -8,7 +8,7 @@ class Api::LikesController < ApplicationController
     else
       @like = Like.new(user_id: current_user.id, comment_id: params[:comment_id])
       @like.save!
-      @comment = Comment.find(params[:comment_id])
+      @comment = Comment.find(params[:comment_id]) #don't need
       render :show
     end
   end
@@ -17,7 +17,7 @@ class Api::LikesController < ApplicationController
     if params[:post_id]
       @like = Like.where(user_id: current_user.id, post_id: params[:post_id])[0]
       @like.destroy
-      @post = Post.find(params[:post_id])
+      @post = Post.find(params[:post_id]) #don't need
       render :show
     else
       @like = Like.where(user_id: current_user.id, comment_id: params[:comment_id])[0]
