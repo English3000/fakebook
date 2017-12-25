@@ -3,6 +3,7 @@ import NavContainer from './navContainer';
 import UserProfileContainer from './userProfileContainer';
 import UserDetailsContainer from './userDetailsContainer';
 import PostsIndexContainer from './postsIndexContainer';
+import FriendsGrid from './friendsGrid';
 import LoadingIcon from './loadingIcon';
 
 export default class UserShowPage extends React.Component {
@@ -32,6 +33,7 @@ export default class UserShowPage extends React.Component {
               <UserDetailsContainer users={this.props.users} />
               <PostsIndexContainer posts={this.props.posts}
                                    comments={this.props.comments} />
+              <FriendsGrid users={this.props.users} currentUser={this.props.currentUser}/>
             </div>
           </div>
         </main>
