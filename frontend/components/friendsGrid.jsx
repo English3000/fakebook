@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 export default class FriendsGrid extends React.Component {
   render() {
-    const { users, currentUser } = this.props;
+    const { users, pageId } = this.props;
     return (<div id='friends-grid'>
-      <h2 style={{textAlign: 'center'}}>Friends</h2>
+      <h3>Friends</h3>
       <div className='flex-center'>
-        {users[currentUser].friend_ids.map(
+        {users[pageId].friend_ids.map(
           friend_id => (<div className='friend'>
-            <Link to={`/users/${friend_id}`}>{friend_id}</Link>
+            <Link to={`/users/${friend_id}`}>{users[friend_id].username}</Link>
           </div>)
         )}
       </div>
@@ -17,5 +17,5 @@ export default class FriendsGrid extends React.Component {
   }
 }
 
-//{users[friend_id].username}
+//
 // style={`background-image: ${users[friend_id].profile_pic} object-fit:contain`}
