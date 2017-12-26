@@ -5,13 +5,13 @@ export default class FriendsGrid extends React.Component {
   render() {
     const { users, pageId, currentUser } = this.props;
     return Object.keys(users).length < 2 ? null : (<div id='friends-grid'>
-      {pageId - currentUser === 0 ? null : <h3>
+      {pageId - currentUser === 0 ? null : <h3 style={{marginBottom: 8}}>
         {users[pageId].friend_ids.length} Friends</h3>}
       <div className='flex-center'>
         {users[pageId].friend_ids.map(
           friendId => (<div className='friend'
-            style={{backgroundImage: `url(${users[friendId].profile_pic})`,
-                         alignItems: 'flex-end', overflowWrap: 'break-word'}}>
+            style={{backgroundImage: `url(${users[friendId].profile_pic})`, display: 'flex',
+                    objectFit: 'contain', alignItems: 'flex-end', overflowWrap: 'break-word'}}>
             <Link to={`/users/${friendId}`}>{users[friendId].username}</Link>
           </div>)
         )}
