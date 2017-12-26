@@ -39,13 +39,13 @@ export default class Nav extends React.Component {
             <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
             <Link to='/posts' className='logo-font'>fyi</Link>}
           </div>
-          <div><input type='text' placeholder='search'
-                      style={{marginTop: 7.5, minWidth: 155, fontSize: 15}}
+          <div><input type='text' placeholder='Search...'
+                      style={{marginTop: 5, minWidth: 125, height: 30, fontSize: 15}}
                       onChange={event => this.search(event)}/></div>
           <ul style={{position: 'absolute', listStyle: 'none', backgroundColor: 'white',
-                      color: 'black', marginTop: 30, marginLeft: 46}}>
+                      color: 'black', marginTop: 35, marginLeft: 45}}>
             {this.state.matches.map(
-              userId => (<li key={`result-${userId}`} class='search-result' style={{padding: 2.5}}>
+              userId => (<li key={`result-${userId}`} class='search-result' style={{paddingVertical: 2.5, paddingHorizontal: 5}}>
                 <Link to={`/users/${userId}`}>{users[userId].username}</Link>
               </li>)
             )}
