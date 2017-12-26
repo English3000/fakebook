@@ -9,7 +9,8 @@ export default class FriendsGrid extends React.Component {
       <div className='flex-center'>
         {users[pageId].friend_ids.map(
           friendId => (<div className='friend'>
-            <Link style={{backgroundImage: users[friendId].profile_pic, objectFit: 'contain'}}
+            <Link style={{backgroundImage: `url(${users[friendId].profile_pic})`,
+                          objectFit: 'contain', alignItems: 'flex-end'}}
               to={`/users/${friendId}`}>{users[friendId].username}</Link>
           </div>)
         )}
