@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export default class FriendsGrid extends React.Component {
   render() {
     const { users, pageId } = this.props;
+    console.log(users);
     return (<div id='friends-grid'>
       {/* <h3>Friends</h3> */}
       <div className='flex-center'>
