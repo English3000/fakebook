@@ -22,6 +22,7 @@ export default class Nav extends React.Component {
           {match.path === '/posts' ?
           <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
           <Link to='/posts' className='logo-font'>fyi</Link>}
+          <input type='text' placeholder='search'/>
         </div>
         <nav className='flex-middle'>
           <Link to={`/users/${currentUser}`} className='flex-middle'>
