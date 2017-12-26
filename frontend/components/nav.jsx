@@ -18,11 +18,13 @@ export default class Nav extends React.Component {
   search(event) {
     const { users } = this.props;
     let matches = [];
-    Object.keys(users).forEach(userId => {
-      if (users[userId].username.includes(event.target.value)) {
-        matches.push(userId);
-      }
-    });
+    if (event.target.value.length > 0) {
+      Object.keys(users).forEach(userId => {
+        if (users[userId].username.includes(event.target.value)) {
+          matches.push(userId);
+        }
+      });
+    }
     this.setState({ matches });
   }
 
@@ -37,9 +39,10 @@ export default class Nav extends React.Component {
             <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
             <Link to='/posts' className='logo-font'>fyi</Link>}
           </div>
-          <div><input type='text' placeholder='search' style={{marginTop: 12.5}}
+          <div><input type='text' placeholder='search' style={{marginTop: 11}}
                       onChange={event => this.search(event)}/></div>
-          <ul style={{position: 'absolute', listStyle: 'none'}}>
+          <ul style={{position: 'absolute', listStyle: 'none', backgroundColor: 'white',
+                      color: 'black', marginTop: 30, marginLeft: 45}}>
             {this.state.matches.map(
               userId => (<li key={`result-${userId}`}>
                 <Link to={`/users/${userId}`}>{users[userId].username}</Link>
