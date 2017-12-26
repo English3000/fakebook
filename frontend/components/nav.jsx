@@ -5,7 +5,9 @@ import FriendRequestItem from './friendRequestItem';
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { searchResults: [] };
     this.signOut = this.signOut.bind(this);
+    this.search = this.search.bind(this);
   }
 
   signOut(event) {
@@ -13,16 +15,29 @@ export default class Nav extends React.Component {
     this.props.signOut();
   }
 
+  search(event) {
+    // this.setState({ searchResults: /* query to db, searches by event.target.value */ });
+  }
+
   render() {
     const { users, currentUser, match } = this.props;
 
     return (<header className='nav-bar'>
       <div className='center-900px flex-between'>
-        <div className='header-logo'>
-          {match.path === '/posts' ?
-          <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
-          <Link to='/posts' className='logo-font'>fyi</Link>}
-          <input type='text' placeholder='search'/>
+        <div>
+          <div className='header-logo'>
+            {match.path === '/posts' ?
+            <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
+            <Link to='/posts' className='logo-font'>fyi</Link>}
+          </div>
+          <input type='text' placeholder='search' onChange={event => this.search(event)}/>
+          <ul style={{position: 'absolute', listStyle: 'none'}}>
+            {this.state.searchResults.map(
+              user => (<li key={`result-${user.id}`}>
+                <Link to={`/users/${user.id}`}>{user.username}</Link>
+              </li>)
+            )}
+          </ul>
         </div>
         <nav className='flex-middle'>
           <Link to={`/users/${currentUser}`} className='flex-middle'>
