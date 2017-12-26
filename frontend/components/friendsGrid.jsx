@@ -5,20 +5,19 @@ export default class FriendsGrid extends React.Component {
   render() {
     const { users, pageId } = this.props;
     console.log(users);
+    if (Object.keys(users).length < 2) {
+      return;
+    }
     return (<div id='friends-grid'>
-      {/* <h3>Friends</h3> */}
+      <h3>Friends</h3>
       <div className='flex-center'>
         {users[pageId].friend_ids.map(
           friendId => (<div className='friend'>
-            <Link to={`/users/${friendId}`}></Link>
+            <Link style={`background-image: ${users[friendId].profile_pic} object-fit:contain`}
+              to={`/users/${friendId}`}>{users[friendId].username}</Link>
           </div>)
         )}
       </div>
     </div>);
   }
 }
-
-//{Object.keys(users)} works
-
-// users[friendId].username
-// style={`background-image: ${users[friend_id].profile_pic} object-fit:contain`}
