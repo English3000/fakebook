@@ -5,7 +5,7 @@ import FriendRequestItem from './friendRequestItem';
 export default class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchResults: [] };
+    this.state = { matches: [] };
     this.signOut = this.signOut.bind(this);
     this.search = this.search.bind(this);
   }
@@ -16,7 +16,14 @@ export default class Nav extends React.Component {
   }
 
   search(event) {
-    // this.setState({ searchResults: /* query to db, searches by event.target.value */ });
+    const { users } = this.props;
+    let matches = [];
+    Object.keys(users).forEach(userId => {
+      if (users[userId].username.includes(event.target.value)) {
+        matches.push(userId);
+      }
+    });
+    this.setState({ matches });
   }
 
   render() {
@@ -30,12 +37,12 @@ export default class Nav extends React.Component {
             <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
             <Link to='/posts' className='logo-font'>fyi</Link>}
           </div>
-          <div><input type='text' placeholder='search' style={{marginTop: 10}}
+          <div><input type='text' placeholder='search' style={{marginTop: 12.5}}
                       onChange={event => this.search(event)}/></div>
           <ul style={{position: 'absolute', listStyle: 'none'}}>
-            {this.state.searchResults.map(
-              user => (<li key={`result-${user.id}`}>
-                <Link to={`/users/${user.id}`}>{user.username}</Link>
+            {this.state.matches.map(
+              userId => (<li key={`result-${userId}`}>
+                <Link to={`/users/${userId}`}>{users[userId].username}</Link>
               </li>)
             )}
           </ul>
