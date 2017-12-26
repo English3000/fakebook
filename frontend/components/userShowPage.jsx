@@ -33,7 +33,8 @@ export default class UserShowPage extends React.Component {
               <UserDetailsContainer users={this.props.users} />
               <PostsIndexContainer posts={this.props.posts}
                                    comments={this.props.comments} />
-              <FriendsGrid users={this.props.users} pageId={this.props.match.params.id}/>
+              <FriendsGrid users={this.props.users} pageId={this.props.match.params.id}
+                           currentUser={this.props.currentUser}/>
             </div>
           </div>
         </main>
