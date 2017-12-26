@@ -8,7 +8,7 @@ export default class FriendsGrid extends React.Component {
       <h2 style='text-align:center'>Friends</h2>
       <div class='flex-center'>
         {users[currentUser].friend_ids.map(
-          friend => (<div class='friend' style={`background-image: ${friend.profile_pic} object-fit:contain`}>
+          friend => (<div class='friend'>
             <Link to={`/users/${friend.id}`}>{friend.username}</Link>
           </div>)
         )}
@@ -16,3 +16,5 @@ export default class FriendsGrid extends React.Component {
     </div>);
   }
 }
+
+/*  style={`background-image: ${friend.profile_pic} object-fit:contain`} */
