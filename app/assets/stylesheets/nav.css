@@ -26,6 +26,14 @@
   box-shadow: 0 0 3px black;
 }
 
+.search-result {
+  padding: 2.5px 5px;
+}
+
+.search-result:hover {
+  background-color: whitesmoke;
+}
+
 .nav-bar nav {
   margin: 7.5px 7.5px 0;
 }
