@@ -25,12 +25,13 @@ export default class Nav extends React.Component {
     return (<header className='nav-bar'>
       <div className='center-900px flex-between'>
         <div style={{display: 'flex'}}>
-          <div className='header-logo' style={{marginRight: 15}}>
+          <div className='header-logo' style={{marginRight: 7.5}}>
             {match.path === '/posts' ?
             <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
             <Link to='/posts' className='logo-font'>fyi</Link>}
           </div>
-          <div><input type='text' placeholder='search' onChange={event => this.search(event)}/></div>
+          <div><input type='text' placeholder='search' style={{marginTop: 10}}
+                      onChange={event => this.search(event)}/></div>
           <ul style={{position: 'absolute', listStyle: 'none'}}>
             {this.state.searchResults.map(
               user => (<li key={`result-${user.id}`}>
