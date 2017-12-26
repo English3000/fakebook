@@ -14,9 +14,11 @@ export default class FriendsGrid extends React.Component {
                       backgroundSize: 'cover', display: 'flex',
                       alignItems: 'flex-end', borderRadius: '100%'}}>
             </Link>
-            <Link style={{width: 70, textAlign: 'center', overflowWrap: 'break-word',
-                          marginBottom: 2, fontSize: 10}} to={`/users/${friendId}`}>
-              {users[friendId].username}</Link></div>)
+            <div style={{width: 70, textAlign: 'center', fontSize: 12,
+                         overflowWrap: 'break-word', marginBottom: 2}}>
+              <Link to={`/users/${friendId}`}>{users[friendId].username}</Link>
+            </div>
+          </div>)
         )}
       </div>
     </div>);
