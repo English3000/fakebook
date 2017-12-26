@@ -26,6 +26,10 @@
   box-shadow: 0 0 3px black;
 }
 
+#search:focus {
+  outline: none;
+}
+
 .search-result {
   padding: 2.5px 5px;
 }
