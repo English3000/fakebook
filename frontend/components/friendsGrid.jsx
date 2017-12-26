@@ -6,7 +6,7 @@ export default class FriendsGrid extends React.Component {
     const { users, pageId } = this.props;
     console.log(users);
     if (Object.keys(users).length < 2) {
-      return;
+      return null;
     }
     return (<div id='friends-grid'>
       <h3>Friends</h3>
