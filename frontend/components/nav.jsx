@@ -24,8 +24,8 @@ export default class Nav extends React.Component {
 
     return (<header className='nav-bar'>
       <div className='center-900px flex-between'>
-        <div>
-          <div className='header-logo'>
+        <div style={{display: 'flex'}}>
+          <div className='header-logo' style={{marginRight: 5}}>
             {match.path === '/posts' ?
             <Link to={`/users/${currentUser}`} className='logo-font'>fyi</Link> :
             <Link to='/posts' className='logo-font'>fyi</Link>}
