@@ -68,7 +68,8 @@
 
 .inputs-div input:focus {
   outline: none;
-  box-shadow: 0 0 1px black;
+  border-style: solid;
+  box-shadow: 0 0 2px black;
 }
 
 /*SOURCE: http://apps.eky.hk/css-triangle-generator/ */

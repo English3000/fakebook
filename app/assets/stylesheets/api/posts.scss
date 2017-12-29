@@ -16,6 +16,10 @@
   border-radius: 5px;
 }
 
+#flush-top {
+  border-radius: 0 0 5px 5px;
+}
+
 .hover-dark:hover {
   border-color: gray;
   box-shadow: 0 0 1px black;
