@@ -7,9 +7,9 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <h2 style={{color: 'white'}}>Stay up to date! </h2>
+        <h2 style={{color: 'white', fontWeight: 300}}>Stay up to date! </h2>
         <GatewayFormContainer />
-        <div style={{display: 'flex', justifyContent: 'flex-end', width: 200}}>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 190}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
             <p className='logo-font gateway-logo'>f y i</p>
           </a>
@@ -29,7 +29,7 @@ export default () => (
               </div>
               <div className='features-div'>
                 <h3 className='feature'>Profiles</h3><br/>
-                <h3 className='feature'><em>Newsfeed</em></h3><br/>
+                <h3 className='feature'><i>Newsfeed</i></h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
               <div style={{padding: 25}}></div>
@@ -39,9 +39,9 @@ export default () => (
                 <i className='fa fa-thumbs-o-up fa-2x green'></i>
               </div>
               <div className='features-div'>
-                <h3 className='feature'><em>Friending</em></h3><br/>
+                <h3 className='feature'><i>Friending</i></h3><br/>
                 <h3 className='feature'>Search</h3><br/>
-                <h3 className='feature'><em>Likes</em></h3>
+                <h3 className='feature'><i>Likes</i></h3>
               </div>
             </section>
             <DemoButtonContainer/>
