@@ -21,8 +21,8 @@ export default () => (
       <div className='center-900px flex-center'>
         <div className='features-circle flex-center flex-middle'>
           <div className='flex-middle flex-column'>
-            <h2 style={{fontWeight: 300, textTransform: 'uppercase',
-                        paddingBottom: 10, marginTop: -5}}>Featuring...</h2>
+            <h2 style={{textTransform: 'uppercase', paddingBottom: 7.5,
+              marginTop: -2.5}}>Featuring</h2>
             <section className='flex' style={{paddingBottom: 5}}>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
@@ -31,7 +31,7 @@ export default () => (
               </div>
               <div className='features-div'>
                 <h3 className='feature'>Profiles</h3><br/>
-                <h3 className='feature'>Newsfeed</h3><br/>
+                <h3 className='feature'><em>Newsfeed</em></h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
               <div style={{padding: 25}}></div>
@@ -41,9 +41,9 @@ export default () => (
                 <i className='fa fa-thumbs-o-up fa-2x green'></i>
               </div>
               <div className='features-div'>
-                <h3 className='feature'>Friending</h3><br/>
+                <h3 className='feature'><em>Friending</em></h3><br/>
                 <h3 className='feature'>Search</h3><br/>
-                <h3 className='feature'>Likes</h3>
+                <h3 className='feature'><em>Likes</em></h3>
               </div>
             </section>
             <DemoButtonContainer/>

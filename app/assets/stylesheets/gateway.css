@@ -212,13 +212,8 @@
 
 .features-div h3 {
   font-size: 20px;
-  font-weight: 600;
   display: inline-block;
   margin-top: 22.5px;
   position: relative;
   top: -4px;
-}
-
-.feature:nth-child(2n) {
-  font-style: italic;
 }
