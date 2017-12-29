@@ -39,15 +39,15 @@ export default class PostsIndex extends React.Component {
                        className='hover-dark'>
             Trending</div>
         </div> }
-        {match.params.id ? <div className='hover-dark' id='flush-top'
-          style={{position: 'fixed', marginLeft: 575, marginTop: -285,
-                       fontSize: 18, width: 210, height: 772, display: 'flex',
+        {match.params.id ? <div className='hover-dark' id='flush'
+          style={{position: 'fixed', marginLeft: 561, marginTop: -285,
+                       fontSize: 18, width: 238, height: 786, display: 'flex',
                        justifyContent: 'center', alignItems: 'center', borderTop: 'none'}}>
           Chat</div> :
-        <div style={{position: 'fixed', marginLeft: 575, marginTop: 15,
-                     fontSize: 18, width: 210, height: 730, display: 'flex',
+        <div style={{position: 'fixed', marginLeft: 575,
+                     fontSize: 18, width: 249, height: 786, display: 'flex',
                      justifyContent: 'center', alignItems: 'center'}}
-                     className='hover-dark'>
+                     className='hover-dark' id='flush'>
           Chat</div> }
       </div>);
   }
