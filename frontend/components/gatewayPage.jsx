@@ -7,9 +7,10 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <div style={{color: 'white', fontWeight: 300, textAlign: 'center'}}>
-          <p style={{fontSize: 28, fontWeight: 700, fontStyle: 'italic'}}>Stay up to date</p>
-          <p style={{fontSize: 28, fontWeight: 200, color: 'whitesmoke'}}>with friends!</p>
+        <div style={{textAlign: 'center'}}>
+          <p style={{fontSize: 28, fontWeight: 700, fontStyle: 'italic', color: 'whitesmoke'}}>
+            Stay up to date</p>
+          <p style={{fontSize: 28, fontWeight: 300, color: 'white'}}>with friends!</p>
         </div>
         <GatewayFormContainer />
         <div style={{display: 'flex', justifyContent: 'flex-end', width: 175}}>
