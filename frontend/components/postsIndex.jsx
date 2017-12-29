@@ -14,10 +14,10 @@ export default class PostsIndex extends React.Component {
 
     return (this.props.pageLoading ? <LoadingIcon /> :
       <div className='ghostwhite-100pct' style={{display: 'flex', justifyContent: 'center'}}>
-        <div className='hover-dark' style={{marginTop: 15, marginLeft: 8, marginRight: 15, width: 202, height: 730, fontSize: 18,
+        {match.params.id ? <div className='hover-dark' style={{marginTop: 15, marginLeft: 8, marginRight: 15, width: 202, height: 730, fontSize: 18,
                                             display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           Links
-        </div>
+        </div> : null}
         <ul style={{width: 450}}>
           {match.params.id && !users[currentUser].friend_ids.includes(parseInt(match.params.id)) ? '' :
           <div>
@@ -31,12 +31,12 @@ export default class PostsIndex extends React.Component {
               post={post} parentProps={parentProps}/>;
             }) : <div>{/* welcome message/pop up for new user */}</div>}
         </ul>
-        <div style={{marginLeft: 15, width: 210}}>
+        {match.params.id ? <div style={{marginLeft: 15, width: 210}}>
           <div className='hover-dark' style={{height: 350, fontSize: 18, marginTop: 15, display: 'flex',
                                               justifyContent: 'center', alignItems: 'center'}}>
             Trending
           </div>
-        </div>
+        </div> : null}
         <div className='hover-dark' style={{position: 'fixed', marginLeft: 575, marginTop: 15, fontSize: 18,
                                             width: 210, height: 730, display: 'flex',
                                             justifyContent: 'center', alignItems: 'center'}}>
