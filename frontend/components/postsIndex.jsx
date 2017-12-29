@@ -45,7 +45,7 @@ export default class PostsIndex extends React.Component {
                        justifyContent: 'center', alignItems: 'center', borderTop: 'none'}}>
           Chat</div> :
         <div style={{position: 'fixed', marginLeft: 595, marginTop: -1,
-                     fontSize: 18, width: 249, height: 786, display: 'flex',
+                     fontSize: 18, width: 249, height: 787, display: 'flex',
                      justifyContent: 'center', alignItems: 'center'}}
                      className='hover-dark' id='flush'>
           Chat</div> }
