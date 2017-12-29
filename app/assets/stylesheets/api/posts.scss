@@ -12,13 +12,14 @@
 
 .hover-dark {
   color: whitesmoke;
-  border: 1px dotted whitesmoke;
+  border: 1.5px dotted whitesmoke;
   border-radius: 5px;
 }
 
 .hover-dark:hover {
   border-color: black;
   color: black;
+  box-shadow: 1px 1px 1px black;
 }
 
 .post {

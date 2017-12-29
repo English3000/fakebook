@@ -9,7 +9,7 @@ export default () => (
       <div className='flex-between flex-middle center-900px'>
         <div style={{color: 'white', fontWeight: 300, textAlign: 'center'}}>
           <p style={{fontSize: 28, fontWeight: 700, fontStyle: 'italic'}}>Stay up to date</p>
-          <p style={{fontSize: 24, fontWeight: 200}}>with friends!</p>
+          <p style={{fontSize: 28, fontWeight: 200, color: 'whitesmoke'}}>with friends!</p>
         </div>
         <GatewayFormContainer />
         <div style={{display: 'flex', justifyContent: 'flex-end', width: 175}}>
@@ -33,7 +33,8 @@ export default () => (
               </div>
               <div className='features-div'>
                 <h3 className='feature'>Profiles</h3><br/>
-                <h3 className='feature'><em>Newsfeed</em></h3><br/>
+                <h3 className='feature' style={{fontWeight: 500, fontStyle: 'italic'}}>
+                  Newsfeed</h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
               <div style={{padding: 25}}></div>
@@ -43,9 +44,11 @@ export default () => (
                 <i className='fa fa-thumbs-o-up fa-2x green'></i>
               </div>
               <div className='features-div'>
-                <h3 className='feature'><em>Friending</em></h3><br/>
+                <h3 className='feature' style={{fontWeight: 500, fontStyle: 'italic'}}>
+                  Friending</h3><br/>
                 <h3 className='feature'>Search</h3><br/>
-                <h3 className='feature'><em>Likes</em></h3>
+                <h3 className='feature' style={{fontWeight: 500, fontStyle: 'italic'}}>
+                  Likes</h3>
               </div>
             </section>
             <DemoButtonContainer/>
@@ -54,7 +57,7 @@ export default () => (
       </div>
     </main>
     <footer className='gateway-footer flex-center'>
-      <a href='https://github.com/English3000/fyi#readme' target='_blank'>find the rest!</a>
+      <a href='https://github.com/English3000/fyi#readme' target='_blank'>Find the rest!</a>
     </footer>
   </div>
 );
