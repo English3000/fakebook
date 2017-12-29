@@ -8,8 +8,8 @@ export default () => (
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
         <div style={{color: 'white', fontWeight: 300, textAlign: 'center'}}>
-          <p style={{fontSize: 24}}><em>Stay up to date</em></p>
-          <p style={{fontSize: 24}}>with friends!</p>
+          <p style={{fontSize: 28}}><em>Stay up to date</em></p>
+          <p style={{fontSize: 28}}>with friends!</p>
         </div>
         <GatewayFormContainer />
         <div style={{display: 'flex', justifyContent: 'flex-end', width: 175}}>
