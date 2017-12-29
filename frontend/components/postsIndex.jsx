@@ -40,7 +40,7 @@ export default class PostsIndex extends React.Component {
             Trending</div>
         </div> }
         {match.params.id ? <div className='hover-dark' id='flush'
-          style={{position: 'fixed', marginLeft: 565, marginTop: -285,
+          style={{position: 'fixed', marginLeft: 571, marginTop: -285,
                        fontSize: 18, width: 249, height: 786, display: 'flex',
                        justifyContent: 'center', alignItems: 'center', borderTop: 'none'}}>
           Chat</div> :

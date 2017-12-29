@@ -8,13 +8,13 @@ export default () => (
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
         <div style={{textAlign: 'center', color: 'white'}}>
-          <p style={{fontSize: 32, fontWeight: 600, fontStyle: 'italic'}}>
+          <p style={{fontSize: 36, fontWeight: 600, fontStyle: 'italic'}}>
             Keep in touch.</p>
           {/* <p style={{fontSize: 28, fontWeight: 300}}>
             with friends!</p> */}
         </div>
         <GatewayFormContainer />
-        <div style={{display: 'flex', justifyContent: 'flex-end', width: 172}}>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 184}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
             <p className='logo-font gateway-logo'>f y i</p>
           </a>
