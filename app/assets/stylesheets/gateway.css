@@ -31,7 +31,7 @@
 
 .gateway-footer {
   min-height: 50px;
-  max-height: 250px;
+  /* max-height: 250px; */
 }
 
 .gateway-footer a {
@@ -170,7 +170,7 @@
   border-radius: 100%;
   box-shadow: 0 0 7.5px #cdc9c9;
   position: relative;
-  top: 45px;
+  top: 55px;
 }
 
 .features-circle:hover {

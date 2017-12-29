@@ -14,8 +14,8 @@ export default class PostsIndex extends React.Component {
 
     return (this.props.pageLoading ? <LoadingIcon /> :
       <div className='ghostwhite-100pct' style={{display: 'flex', justifyContent: 'center'}}>
-        <div className='hover-dark' style={{padding: 12.5, width: 200, textAlign: 'center',
-                                            display: 'flex', alignItems: 'center'}}>
+        <div className='hover-dark' style={{margin: 12.5, marginTop: 15, width: 200, height: '100%', display: 'flex',
+                                            justifyContent: 'center', alignItems: 'center'}}>
           Links
         </div>
         <ul style={{width: 450}}>
@@ -31,9 +31,9 @@ export default class PostsIndex extends React.Component {
               post={post} parentProps={parentProps}/>;
             }) : <div>{/* welcome message/pop up for new user */}</div>}
         </ul>
-        <div style={{padding: 12.5, width: 200}}>
-          <div className='hover-dark' style={{height: 350, textAlign: 'center', marginTop: 2.5,
-                                              display: 'flex', alignItems: 'center'}}>
+        <div style={{margin: 12.5, width: 200}}>
+          <div className='hover-dark' style={{height: 350, marginTop: 15, display: 'flex',
+                                              justifyContent: 'center', alignItems: 'center'}}>
             Trending
           </div>
         </div>
