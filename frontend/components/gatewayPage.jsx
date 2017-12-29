@@ -9,7 +9,7 @@ export default () => (
       <div className='flex-between flex-middle center-900px'>
         <div style={{color: 'white', fontWeight: 300, textAlign: 'center'}}>
           <p style={{fontSize: 28, fontWeight: 700, fontStyle: 'italic'}}>Stay up to date</p>
-          <p style={{fontSize: 28, fontWeight: 300}}>with friends!</p>
+          <p style={{fontSize: 24, fontWeight: 200}}>with friends!</p>
         </div>
         <GatewayFormContainer />
         <div style={{display: 'flex', justifyContent: 'flex-end', width: 175}}>
