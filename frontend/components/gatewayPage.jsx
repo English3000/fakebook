@@ -21,16 +21,26 @@ export default () => (
             <section className='flex'>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
-                <i className='fa fa-handshake-o fa-2x green'></i>
                 <i className='fa fa-newspaper-o fa-2x green'></i>
+                <i className='fa fa-paper-plane-o fa-2x green'></i>
               </div>
               <div className='features-div'>
                 <h3 className='feature'>Profiles</h3><br/>
                 <h3 className='feature'>Newsfeed</h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
+              <div className='icons-div flex-middle flex-column'>
+                <i className='fa fa-handshake-o fa-2x green'></i>
+                <i className='fa fa-search fa-2x green'></i>
+                <i className='fa fa-thumbs-o-up fa-2x green'></i>
+              </div>
+              <div className='features-div'>
+                <h3 className='feature'>Friending</h3><br/>
+                <h3 className='feature'>Search</h3><br/>
+                <h3 className='feature'>Likes</h3>
+              </div>
             </section>
-            <DemoButtonContainer/> 
+            <DemoButtonContainer/>
           </div>
         </div>
       </div>
