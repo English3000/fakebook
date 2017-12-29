@@ -13,7 +13,7 @@ export default () => (
           <p style={{fontSize: 28, fontWeight: 300}}>with friends!</p>
         </div>
         <GatewayFormContainer />
-        <div style={{display: 'flex', justifyContent: 'flex-end', width: 170}}>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 172}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
             <p className='logo-font gateway-logo'>f y i</p>
           </a>
@@ -25,8 +25,8 @@ export default () => (
         <div className='features-circle flex-center flex-middle'>
           <div className='flex-middle flex-column'>
             <h2 style={{textTransform: 'uppercase', paddingBottom: 7.5,
-              marginTop: -2.5}}>Featuring</h2>
-            <section className='flex' style={{paddingBottom: 7.5}}>
+              marginTop: -5}}>Featuring</h2>
+            <section className='flex' style={{paddingBottom: 10}}>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
                 <i className='fa fa-newspaper-o fa-2x green'></i>
