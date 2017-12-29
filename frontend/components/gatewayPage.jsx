@@ -29,6 +29,7 @@ export default () => (
                 <h3 className='feature'>Newsfeed</h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
+              <div style={{padding: 10}}></div>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-handshake-o fa-2x green'></i>
                 <i className='fa fa-search fa-2x green'></i>
