@@ -44,7 +44,7 @@ export default class Nav extends React.Component {
                               paddingLeft: 5.25, paddingRight: 5.25, height: 18, fontSize: 15}}
                       onChange={event => this.search(event)}/></div>
           <ul style={{position: 'absolute', listStyle: 'none', backgroundColor: 'white', color: 'black',
-                      marginTop: 32, width: 166, overflowWrap: 'break-word', marginLeft: 45}}>
+                      marginTop: 31, width: 175.5, overflowWrap: 'break-word', marginLeft: 46}}>
             {this.state.matches.map(
               userId => (<li key={`result-${userId}`} class='search-result'>
                 <Link to={`/users/${userId}`}>{users[userId].username}</Link>

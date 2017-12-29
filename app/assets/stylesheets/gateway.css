@@ -68,7 +68,7 @@
 
 .inputs-div input:focus {
   outline: none;
-  border-style: solid;
+  border: 2px solid white;
   box-shadow: 0 0 2px black;
 }
 
