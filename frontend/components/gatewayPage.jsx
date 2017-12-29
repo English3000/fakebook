@@ -25,7 +25,7 @@ export default () => (
         <div className='features-circle flex-center flex-middle'>
           <div className='flex-middle flex-column'>
             <h2 style={{textTransform: 'uppercase', paddingBottom: 7.5,
-              marginTop: -5}}>Featuring</h2>
+                        marginTop: -5}}>Featuring</h2>
             <section className='flex' style={{paddingBottom: 10}}>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>

@@ -40,7 +40,7 @@ export default class Nav extends React.Component {
             <Link to='/posts' className='logo-font'>fyi</Link>}
           </div>
           <div><input type='text' placeholder='Search...' id='search'
-                      style={{marginTop: 6, minWidth: 125, padding: 2.5,
+                      style={{marginTop: 6, width: 166, padding: 2.5, borderRadius: 2,
                               paddingLeft: 3.25, paddingRight: 3.25, height: 19, fontSize: 15}}
                       onChange={event => this.search(event)}/></div>
           <ul style={{position: 'absolute', listStyle: 'none', backgroundColor: 'white',
