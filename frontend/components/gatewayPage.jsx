@@ -7,18 +7,20 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <h2 style={{color: 'white'}}>STAY UP TO DATE: </h2>
+        <h2 style={{color: 'white'}}>Stay up to date! </h2>
         <GatewayFormContainer />
-        <a href='https://github.com/English3000/fyi#readme' target='_blank'>
-          <p className='logo-font gateway-logo'>f y i</p>
-        </a>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 250}}>
+          <a href='https://github.com/English3000/fyi#readme' target='_blank'>
+            <p className='logo-font gateway-logo'>f y i</p>
+          </a>
+        </div>
       </div>
     </header>
     <main className='ghostwhite flex-middle'>
       <div className='center-900px flex-center'>
         <div className='features-circle flex-center flex-middle'>
           <div className='flex-middle flex-column'>
-            <h2>Featuring...</h2>
+            <h2 style={{fontWeight: 300}}>Featuring...</h2>
             <section className='flex'>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
