@@ -7,9 +7,10 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <h2 style={{color: 'white', fontWeight: 300}}>Stay up to date! </h2>
+        <h2 style={{color: 'white', fontWeight: 300, fontStyle: 'italic'}}>
+          Stay up to date!</h2>
         <GatewayFormContainer />
-        <div style={{display: 'flex', justifyContent: 'flex-end', width: 190}}>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 225}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
             <p className='logo-font gateway-logo'>f y i</p>
           </a>
@@ -20,8 +21,9 @@ export default () => (
       <div className='center-900px flex-center'>
         <div className='features-circle flex-center flex-middle'>
           <div className='flex-middle flex-column'>
-            <h2 style={{fontWeight: 300}}>Featuring...</h2>
-            <section className='flex'>
+            <h2 style={{fontWeight: 300, textTransform: 'uppercase',
+                        paddingBottom: 10, marginTop: -5}}>Featuring...</h2>
+            <section className='flex' style={{paddingBottom: 5}}>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
                 <i className='fa fa-newspaper-o fa-2x green'></i>
@@ -29,7 +31,7 @@ export default () => (
               </div>
               <div className='features-div'>
                 <h3 className='feature'>Profiles</h3><br/>
-                <h3 className='feature'><i>Newsfeed</i></h3><br/>
+                <h3 className='feature'>Newsfeed</h3><br/>
                 <h3 className='feature'>Comments</h3>
               </div>
               <div style={{padding: 25}}></div>
@@ -39,9 +41,9 @@ export default () => (
                 <i className='fa fa-thumbs-o-up fa-2x green'></i>
               </div>
               <div className='features-div'>
-                <h3 className='feature'><i>Friending</i></h3><br/>
+                <h3 className='feature'>Friending</h3><br/>
                 <h3 className='feature'>Search</h3><br/>
-                <h3 className='feature'><i>Likes</i></h3>
+                <h3 className='feature'>Likes</h3>
               </div>
             </section>
             <DemoButtonContainer/>

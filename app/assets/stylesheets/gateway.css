@@ -218,3 +218,7 @@
   position: relative;
   top: -4px;
 }
+
+.feature:nth-child(2n) {
+  font-style: italic;
+}
