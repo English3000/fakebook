@@ -7,13 +7,13 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <div style={{textAlign: 'center'}}>
-          <p style={{fontSize: 28, fontWeight: 700, fontStyle: 'italic', color: 'whitesmoke'}}>
+        <div style={{textAlign: 'center', color: 'white'}}>
+          <p style={{fontSize: 28, fontWeight: 600, fontStyle: 'italic'}}>
             Stay up to date</p>
-          <p style={{fontSize: 28, fontWeight: 300, color: 'white'}}>with friends!</p>
+          <p style={{fontSize: 28, fontWeight: 300}}>with friends!</p>
         </div>
         <GatewayFormContainer />
-        <div style={{display: 'flex', justifyContent: 'flex-end', width: 175}}>
+        <div style={{display: 'flex', justifyContent: 'flex-end', width: 170}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
             <p className='logo-font gateway-logo'>f y i</p>
           </a>

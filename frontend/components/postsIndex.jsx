@@ -14,7 +14,7 @@ export default class PostsIndex extends React.Component {
 
     return (this.props.pageLoading ? <LoadingIcon /> :
       <div className='ghostwhite-100pct' style={{display: 'flex', justifyContent: 'center'}}>
-        <div className='hover-dark' style={{marginTop: 15, marginRight: 15, width: 210, height: 735, fontSize: 18,
+        <div className='hover-dark' style={{marginTop: 15, marginLeft: 7, marginRight: 15, width: 203, height: 730, fontSize: 18,
                                             display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           Links
         </div>
@@ -37,8 +37,11 @@ export default class PostsIndex extends React.Component {
             Trending
           </div>
         </div>
-        <div className='hover-dark' style={{position: 'fixed', marginLeft: 407.5,
-                                            width: 210, height: 735}}>Chat</div>
+        <div className='hover-dark' style={{position: 'fixed', marginLeft: 542.5, fontSize: 18,
+                                            width: 210, height: 730, display: 'flex',
+                                            justifyContent: 'center', alignItems: 'center'}}>
+          Chat
+        </div>
       </div>);
   }
 }
