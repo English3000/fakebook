@@ -7,10 +7,11 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
+        <h2 style={{color: 'white'}}>STAY UP TO DATE: </h2>
+        <GatewayFormContainer />
         <a href='https://github.com/English3000/fyi#readme' target='_blank'>
           <p className='logo-font gateway-logo'>f y i</p>
         </a>
-        <GatewayFormContainer />
       </div>
     </header>
     <main className='ghostwhite flex-middle'>
