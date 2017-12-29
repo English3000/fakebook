@@ -10,6 +10,16 @@
   background-color: ghostwhite;
 }
 
+.hover-dark {
+  color: whitesmoke;
+  border: 1px dashed whitesmoke;
+}
+
+.hover-dark:hover {
+  border-color: black;
+  color: black;
+}
+
 .post {
   margin-top: 15px;
   padding: 17.5px 15px 12.5px;

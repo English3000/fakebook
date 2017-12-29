@@ -13,8 +13,12 @@ export default class PostsIndex extends React.Component {
     const parentProps = this.props;
 
     return (this.props.pageLoading ? <LoadingIcon /> :
-      <div className='ghostwhite-100pct'>
-        <ul className='center-450px'>
+      <div className='ghostwhite-100pct' style={{display: 'flex', justifyContent: 'center'}}>
+        <div className='hover-dark' style={{padding: 12.5, width: 200, textAlign: 'center',
+                                            display: 'flex', alignItems: 'center'}}>
+          Links
+        </div>
+        <ul style={{width: 450}}>
           {match.params.id && !users[currentUser].friend_ids.includes(parseInt(match.params.id)) ? '' :
           <div>
             <div className='px15'></div>
@@ -27,6 +31,12 @@ export default class PostsIndex extends React.Component {
               post={post} parentProps={parentProps}/>;
             }) : <div>{/* welcome message/pop up for new user */}</div>}
         </ul>
+        <div style={{padding: 12.5, width: 200}}>
+          <div className='hover-dark' style={{height: 350, textAlign: 'center', marginTop: 2.5,
+                                              display: 'flex', alignItems: 'center'}}>
+            Trending
+          </div>
+        </div>
       </div>);
   }
 }
