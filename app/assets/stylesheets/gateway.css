@@ -66,6 +66,11 @@
   margin-bottom: 3px;
 }
 
+.inputs-div input:focus {
+  outline: none;
+  box-shadow: 0 0 1px black;
+}
+
 /*SOURCE: http://apps.eky.hk/css-triangle-generator/ */
 #sign-up {
   width: 0;
