@@ -7,8 +7,10 @@ export default () => (
   <div>
     <header className='gateway-header'>
       <div className='flex-between flex-middle center-900px'>
-        <h2 style={{color: 'white', fontWeight: 300, fontStyle: 'italic'}}>
-          Stay up to date!</h2>
+        <div style={{color: 'white', fontWeight: 300, fontStyle: 'italic', textAlign: 'center'}}>
+          <h2>Stay up to date</h2>
+          <h2>with friends!</h2>
+        </div>
         <GatewayFormContainer />
         <div style={{display: 'flex', justifyContent: 'flex-end', width: 225}}>
           <a href='https://github.com/English3000/fyi#readme' target='_blank'>
@@ -23,7 +25,7 @@ export default () => (
           <div className='flex-middle flex-column'>
             <h2 style={{textTransform: 'uppercase', paddingBottom: 7.5,
               marginTop: -2.5}}>Featuring</h2>
-            <section className='flex' style={{paddingBottom: 5}}>
+            <section className='flex' style={{paddingBottom: 6}}>
               <div className='icons-div flex-middle flex-column'>
                 <i className='fa fa-user-o fa-2x green'></i>
                 <i className='fa fa-newspaper-o fa-2x green'></i>
