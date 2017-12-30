@@ -59,7 +59,7 @@ export default class PostsIndexItem extends React.Component {
               <i className="fa fa-thumbs-up fa-lg green hover-red"
                  onClick={() => parentProps.unlikePost(post)}></i>
             </div> : <div className='flex-middle'>
-              <span className='likes'>{post.likes}</span>
+              <span className='likes' style={{fontWeight: 400}}>{post.likes}</span>
               <i className="fa fa-thumbs-up fa-lg green"
                  onClick={() => parentProps.likePost(post)}></i>
             </div> : ''}
