@@ -65,7 +65,6 @@ export default class PostsIndexItem extends React.Component {
             </div> : ''}
             <p className='post-body'>{post.body}</p>
           </div>
-          {/* <p>{post.likes}</p> */}
           {/* 3 most recent comments chron'ly */}
         </article>
         <ul>
