@@ -15,7 +15,7 @@ export default class PostsIndex extends React.Component {
     return (this.props.pageLoading ? <LoadingIcon /> :
       <div className='ghostwhite-100pct' style={{display: 'flex', justifyContent: 'center'}}>
         {match.params.id ? null : <div className='hover-dark'
-          style={{marginTop: 15, marginLeft: 8, marginRight: 15, position: 'fixed',
+          style={{marginTop: 15, marginLeft: 8, marginRight: 15,
                   width: 202, height: 730, fontSize: 18, display: 'flex',
                   justifyContent: 'center', alignItems: 'center'}}>
           Links
@@ -34,7 +34,7 @@ export default class PostsIndex extends React.Component {
             }) : <div>{/* welcome message/pop up for new user */}</div>}
         </ul>
         {match.params.id ? null : <div style={{marginLeft: 15, width: 210}}>
-          <div style={{height: 350, fontSize: 18, marginTop: 15, position: 'fixed',
+          <div style={{height: 350, fontSize: 18, marginTop: 15,
                        display: 'flex', justifyContent: 'center', alignItems: 'center'}}
                        className='hover-dark'>
             Trending</div>
