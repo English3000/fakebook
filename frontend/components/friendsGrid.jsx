@@ -7,7 +7,7 @@ export default class FriendsGrid extends React.Component {
     return Object.keys(users).length < 2 ? null : (<div id='friends-grid'>
       {pageId - currentUser === 0 ? null : <h3 style={{fontWeight: 'bold', marginBottom: 4}}>
         {users[pageId].friend_ids.length} Friend{users[pageId].friend_ids.length - 1 === 0 ? '' : 's'}</h3>}
-      <div className='flex-center'>
+      <div className='flex-center' style={{flexWrap: 'wrap'}}>
         {users[pageId].friend_ids.map(
           friendId => (<div><Link className='friend' to={`/users/${friendId}`}
               style={{backgroundImage: `url(${users[friendId].profile_pic})`,
