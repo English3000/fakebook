@@ -1,5 +1,5 @@
 #friends-grid {
-  width: 200px;
+  width: 200px; //actually only 185px;
   margin: 15px 0px 0px 15px;
   text-align: center;
 }
@@ -7,7 +7,7 @@
 .friend {
   width: 60px;
   height: 60px;
-  margin: 0 5px 2px;
+  margin: 0 6px 2px;
   background-color: rgba(152, 251, 152, 0.2);
   border-radius: 5px;
   // text-shadow: 0 0 2px white;
