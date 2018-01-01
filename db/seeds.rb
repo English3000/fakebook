@@ -66,6 +66,7 @@ post4 = Post.create({user_id: user1.id, body: "You're all great friends!", audie
 post5 = Post.create({user_id: user4.id, body: "fyi, I'm new", audience: 'PUBLIC'})
 post6 = Post.create({user_id: user4.id, body: "No friends yet :(", audience: 'FRIENDS'})
 post7 = Post.create({user_id: user3.id, body: "Smiling is good for you!", audience: 'PUBLIC'})
+post8 = Post.create({user_id: user5.id, body: 'I woke up today to find out I have work!', audience: 'FRIENDS'})
 
 comment1 = Comment.create({user_id: user2.id, post_id: post1.id, body: "I won't."})
 comment2 = Comment.create({user_id: user1.id, post_id: post1.id, body: "You can't!"})
