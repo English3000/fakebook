@@ -29,23 +29,21 @@ user3 = User.create({username: 'friendlyUser', password: 'friendly',
 
 user4 = User.create({username: 'newestUser', password: 'newestUser'})
 
-user5 = User.create({username: 'grumpyUser', password: 'grumpy',
+user5 = User.create({username: 'grumpyUser', password: 'grumpyUser',
   profile_pic: File.new('app/assets/images/grumpy-cat.jpg'),
   cover_photo: File.new('app/assets/images/rainbow-cat-background.jpg'),
   custom_link: 'https://www.adoptapet.com/cat-adoption',
-  intro: "Ssssss.",
-  location: '', school: "",
-  job: 'pet', partnership: 'single'})
+  intro: "Ssssss.", job: 'pet', partnership: 'single'})
 
-user6 = User.create({username: 'sleepyUser', password: 'sleepy',
+user6 = User.create({username: 'sleepyUser', password: 'sleepyUser',
   profile_pic: File.new('app/assets/images/sleepy-fox.jpg'),
   cover_photo: File.new('app/assets/images/hollywood-sign.jpg'),
   intro: "Don't send me any friend requests after 9 PM!
   Hard enough to fall asleep as it is.",
-  location: 'Los Angeles', school: "",
+  location: 'Los Angeles',
   job: 'professor', partnership: 'married'})
 
-user7 = User.create({username: 'excitedUser', password: 'excited',
+user7 = User.create({username: 'excitedUser', password: 'excitedUser',
   profile_pic: File.new('app/assets/images/fist-thru-glass.jpg'),
   custom_link: 'https://giphy.com/explore/new-year-2018',
   intro: "Can't believe it's 2018! Time to make some new friends.",
