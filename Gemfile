@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'newrelic_rpm'
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'
 gem 'jquery-rails'
